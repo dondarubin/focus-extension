@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --font-family-main: 'Work Sans', sans-serif;
+
+    --font-weight-s1: 300;
+    --font-size-s1: 14px;
+    --font-line-s1: 16.42px;
+    --font-s1: var(--font-weight-s1) var(--font-size-s1) / var(--font-line-s1) var(--font-family-main);
+
+    --font-size-s2: 14px;
+    --font-line-s2: 16.42px;
+    --font-weight-s2: 400;
+    --font-s2: var(--font-weight-s2) var(--font-size-s2) / var(--font-line-s2) var(--font-family-main);
+
+    --font-size-btn: 14px;
+    --font-line-btn: 16.42px;
+    --font-weight-btn: 500;
+    --font-btn: var(--font-weight-btn) var(--font-size-btn) / var(--font-line-btn) var(--font-family-main);
+
+    --font-weight-body-r: 400;
+    --font-size-body-r: 18px;
+    --font-line-body-r: 21.11px;
+    --font-body-r: var(--font-weight-body-r) var(--font-size-body-r) / var(--font-line-body-r) var(--font-family-main);
+
+    --font-weight-body-h2: 400;
+    --font-size-body-h2: 24px;
+    --font-line-body-h2: 28.15px;
+    --font-h2: var(--font-weight-body-h2) var(--font-size-body-h2) / var(--font-line-body-h2) var(--font-family-main);
+
+    --font-weight-body-h1: 600;
+    --font-size-body-h1: 30px;
+    --font-line-body-h1: 35.19px;
+    --font-h1: var(--font-weight-body-h1) var(--font-size-body-h1) / var(--font-line-body-h1) var(--font-family-main);
+
+}
