@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import AppRouter from "./providers/router/AppRouter";
 import "./styles/index.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
-import { Footer } from "~widgets/footer/Footer";
+import { Footer } from "~widgets/Footer/Footer";
 
 const App = () => {
     return (

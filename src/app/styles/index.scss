@@ -3,11 +3,14 @@
 
 
 .app {
-    font: var(--font-body-r);
-    width: 500px;
-    height: 600px;
+    font: var(--font-body-r-wf);
+    width: var(--app-width);
+    height: var(--app-height);
+    background: var(--app-bg);
 }
 
 .page-wrapper {
-
+    min-width: 100%;
+    min-height: calc(var(--app-height) - var(--footer-height));
+    display: inline-block;
 }

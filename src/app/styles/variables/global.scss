@@ -1,36 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
 
 :root {
+    // Fonts
     --font-family-main: 'Work Sans', sans-serif;
 
-    --font-weight-s1: 300;
-    --font-size-s1: 14px;
-    --font-line-s1: 16.42px;
-    --font-s1: var(--font-weight-s1) var(--font-size-s1) / var(--font-line-s1) var(--font-family-main);
+    // Work Flow
+    --font-weight-s1-wf: 300;
+    --font-size-s1-wf: 14px;
+    --font-line-s1-wf: 16.42px;
+    --font-s1-wf: var(--font-weight-s1-wf) var(--font-size-s1-wf) / var(--font-line-s1-wf) var(--font-family-main);
 
-    --font-size-s2: 14px;
-    --font-line-s2: 16.42px;
-    --font-weight-s2: 400;
-    --font-s2: var(--font-weight-s2) var(--font-size-s2) / var(--font-line-s2) var(--font-family-main);
+    --font-size-s2-wf: 14px;
+    --font-line-s2-wf: 16.42px;
+    --font-weight-s2-wf: 400;
+    --font-s2-wf: var(--font-weight-s2-wf) var(--font-size-s2-wf) / var(--font-line-s2-wf) var(--font-family-main);
 
-    --font-size-btn: 14px;
-    --font-line-btn: 16.42px;
-    --font-weight-btn: 500;
-    --font-btn: var(--font-weight-btn) var(--font-size-btn) / var(--font-line-btn) var(--font-family-main);
+    --font-size-btn-wf: 14px;
+    --font-line-btn-wf: 16.42px;
+    --font-weight-btn-wf: 500;
+    --font-btn-wf: var(--font-weight-btn-wf) var(--font-size-btn-wf) / var(--font-line-btn-wf) var(--font-family-main);
 
-    --font-weight-body-r: 400;
-    --font-size-body-r: 18px;
-    --font-line-body-r: 21.11px;
-    --font-body-r: var(--font-weight-body-r) var(--font-size-body-r) / var(--font-line-body-r) var(--font-family-main);
+    --font-weight-body-r-wf: 400;
+    --font-size-body-r-wf: 18px;
+    --font-line-body-r-wf: 21.11px;
+    --font-body-r-wf: var(--font-weight-body-r-wf) var(--font-size-body-r-wf) / var(--font-line-body-r-wf) var(--font-family-main);
 
-    --font-weight-body-h2: 400;
-    --font-size-body-h2: 24px;
-    --font-line-body-h2: 28.15px;
-    --font-h2: var(--font-weight-body-h2) var(--font-size-body-h2) / var(--font-line-body-h2) var(--font-family-main);
+    --font-weight-h2-wf: 400;
+    --font-size-h2-wf: 24px;
+    --font-line-h2-wf: 28.15px;
+    --font-h2-wf: var(--font-weight-h2-wf) var(--font-size-h2-wf) / var(--font-line-h2-wf) var(--font-family-main);
 
-    --font-weight-body-h1: 600;
-    --font-size-body-h1: 30px;
-    --font-line-body-h1: 35.19px;
-    --font-h1: var(--font-weight-body-h1) var(--font-size-body-h1) / var(--font-line-body-h1) var(--font-family-main);
+    --font-weight-h1-wf: 600;
+    --font-size-h1-wf: 30px;
+    --font-line-h1-wf: 35.19px;
+    --font-h1-wf: var(--font-weight-h1-wf) var(--font-size-h1-wf) / var(--font-line-h1-wf) var(--font-family-main);
+
+
+    // Sizes
+    --app-width: 500px;
+    --app-height: 600px;
+    --footer-width: 100%;
+    --footer-height: 70px;
+
+
+    // Colors
+    --app-bg: #F3F3F3;
+    --footer-bg: white;
 
 }

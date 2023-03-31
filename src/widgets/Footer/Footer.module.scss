@@ -1,3 +1,7 @@
 .Footer {
-    background: red;
+    width: var(--footer-width);
+    height: var(--footer-height);
+    background: var(--footer-bg);
+    position: absolute;
+    bottom: 0;
 }
