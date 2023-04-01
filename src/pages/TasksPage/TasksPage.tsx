@@ -1,11 +1,11 @@
 import React from "react";
 
-const MainPage = () => {
+const TasksPage = () => {
     return (
         <div>
-            Main Page
+            Tasks Page
         </div>
     );
 };
 
-export default MainPage;
+export default TasksPage;

@@ -30,6 +30,16 @@
     ],
     "permissions": [
       "tabs"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "~shared/resources/icons/*.png"
+        ],
+        "matches": [
+          "https://www.plasmo.com/*"
+        ]
+      }
     ]
   }
 }

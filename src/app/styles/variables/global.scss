@@ -4,6 +4,43 @@
     // Fonts
     --font-family-main: 'Work Sans', sans-serif;
 
+    // Timer Page
+    --font-weight-small-tp: 400;
+    --font-size-small-tp: 12px;
+    --font-line-small-tp: 14.08px;
+    --font-small-tp: var(--font-weight-small-tp) var(--font-size-small-tp) / var(--font-line-small-tp) var(--font-family-main);
+
+    --font-weight-btn-tp: 500;
+    --font-size-btn-tp: 14px;
+    --font-line-btn-tp: 16.42px;
+    --font-btn-tp: var(--font-weight-btn-tp) var(--font-size-btn-tp) / var(--font-line-btn-tp) var(--font-family-main);
+
+    --font-weight-body-light-tp: 300;
+    --font-size-body-light-tp: 18px;
+    --font-line-body-light-tp: 21.11px;
+    --font-body-light-tp: var(--font-weight-body-light-tp) var(--font-size-body-light-tp) / var(--font-line-body-light-tp) var(--font-family-main);
+
+    --font-weight-body-regular-tp: 400;
+    --font-size-body-regular-tp: 18px;
+    --font-line-body-regular-tp: 21.11px;
+    --font-body-regular-tp: var(--font-weight-body-regular-tp) var(--font-size-body-regular-tp) / var(--font-line-body-regular-tp) var(--font-family-main);
+
+    --font-weight-h3-tp: 400;
+    --font-size-h3-tp: 24px;
+    --font-line-h3-tp: 28.15px;
+    --font-h3-tp: var(--font-weight-h3-tp) var(--font-size-h3-tp) / var(--font-line-h3-tp) var(--font-family-main);
+
+    --font-weight-h2-tp: 600;
+    --font-size-h2-tp: 30px;
+    --font-line-h2-tp: 35.19px;
+    --font-h2-tp: var(--font-weight-h2-tp) var(--font-size-h2-tp) / var(--font-line-h2-tp) var(--font-family-main);
+
+    --font-weight-h1-tp: 500;
+    --font-size-h1-tp: 70px;
+    --font-line-h1-tp: 82.11px;
+    --font-h1-tp: var(--font-weight-h1-tp) var(--font-size-h1-tp) / var(--font-line-h1-tp) var(--font-family-main);
+
+
     // Work Flow
     --font-weight-s1-wf: 300;
     --font-size-s1-wf: 14px;

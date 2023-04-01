@@ -1,11 +1,11 @@
 import React from "react";
 
-const MainPage = () => {
+const StatsPage = () => {
     return (
         <div>
-            Main Page
+            Stats Page
         </div>
     );
 };
 
-export default MainPage;
+export default StatsPage;
