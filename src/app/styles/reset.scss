@@ -9,6 +9,7 @@ input,
 button,
 textarea,
 select {
-    font-size: inherit;
+    font: inherit;
     background: inherit;
+    cursor: pointer;
 }

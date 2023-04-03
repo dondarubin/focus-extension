@@ -1,5 +1,8 @@
 @import "reset";
 @import "variables/global";
+@import "themes/blue";
+@import "themes/orange";
+@import "themes/purple";
 
 
 .app {
@@ -7,6 +10,7 @@
     width: var(--app-width);
     height: var(--app-height);
     background: var(--app-bg);
+    color: var(--primary-color);
 }
 
 .page-wrapper {

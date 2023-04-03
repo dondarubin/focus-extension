@@ -1,9 +1,12 @@
 import App from "~app/App";
+import ThemeProvider from "~app/providers/ThemeProvider/ThemeProvider";
 
 function IndexPopup() {
 
     return (
-        <App />
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
     );
 }
 

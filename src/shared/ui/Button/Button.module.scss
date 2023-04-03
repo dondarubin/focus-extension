@@ -1,5 +1,14 @@
 .Button {
     cursor: pointer;
+    width: 155px;
+    height: 46px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.Button:hover {
+    box-shadow: none;
+    border: 1.5px solid #040404;
+    transform: translateX(2px) translateY(3px);
 }
 
 .clear {
@@ -8,3 +17,12 @@
     background: none;
     outline: none;
 }
+
+.default {
+    border: 1px solid #040404;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--primary-color);
+    box-shadow: 1px 3px black;
+}
+

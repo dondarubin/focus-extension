@@ -1,0 +1,32 @@
+.ThemeSwitcher {
+    width: 155px;
+    height: 44px;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #040404;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../../shared/resources/icons/arrow/select-arrow.png") no-repeat right;
+    background-position-x: calc(100% - 8px);
+    background-size: 14px 7px;
+    box-shadow: 2px 3px black;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.ThemeSwitcher:active, .ThemeSwitcher:focus {
+    outline: none;
+}
+
+
+.ThemeSwitcher:hover {
+    box-shadow: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: translateX(2px) translateY(3px);
+}
+
+
+
+
+
