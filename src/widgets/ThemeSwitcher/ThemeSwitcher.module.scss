@@ -18,6 +18,12 @@
     outline: none;
 }
 
+.ThemeSwitcher:focus {
+    box-shadow: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: translateX(2px) translateY(3px);
+}
 
 .ThemeSwitcher:hover {
     box-shadow: none;
