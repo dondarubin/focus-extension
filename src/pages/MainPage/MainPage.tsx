@@ -3,6 +3,7 @@ import { ThemeSwitcher } from "~widgets/ThemeSwitcher/ThemeSwitcher";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { classNames } from "~shared/lib/classNames/classNames";
 import style from "./MainPage.module.scss";
+import { SelectFocusTime } from "~widgets/SelectFocusTime/SelectFocusTime";
 
 const MainPage = () => {
     return (
@@ -12,6 +13,10 @@ const MainPage = () => {
             <br />
             <br />
             <ThemeSwitcher />
+            <br />
+            <br />
+            <br />
+            <SelectFocusTime />
             <br />
             <br />
             <br />
