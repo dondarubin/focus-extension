@@ -1,35 +1,4 @@
-.main {
+.MainPage {
     min-width: var(--app-width);
     min-height: calc(var(--app-height) - var(--footer-height));
-}
-
-.button {
-    font: var(--font-btn-tp);
-}
-
-.nav {
-    color: #9FB4F6;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: var(--mp-nav-height);
-    padding-top: 20px;
-}
-
-.name {
-    font: var(--font-btn-tp);
-}
-
-.content {
-    min-height: calc(var(--app-height) - var(--mp-nav-height) - var(--footer-height));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.time {
-    color: black;
-    font: var(--font-h1-tp);
 }

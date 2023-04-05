@@ -1,0 +1,26 @@
+.NavMainPage {
+    color: #9FB4F6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: var(--mp-nav-height);
+    padding-top: 20px;
+}
+
+.title {
+    font: var(--font-btn-tp);
+    color: #687FC9;
+}
+
+.iconWrapper {
+    width: 70px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconWrapper > svg {
+    cursor: pointer;
+}

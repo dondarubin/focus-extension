@@ -1,0 +1,17 @@
+.ContentMainPage {
+    min-height: calc(var(--app-height) - var(--mp-nav-height) - var(--footer-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time {
+    color: black;
+    font: var(--font-h1-tp);
+}
+
+.button {
+    margin-top: 20px;
+    font: var(--font-btn-tp);
+}
