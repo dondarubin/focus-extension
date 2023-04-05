@@ -9,28 +9,18 @@ import { SettingsIcon } from "~shared/resources/icons/settings/settings";
 
 const MainPage = () => {
     return (
-        <div className={classNames("main", {}, [])}>
+        <div className={classNames(style.main, {}, [])}>
             <nav className={classNames(style.nav, {}, [])}>
                 <MainIcon />
                 <p className={classNames(style.name, {}, [])}>walletadress.ada</p>
                 <SettingsIcon />
             </nav>
-
-            {/*Main Page*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<ThemeSwitcher />*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<SelectFocusTime />*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<br />*/}
-            {/*<Button theme={ThemeButton.DEFAULT} className={classNames(style.button, {}, [])}>*/}
-            {/*    Save*/}
-            {/*</Button>*/}
+            <div className={classNames(style.content, {}, [])}>
+                <p className={classNames(style.time, {}, [])}>25:00</p>
+                <Button theme={ThemeButton.DEFAULT} className={classNames(style.button, {}, [])}>
+                    Save
+                </Button>
+            </div>
         </div>
     );
 };
