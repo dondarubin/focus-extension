@@ -18,7 +18,7 @@ export const FooterButtons = ({ className }: FooterButtonsProps) => {
 
 
             <Button
-                className={classNames("", {}, [className])}
+                className={classNames(styles.footerButton, {}, [className])}
                 theme={ThemeButton.CLEAR}
             >
                 <Link to={"/"}>
@@ -28,7 +28,7 @@ export const FooterButtons = ({ className }: FooterButtonsProps) => {
 
 
             <Button
-                className={classNames("", {}, [className])}
+                className={classNames(styles.footerButton, {}, [className])}
                 theme={ThemeButton.CLEAR}
             >
                 <Link to={"/tasks"}>
@@ -37,7 +37,7 @@ export const FooterButtons = ({ className }: FooterButtonsProps) => {
             </Button>
 
             <Button
-                className={classNames("", {}, [className])}
+                className={classNames(styles.footerButton, {}, [className])}
                 theme={ThemeButton.CLEAR}
             >
                 <Link to={"/blocker"}>
@@ -46,7 +46,7 @@ export const FooterButtons = ({ className }: FooterButtonsProps) => {
             </Button>
 
             <Button
-                className={classNames("", {}, [className])}
+                className={classNames(styles.footerButton, {}, [className])}
                 theme={ThemeButton.CLEAR}
             >
                 <Link to={"/stats"}>
