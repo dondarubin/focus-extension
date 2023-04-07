@@ -65,13 +65,11 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
                 </div>
             </div>
 
-            <div className={classNames(styles.buttonWrap, {}, [])}>
-                <Button theme={ThemeButton.DEFAULT}
-                        className={classNames(styles.button, {}, [])}
-                        onClick={() => setModalActive(false)}>
-                    Save
-                </Button>
-            </div>
+            <Button theme={ThemeButton.DEFAULT}
+                    className={classNames(styles.button, {}, [])}
+                    onClick={() => setModalActive(false)}>
+                Save
+            </Button>
         </Modal>
     );
 };

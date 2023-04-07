@@ -23,12 +23,12 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             toggleTheme(Theme.PURPLE);
             return;
         }
-    };
+    }
 
     return (
         <Select
             theme={theme}
-            OnClickToggleTheme={OnClickToggleTheme}
+            OnChange={OnClickToggleTheme}
             className={className}
         >
             <option key={"blue"} value="blue" className={"selectOption"}>
@@ -43,18 +43,3 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         </Select>
     );
 });
-// <select
-//     value={theme}
-//     onChange={OnClickToggleTheme}
-//     className={classNames(styles.ThemeSwitcher, {}, [])}
-// >
-//     <option key={"blue"} value="blue" className={"themeOption"}>
-//         Blue
-//     </option>
-//     <option key={"orange"} value="orange" className={"themeOption"}>
-//         Orange
-//     </option>
-//     <option key={"purple"} value="purple" className={"themeOption"}>
-//         Purple
-//     </option>
-// </select>

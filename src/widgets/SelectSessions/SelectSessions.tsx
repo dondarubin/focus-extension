@@ -11,13 +11,13 @@ export const SelectSessions = ({ className }: SelectSessionsProps) => {
             className={className}
         >
             <option key={"2"} value="2" className={"selectOption"}>
-                2 min
+                2
             </option>
             <option key={"4"} value="4" className={"selectOption"}>
-                4 min
+                4
             </option>
             <option key={"6"} value="6" className={"selectOption"}>
-                6 min
+                6
             </option>
         </Select>
     );
