@@ -12,7 +12,7 @@ export const ContentMainPage = ({ className }: ContentMainPageProps) => {
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
             <p className={classNames(styles.time, {}, [])}>25:00</p>
             <Button theme={ThemeButton.DEFAULT} className={classNames(styles.button, {}, [])}>
-                Save
+                Start
             </Button>
         </div>
     );
