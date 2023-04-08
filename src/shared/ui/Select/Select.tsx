@@ -5,7 +5,7 @@ import { classNames } from "~shared/lib/classNames/classNames";
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     className?: string;
     theme?: string;
-    OnChange?: (event) => void;
+    OnChangeSwitchTheme?: (event) => void;
 }
 
 export const Select: FC<SelectProps> = (props) => {
@@ -14,7 +14,7 @@ export const Select: FC<SelectProps> = (props) => {
     const {
         className,
         theme,
-        OnChange,
+        OnChangeSwitchTheme,
         children
     } = props;
 
@@ -24,10 +24,9 @@ export const Select: FC<SelectProps> = (props) => {
             value={theme}
             onChange={(event) => {
                 ref.current.blur();
-                OnChange(event);
+                OnChangeSwitchTheme(event);
             }}
             className={classNames(styles.Select, {}, [className])}
-
         >
             {children}
         </select>

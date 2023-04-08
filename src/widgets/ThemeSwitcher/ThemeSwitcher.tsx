@@ -10,7 +10,7 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
-    function OnClickToggleTheme(event) {
+    function OnClickSwitchTheme(event) {
         if (event.target.value === "blue") {
             toggleTheme(Theme.BLUE);
             return;
@@ -28,7 +28,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     return (
         <Select
             theme={theme}
-            OnChange={OnClickToggleTheme}
+            OnChangeSwitchTheme={OnClickSwitchTheme}
             className={className}
         >
             <option key={"blue"} value="blue" className={"selectOption"}>

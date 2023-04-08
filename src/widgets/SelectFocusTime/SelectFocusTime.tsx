@@ -9,6 +9,8 @@ export const SelectFocusTime = ({ className }: SelectTimeProps) => {
     return (
         <Select
             className={className}
+            OnChangeSelect={() => {
+            }}
         >
             <option key={"20"} value="20" className={"selectOption"}>
                 20 min
