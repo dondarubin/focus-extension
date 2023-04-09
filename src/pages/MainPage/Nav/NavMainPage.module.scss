@@ -10,17 +10,41 @@
 
 .title {
     font: var(--font-btn-tp);
-    color: #687FC9;
+    color: var(--secondary-color);
 }
 
-.iconWrapper {
+.iconButtonMain {
     width: 70px;
+    height: 32px;
+}
+
+.iconButtonMain > svg > path:nth-child(-n + 8) {
+    fill: var(--secondary-color);
+}
+
+.iconButtonSettingsWrapper {
+    width: 70px;
+    height: 32px;
+    vertical-align: center;
+}
+
+.iconButtonSettings {
+    width: 32px;
     height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
-.iconWrapper > svg {
+.iconButtonSettings > svg {
     cursor: pointer;
+}
+
+.iconButtonSettings:hover > svg > path {
+    stroke: var(--primary-color);
+}
+
+.iconButtonSettings:hover > svg > circle {
+    stroke: var(--primary-color);
 }

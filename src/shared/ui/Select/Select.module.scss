@@ -7,9 +7,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url("../../resources/icons/arrow/select-arrow.svg") no-repeat right;
-    background-position-x: calc(100% - 8px);
-    background-size: 14px 7px;
+    background: var(--select-arrow-default);
+    background-position-x: calc(100% - 15px);
     box-shadow: 2px 3px black;
     transition: transform 0.1s, box-shadow 0.1s;
 }
@@ -23,6 +22,8 @@
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     transform: translateX(2px) translateY(3px);
+    background: var(--select-arrow-theme);
+    background-position-x: calc(100% - 15px);
 }
 
 .Select:hover {
@@ -30,10 +31,8 @@
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     transform: translateX(2px) translateY(3px);
-}
-
-.selectOption {
-    background: red;
+    background: var(--select-arrow-theme);
+    background-position-x: calc(100% - 15px);
 }
 
 

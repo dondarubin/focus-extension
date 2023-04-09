@@ -1,7 +1,6 @@
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./FooterButtons.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-
 import { TimerIcon } from "~shared/resources/icons/timer/TimerIcon";
 import { TasksIcon } from "~shared/resources/icons/tasks/TasksIcon";
 import { BlockIcon } from "~shared/resources/icons/block/BlockIcon";
@@ -15,44 +14,41 @@ interface FooterButtonsProps {
 export const FooterButtons = ({ className }: FooterButtonsProps) => {
     return (
         <div className={classNames(styles.FooterButtons, {}, [className])}>
-
-
-            <Button
-                className={classNames(styles.footerButton, {}, [className])}
-                theme={ThemeButton.CLEAR}
-            >
-                <Link to={"/"}>
+            <Link to={"/"}>
+                <Button
+                    className={classNames(styles.footerButton, {}, [className])}
+                    theme={ThemeButton.CLEAR}
+                >
                     <TimerIcon />
-                </Link>
-            </Button>
+                </Button>
+            </Link>
 
-
-            <Button
-                className={classNames(styles.footerButton, {}, [className])}
-                theme={ThemeButton.CLEAR}
-            >
-                <Link to={"/tasks"}>
+            <Link to={"/tasks"}>
+                <Button
+                    className={classNames(styles.footerButton, {}, [className])}
+                    theme={ThemeButton.CLEAR}
+                >
                     <TasksIcon />
-                </Link>
-            </Button>
+                </Button>
+            </Link>
 
-            <Button
-                className={classNames(styles.footerButton, {}, [className])}
-                theme={ThemeButton.CLEAR}
-            >
-                <Link to={"/blocker"}>
-                    <BlockIcon />
-                </Link>
-            </Button>
+            <Link to={"/blocker"}>
+                <Button
+                    className={classNames(styles.footerButton, {}, [className])}
+                    theme={ThemeButton.CLEAR}
+                >
+                    {/*<BlockIcon />*/}
+                </Button>
+            </Link>
 
-            <Button
-                className={classNames(styles.footerButton, {}, [className])}
-                theme={ThemeButton.CLEAR}
-            >
-                <Link to={"/stats"}>
-                    <StatsIcon />
-                </Link>
-            </Button>
+            <Link to={"/stats"}>
+                <Button
+                    className={classNames(styles.footerButton, {}, [className])}
+                    theme={ThemeButton.CLEAR}
+                >
+                    {/*<StatsIcon />*/}
+                </Button>
+            </Link>
         </div>
     );
 };
