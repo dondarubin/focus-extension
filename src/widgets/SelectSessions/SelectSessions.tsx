@@ -9,7 +9,7 @@ export const SelectSessions = ({ className }: SelectSessionsProps) => {
     return (
         <Select
             className={className}
-            OnChangeSelect={() => {
+            OnChange={() => {
             }}
         >
             <option key={"2"} value="2" className={"selectOption"}>

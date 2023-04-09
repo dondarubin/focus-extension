@@ -28,7 +28,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     return (
         <Select
             theme={theme}
-            OnChangeSwitchTheme={OnClickSwitchTheme}
+            OnChange={OnClickSwitchTheme}
             className={className}
         >
             <option key={"blue"} value="blue" className={"selectOption"}>

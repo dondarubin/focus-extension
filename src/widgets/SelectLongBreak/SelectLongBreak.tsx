@@ -9,7 +9,7 @@ export const SelectLongBreak = ({ className }: SelectLongBreakProps) => {
     return (
         <Select
             className={className}
-            OnChangeSelect={() => {
+            OnChange={() => {
             }}
         >
             <option key={"10"} value="10" className={"selectOption"}>
