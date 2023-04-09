@@ -18,18 +18,20 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
 
     return (
         <nav className={classNames(styles.NavMainPage, {}, [className])}>
-            <Button className={classNames(styles.iconWrapper, {}, [])}
+            <Button className={classNames(styles.iconButtonMain, {}, [])}
                     theme={ThemeButton.CLEAR}>
                 <MainIcon />
             </Button>
 
             <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
 
-            <Button className={classNames(styles.iconWrapper, {}, [])}
-                    onClick={() => setModalActive(true)}
-                    theme={ThemeButton.CLEAR}>
-                <SettingsIcon />
-            </Button>
+            <div className={classNames(styles.iconButtonSettingsWrapper)}>
+                <Button className={classNames(styles.iconButtonSettings, {}, [])}
+                        onClick={() => setModalActive(true)}
+                        theme={ThemeButton.CLEAR}>
+                    <SettingsIcon />
+                </Button>
+            </div>
         </nav>
     );
 };

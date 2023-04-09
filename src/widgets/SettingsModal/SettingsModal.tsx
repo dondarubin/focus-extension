@@ -34,7 +34,7 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
             </div>
 
             <div className={classNames(styles.whatIs, {}, [])}>
-                <span>What is the pomodorpo technique</span>
+                <span>What is the pomodoro technique</span>
                 <QuestionIcon />
             </div>
 

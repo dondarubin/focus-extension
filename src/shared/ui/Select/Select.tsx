@@ -4,7 +4,7 @@ import { classNames } from "~shared/lib/classNames/classNames";
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     className?: string;
-    theme?: string;
+    Value?: string;
     OnChange?: (event) => void;
 }
 
@@ -13,7 +13,7 @@ export const Select: FC<SelectProps> = (props) => {
 
     const {
         className,
-        theme,
+        Value,
         OnChange,
         children
     } = props;
@@ -21,7 +21,7 @@ export const Select: FC<SelectProps> = (props) => {
     return (
         <select
             ref={ref}
-            value={theme}
+            value={Value}
             onChange={(event) => {
                 ref.current.blur();
                 OnChange(event);

@@ -12,14 +12,17 @@ export const SelectSessions = ({ className }: SelectSessionsProps) => {
             OnChange={() => {
             }}
         >
+            <option key={"1"} value="1" className={"selectOption"}>
+                1
+            </option>
             <option key={"2"} value="2" className={"selectOption"}>
                 2
             </option>
+            <option key={"3"} value="3" className={"selectOption"}>
+                3
+            </option>
             <option key={"4"} value="4" className={"selectOption"}>
                 4
-            </option>
-            <option key={"6"} value="6" className={"selectOption"}>
-                6
             </option>
         </Select>
     );
