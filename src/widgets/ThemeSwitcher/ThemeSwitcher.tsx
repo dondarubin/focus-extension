@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { Theme } from "~app/providers/ThemeProvider/lib/ThemeContext";
 import { useTheme } from "~app/providers/ThemeProvider/lib/useTheme";
 import { Select } from "~shared/ui/Select/Select";
+import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -26,20 +27,20 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     }
 
     return (
-        <Select
-            Value={theme}
+        <CustomSelect
+            initValue={theme}
             OnChange={OnClickSwitchTheme}
             className={className}
         >
-            <option key={"blue"} value="blue" className={"selectOption"}>
+            <div key={"blue"} value="blue" className={"selectOption"}>
                 Blue
-            </option>
-            <option key={"orange"} value="orange" className={"selectOption"}>
+            </div>
+            <div key={"orange"} value="orange" className={"selectOption"}>
                 Orange
-            </option>
-            <option key={"purple"} value="purple" className={"selectOption"}>
+            </div>
+            <div key={"purple"} className={"selectOption"}>
                 Purple
-            </option>
-        </Select>
+            </div>
+        </CustomSelect>
     );
 });

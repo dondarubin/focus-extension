@@ -10,6 +10,7 @@ import { SelectLongBreak } from "~widgets/SelectLongBreak/SelectLongBreak";
 import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import React from "react";
+import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
 interface SettingsModalProps {
     modalActive: boolean;
@@ -39,6 +40,30 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
             </div>
 
             <div className={classNames(styles.info, {}, [])}>
+
+                <div className={classNames(styles.focus, {}, [])}>
+                    <span>Theme</span>
+                    <CustomSelect initValue={"Blue"}>
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "row"
+                        }}>
+                            <div style={{
+                                width: 18,
+                                height: 18,
+                                background: "#9FB4F6",
+                                border: `1px solid #26282B`,
+                                borderRadius: 3,
+                                boxSizing: `border-box`
+                            }}>
+                            </div>
+                            Blue
+                        </div>
+                        <div>Orange</div>
+                        <div>Purple</div>
+                    </CustomSelect>
+                </div>
+
                 <div className={classNames(styles.focus, {}, [])}>
                     <span>Focus</span>
                     <SelectFocusTime />
