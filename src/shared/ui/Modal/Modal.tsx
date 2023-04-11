@@ -1,12 +1,14 @@
-import { classNames } from "~shared/lib/classNames/classNames";
+import {classNames} from "~shared/lib/classNames/classNames";
 import styles from "./Modal.module.scss";
-import type { FC, ReactNode } from "react";
-import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import { CloseIcon } from "~shared/resources/icons/close/CloseIcon";
+import type {FC, ReactNode} from "react";
+import {Button, ThemeButton} from "~shared/ui/Button/Button";
+import {CloseIcon} from "~shared/resources/icons/close/CloseIcon";
+import React, {Dispatch, SetStateAction} from "react";
+
 
 interface ModalProps {
     modalActive: boolean;
-    setModalActive: (arg: boolean) => void;
+    setModalActive: Dispatch<SetStateAction<boolean>>;
     className?: string;
     children?: ReactNode;
 }
@@ -19,6 +21,10 @@ export const Modal: FC<ModalProps> = (props) => {
         children
     } = props;
 
+    function OnClickCloseSettingsModalHandler() {
+        setModalActive((prev) => !prev)
+    }
+
     return (
         <div className={classNames(styles.Modal, {}, [
             className,
@@ -27,7 +33,7 @@ export const Modal: FC<ModalProps> = (props) => {
             <div className={classNames(styles.modalContent, {}, [])}>
                 <Button
                     className={classNames(styles.modalButton, {}, [])}
-                    onClick={() => setModalActive(false)}
+                    onClick={OnClickCloseSettingsModalHandler}
                     theme={ThemeButton.CLEAR}
                 >
                     <CloseIcon />

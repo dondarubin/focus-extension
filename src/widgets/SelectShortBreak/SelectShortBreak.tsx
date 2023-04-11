@@ -1,4 +1,3 @@
-import { Select } from "~shared/ui/Select/Select";
 import React from "react";
 import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
@@ -14,15 +13,9 @@ export const SelectShortBreak = ({ className }: SelectShortBreakProps) => {
             OnChange={(selected) => {
             }}
         >
-            <div className={"selectOption"}>
-                5 min
-            </div>
-            <div className={"selectOption"}>
-                7 min
-            </div>
-            <div className={"selectOption"}>
-                10 min
-            </div>
+            <div>5 min</div>
+            <div>7 min</div>
+            <div>10 min</div>
         </CustomSelect>
     );
 };

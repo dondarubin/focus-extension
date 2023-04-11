@@ -9,12 +9,12 @@ import { SelectShortBreak } from "~widgets/SelectShortBreak/SelectShortBreak";
 import { SelectLongBreak } from "~widgets/SelectLongBreak/SelectLongBreak";
 import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import React from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
 interface SettingsModalProps {
     modalActive: boolean;
-    setModalActive: (arg: boolean) => void;
+    setModalActive: Dispatch<SetStateAction<boolean>>;
     children?: ReactNode;
 }
 
@@ -23,6 +23,10 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
         modalActive,
         setModalActive
     } = props;
+
+    function OnClickCloseSettingsModalHandler() {
+        setModalActive((prev) => !prev)
+    }
 
     return (
         <Modal
@@ -69,7 +73,7 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
 
             <Button theme={ThemeButton.DEFAULT}
                     className={classNames(styles.button, {}, [])}
-                    onClick={() => setModalActive(false)}>
+                    onClick={OnClickCloseSettingsModalHandler}>
                 Save
             </Button>
         </Modal>
