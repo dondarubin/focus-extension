@@ -23,7 +23,7 @@ function createOption(option: ReactElement): Option {
 }
 
 function initOption(optionText: string, options: Option[]): Option {
-    const opt = options.find(opt => opt.text.toLowerCase() === optionText);
+    const opt = options.find(opt => opt.text.toLowerCase() === optionText.toLowerCase());
     if (opt === undefined) {
         console.error("can not find initial option element");
     }
@@ -101,7 +101,7 @@ export const CustomSelect: FC<CustomSelectProps> = (props) => {
                 className={classNames(styles.CustomSelectHeader, {}, [className, isOpen ? styles.CustomSelectHeaderFocus : ""])}
                 onClick={toggleDropdown}
             >
-                {selectedOption.text}
+                {selectedOption.element}
             </div>
             {isOpen && <div className={classNames(styles.dropdownOptions, {}, [])}>{optionsContainers}</div>}
         </div>

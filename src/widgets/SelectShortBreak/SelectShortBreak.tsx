@@ -1,5 +1,6 @@
 import { Select } from "~shared/ui/Select/Select";
 import React from "react";
+import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
 interface SelectShortBreakProps {
     className?: string;
@@ -7,20 +8,21 @@ interface SelectShortBreakProps {
 
 export const SelectShortBreak = ({ className }: SelectShortBreakProps) => {
     return (
-        <Select
+        <CustomSelect
+            initValue={'7 min'}
             className={className}
-            OnChange={() => {
+            OnChange={(selected) => {
             }}
         >
-            <option key={"5"} value="5" className={"selectOption"}>
+            <div className={"selectOption"}>
                 5 min
-            </option>
-            <option key={"7"} value="7" className={"selectOption"}>
+            </div>
+            <div className={"selectOption"}>
                 7 min
-            </option>
-            <option key={"10"} value="10" className={"selectOption"}>
+            </div>
+            <div className={"selectOption"}>
                 10 min
-            </option>
-        </Select>
+            </div>
+        </CustomSelect>
     );
 };

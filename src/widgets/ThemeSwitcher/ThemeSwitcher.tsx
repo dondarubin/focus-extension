@@ -1,8 +1,9 @@
 import React, { memo } from "react";
 import { Theme } from "~app/providers/ThemeProvider/lib/ThemeContext";
 import { useTheme } from "~app/providers/ThemeProvider/lib/useTheme";
-import { Select } from "~shared/ui/Select/Select";
 import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
+import { ColorRect } from "~shared/ui/ColorRect/ColorRect";
+import styles from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -11,16 +12,16 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
-    function OnClickSwitchTheme(event) {
-        if (event.target.value === "blue") {
+    function OnClickSwitchTheme(selected) {
+        if (selected === "Blue") {
             toggleTheme(Theme.BLUE);
             return;
         }
-        if (event.target.value === "orange") {
+        if (selected === "Orange") {
             toggleTheme(Theme.ORANGE);
             return;
         }
-        if (event.target.value === "purple") {
+        if (selected === "Purple") {
             toggleTheme(Theme.PURPLE);
             return;
         }
@@ -30,15 +31,17 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         <CustomSelect
             initValue={theme}
             OnChange={OnClickSwitchTheme}
-            className={className}
         >
-            <div key={"blue"} value="blue" className={"selectOption"}>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#9FB4F6"} />
                 Blue
             </div>
-            <div key={"orange"} value="orange" className={"selectOption"}>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#F6BF62"} />
                 Orange
             </div>
-            <div key={"purple"} className={"selectOption"}>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#856BC2"} />
                 Purple
             </div>
         </CustomSelect>
