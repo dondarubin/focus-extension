@@ -22,6 +22,7 @@ export const Button: FC<ButtonProps> = (props) => {
         ...otherProps
     } = props;
 
+
     return (
         <button
             type="button"
