@@ -1,38 +1,38 @@
 .Select {
-  width: 155px;
-  height: 44px;
-  padding: 10px 10px 10px 40px;
-  border: 1px solid #040404;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: var(--select-arrow-default);
-  background-position-x: calc(100% - 15px);
-  box-shadow: 2px 3px black;
-  transition: transform 0.1s, box-shadow 0.1s;
+    width: 155px;
+    height: 44px;
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #040404;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--select-arrow-default);
+    background-position-x: calc(100% - 15px);
+    box-shadow: 2px 3px black;
+    transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .Select:active, .Select:focus {
-  outline: none;
+    outline: none;
 }
 
 .Select:focus {
-  box-shadow: none;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  transform: translateX(2px) translateY(3px);
-  background: var(--select-arrow-theme);
-  background-position-x: calc(100% - 15px);
+    box-shadow: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: translateX(2px) translateY(3px);
+    background: var(--select-arrow-theme);
+    background-position-x: calc(100% - 15px);
 }
 
 .Select:hover {
-  box-shadow: none;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  transform: translateX(2px) translateY(3px);
-  background: var(--select-arrow-theme);
-  background-position-x: calc(100% - 15px);
+    box-shadow: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: translateX(2px) translateY(3px);
+    background: var(--select-arrow-theme);
+    background-position-x: calc(100% - 15px);
 }
 
 

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./SiteBlocker.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { MarkIcon } from "~shared/resources/icons/MarkIcon";
 import { AddressBlocker } from "~widgets/AddressBlocker/AddressBlocker";
+import { useRef, useState } from "react";
 
 const mock_addresses = [
     {
@@ -130,7 +130,6 @@ const SiteBlockerPage = () => {
                     );
                 })}
             </div>
-
         </div>
     );
 };

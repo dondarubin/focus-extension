@@ -1,24 +1,25 @@
 .SettingsModal {
-
+    padding: 30px;
 }
 
 .title {
     width: 100%;
     height: 50px;
-    font: var(--font-h2-tp);
+    font: var(--font-h2);
     border-bottom: 1px solid #040404;
-    color: var(--secondary-color);
+    color: black;
 }
 
 .whatIs {
     display: flex;
     padding-top: 15px;
     color: black;
-    font: var(--font-btn-tp);
-}
+    font: var(--font-btn);
+    cursor: pointer;
 
-.whatIs > span {
-    padding-right: 6px;
+    & > span {
+        padding-right: 6px;
+    }
 }
 
 .info {
@@ -35,7 +36,7 @@
 }
 
 .button {
-    font: var(--font-btn-tp);
+    font: var(--font-btn);
     position: fixed;
     right: 0;
     margin: 50px 30px 0 0;
