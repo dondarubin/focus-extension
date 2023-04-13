@@ -4,73 +4,51 @@
     // Fonts
     --font-family-main: 'Work Sans', sans-serif;
 
-    // Timer Page
-    --font-weight-small-tp: 400;
-    --font-size-small-tp: 12px;
-    --font-line-small-tp: 14.08px;
-    --font-small-tp: var(--font-weight-small-tp) var(--font-size-small-tp) / var(--font-line-small-tp) var(--font-family-main);
+    --font-weight-small: 400;
+    --font-size-small: 12px;
+    --font-line-small: 14.08px;
+    --font-small: var(--font-weight-small) var(--font-size-small) / var(--font-line-small) var(--font-family-main);
 
-    --font-weight-btn-tp: 500;
-    --font-size-btn-tp: 14px;
-    --font-line-btn-tp: 16.42px;
-    --font-btn-tp: var(--font-weight-btn-tp) var(--font-size-btn-tp) / var(--font-line-btn-tp) var(--font-family-main);
+    --font-weight-small-1: 300;
+    --font-size-small-1: 14px;
+    --font-line-small-1: 16.42px;
+    --font-small-1: var(--font-weight-small-1) var(--font-size-small-1) / var(--font-line-small-1) var(--font-family-main);
 
-    --font-weight-body-light-tp: 300;
-    --font-size-body-light-tp: 18px;
-    --font-line-body-light-tp: 21.11px;
-    --font-body-light-tp: var(--font-weight-body-light-tp) var(--font-size-body-light-tp) / var(--font-line-body-light-tp) var(--font-family-main);
+    --font-weight-small-2: 400;
+    --font-size-small-2: 14px;
+    --font-line-small-2: 16.42px;
+    --font-small-2: var(--font-weight-small-2) var(--font-size-small-2) / var(--font-line-small-2) var(--font-family-main);
 
-    --font-weight-body-regular-tp: 400;
-    --font-size-body-regular-tp: 18px;
-    --font-line-body-regular-tp: 21.11px;
-    --font-body-regular-tp: var(--font-weight-body-regular-tp) var(--font-size-body-regular-tp) / var(--font-line-body-regular-tp) var(--font-family-main);
+    --font-weight-btn: 500;
+    --font-size-btn: 14px;
+    --font-line-btn: 16.42px;
+    --font-btn: var(--font-weight-btn) var(--font-size-btn) / var(--font-line-btn) var(--font-family-main);
 
-    --font-weight-h3-tp: 400;
-    --font-size-h3-tp: 24px;
-    --font-line-h3-tp: 28.15px;
-    --font-h3-tp: var(--font-weight-h3-tp) var(--font-size-h3-tp) / var(--font-line-h3-tp) var(--font-family-main);
+    --font-weight-body-light: 300;
+    --font-size-body-light: 18px;
+    --font-line-body-light: 21.11px;
+    --font-body-light: var(--font-weight-body-light) var(--font-size-body-light) / var(--font-line-body-light) var(--font-family-main);
 
-    --font-weight-h2-tp: 600;
-    --font-size-h2-tp: 30px;
-    --font-line-h2-tp: 35.19px;
-    --font-h2-tp: var(--font-weight-h2-tp) var(--font-size-h2-tp) / var(--font-line-h2-tp) var(--font-family-main);
+    --font-weight-body-regular: 400;
+    --font-size-body-regular: 18px;
+    --font-line-body-regular: 21.11px;
+    --font-body-regular: var(--font-weight-body-regular) var(--font-size-body-regular) / var(--font-line-body-regular) var(--font-family-main);
 
-    --font-weight-h1-tp: 300;
-    --font-size-h1-tp: 70px;
-    --font-line-h1-tp: 82.11px;
-    --font-h1-tp: var(--font-weight-h1-tp) var(--font-size-h1-tp) / var(--font-line-h1-tp) var(--font-family-main);
+    --font-weight-h3: 400;
+    --font-size-h3: 24px;
+    --font-line-h3: 28.15px;
+    --font-h3: var(--font-weight-h3) var(--font-size-h3) / var(--font-line-h3) var(--font-family-main);
 
+    --font-weight-h2: 600;
+    --font-size-h2: 30px;
+    --font-line-h2: 35.19px;
+    --font-h2: var(--font-weight-h2) var(--font-size-h2) / var(--font-line-h2) var(--font-family-main);
 
-    // Work Flow
-    --font-weight-s1-wf: 300;
-    --font-size-s1-wf: 14px;
-    --font-line-s1-wf: 16.42px;
-    --font-s1-wf: var(--font-weight-s1-wf) var(--font-size-s1-wf) / var(--font-line-s1-wf) var(--font-family-main);
+    --font-weight-h1: 300;
+    --font-size-h1: 70px;
+    --font-line-h1: 82.11px;
+    --font-h1: var(--font-weight-h1) var(--font-size-h1) / var(--font-line-h1) var(--font-family-main);
 
-    --font-size-s2-wf: 14px;
-    --font-line-s2-wf: 16.42px;
-    --font-weight-s2-wf: 400;
-    --font-s2-wf: var(--font-weight-s2-wf) var(--font-size-s2-wf) / var(--font-line-s2-wf) var(--font-family-main);
-
-    --font-size-btn-wf: 14px;
-    --font-line-btn-wf: 16.42px;
-    --font-weight-btn-wf: 500;
-    --font-btn-wf: var(--font-weight-btn-wf) var(--font-size-btn-wf) / var(--font-line-btn-wf) var(--font-family-main);
-
-    --font-weight-body-r-wf: 400;
-    --font-size-body-r-wf: 18px;
-    --font-line-body-r-wf: 21.11px;
-    --font-body-r-wf: var(--font-weight-body-r-wf) var(--font-size-body-r-wf) / var(--font-line-body-r-wf) var(--font-family-main);
-
-    --font-weight-h2-wf: 400;
-    --font-size-h2-wf: 24px;
-    --font-line-h2-wf: 28.15px;
-    --font-h2-wf: var(--font-weight-h2-wf) var(--font-size-h2-wf) / var(--font-line-h2-wf) var(--font-family-main);
-
-    --font-weight-h1-wf: 600;
-    --font-size-h1-wf: 30px;
-    --font-line-h1-wf: 35.19px;
-    --font-h1-wf: var(--font-weight-h1-wf) var(--font-size-h1-wf) / var(--font-line-h1-wf) var(--font-family-main);
 
 
     // Sizes

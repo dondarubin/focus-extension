@@ -9,36 +9,42 @@ import { SelectShortBreak } from "~widgets/SelectShortBreak/SelectShortBreak";
 import { SelectLongBreak } from "~widgets/SelectLongBreak/SelectLongBreak";
 import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import React, {Dispatch, SetStateAction} from "react";
-import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 interface SettingsModalProps {
-    modalActive: boolean;
-    setModalActive: Dispatch<SetStateAction<boolean>>;
+    settingsModalActive: boolean;
+    setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
+    setGuideModalActive: Dispatch<SetStateAction<boolean>>;
     children?: ReactNode;
 }
 
 export const SettingsModal: FC<SettingsModalProps> = (props) => {
     const {
-        modalActive,
-        setModalActive
+        settingsModalActive,
+        setSettingsModalActive,
+        setGuideModalActive
     } = props;
 
     function OnClickCloseSettingsModalHandler() {
-        setModalActive((prev) => !prev)
+        setSettingsModalActive((prev) => !prev);
+    }
+
+    function OnClickOpenGuideModalHandler() {
+        setGuideModalActive((prev) => !prev);
     }
 
     return (
         <Modal
             className={classNames(styles.SettingsModal, {}, [])}
-            modalActive={modalActive}
-            setModalActive={setModalActive}
+            modalActive={settingsModalActive}
+            setModalActive={setSettingsModalActive}
         >
             <div className={classNames(styles.title, {}, [])}>
                 Settings
             </div>
 
-            <div className={classNames(styles.whatIs, {}, [])}>
+            <div onClick={OnClickOpenGuideModalHandler}
+                 className={classNames(styles.whatIs, {}, [])}>
                 <span>What is the pomodoro technique</span>
                 <QuestionIcon />
             </div>
