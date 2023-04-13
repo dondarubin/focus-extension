@@ -5,14 +5,14 @@
 .title {
   width: 100%;
   height: 35px;
-  font: var(--font-h2-tp);
+  font: var(--font-h2);
   color: #26282B;
 }
 
 .titleDescription {
   margin-top: 5px;
   height: 14px;
-  font: var(--font-s1-wf);
+  font: var(--font-small-1);
   color: #040404;
 }
 
@@ -47,7 +47,7 @@ $boxShadowBottomValue: 4px;
   margin-top: 15px + $boxShadowBottomValue;
   height: 16px;
   color: black;
-  font: var(--font-btn-tp);
+  font: var(--font-btn);
 
   &:hover {
     color: var(--primary-color);
