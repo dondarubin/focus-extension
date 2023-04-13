@@ -21,7 +21,7 @@ export const Modal: FC<ModalProps> = (props) => {
         children
     } = props;
 
-    function OnClickCloseSettingsModalHandler() {
+    function OnClickCloseModalHandler() {
         setModalActive((prev) => !prev)
     }
 
@@ -33,7 +33,7 @@ export const Modal: FC<ModalProps> = (props) => {
             <div className={classNames(styles.modalContent, {}, [])}>
                 <Button
                     className={classNames(styles.modalButton, {}, [])}
-                    onClick={OnClickCloseSettingsModalHandler}
+                    onClick={OnClickCloseModalHandler}
                     theme={ThemeButton.CLEAR}
                 >
                     <CloseIcon />
