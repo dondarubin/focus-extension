@@ -64,24 +64,6 @@ $boxShadowBottomValue: 4px;
   overflow-y: auto;
   height: 310px;
 
-  &::-webkit-scrollbar {
-    width: 7px;
-    background-color: #F5F5F5;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: #26282B;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color);
-  }
-
-  &::-webkit-scrollbar-thumb:active {
-    background-color: var(--primary-color);
-  }
-
   & div {
     transition: all 0.2s ease-out;
   }
