@@ -15,6 +15,7 @@ const MainPage = () => {
             <WelcomeModal></WelcomeModal>
             <NavMainPage setModalActive={setModalActive} />
             <ContentMainPage />
+            {/*{modalActive ?  : <></>}*/}
             <SettingsModal modalActive={modalActive} setModalActive={setModalActive} />
         </div>
     );

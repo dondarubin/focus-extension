@@ -1,0 +1,42 @@
+.addressBlockerContainer {
+  display: flex;
+}
+
+.lockButton {
+  margin-top: 2px;
+  width: 42px;
+  height: 42px;
+}
+
+.lockButtonLocked {
+  background: #040404;
+  border: 1px solid #040404;
+  border-radius: 5px;
+}
+
+.addressContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 21px;
+  padding: 10px 10px 5px 20px;
+  height: 43px;
+  width: 374px;
+  border: 1px solid #040404;
+  border-radius: 5px;
+  color: white;
+  background-color: white;
+  box-shadow: 2px 3px black;
+
+  & > span {
+    color: #040404;
+  }
+}
+
+.deleteButton {
+  width: 20px;
+  height: 20px;
+
+  &:hover > svg > path {
+    stroke: var(--primary-color);
+  }
+}

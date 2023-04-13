@@ -1,5 +1,5 @@
 import React from "react";
-import {CustomSelect} from "~shared/ui/CustomSelect/CustomSelect";
+import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 
 interface SelectTimeProps {
     className?: string;
@@ -8,7 +8,7 @@ interface SelectTimeProps {
 export const SelectFocusTime = ({ className }: SelectTimeProps) => {
     return (
         <CustomSelect
-            initValue={'20 min'}
+            initValue={"20 min"}
             className={className}
             OnChange={() => {
             }}
