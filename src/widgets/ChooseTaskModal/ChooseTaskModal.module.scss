@@ -29,15 +29,6 @@
     align-content: flex-start;
     overflow-y: scroll;
     padding-left: 30px;
-
-    &::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: #26282B;
-        border-radius: 5px;
-    }
 }
 
 .cardTask {

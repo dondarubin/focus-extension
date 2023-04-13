@@ -6,15 +6,33 @@
 
 
 .app {
-    font: var(--font-body-regular);
-    width: var(--app-width);
-    height: var(--app-height);
-    background: var(--app-bg);
-    color: var(--primary-color);
+  font: var(--font-body-regular);
+  width: var(--app-width);
+  height: var(--app-height);
+  background: var(--app-bg);
+  color: var(--primary-color);
 }
 
 .page-wrapper {
-    min-width: 100%;
-    min-height: calc(var(--app-height) - var(--footer-height));
-    display: inline-block;
+  min-width: 100%;
+  min-height: calc(var(--app-height) - var(--footer-height));
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #26282B;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: var(--primary-color);
 }
