@@ -6,30 +6,30 @@ import {classNames} from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 
 interface NavMainPageProps {
-    setModalActive: Dispatch<SetStateAction<boolean>>;
+    setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
     className?: string;
 }
 
 export const NavMainPage: FC<NavMainPageProps> = (props) => {
     const {
         className,
-        setModalActive
+        setSettingsModalActive
     } = props;
 
     function OnClickOpenSettingsModalHandler() {
-        setModalActive((prev) => !prev)
+        setSettingsModalActive((prev) => !prev);
     }
 
     return (
         <nav className={classNames(styles.NavMainPage, {}, [className])}>
             <Button className={classNames(styles.iconButtonMain, {}, [])}
                     theme={ThemeButton.CLEAR}>
-                <MainIcon/>
+                <MainIcon />
             </Button>
 
             <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
 
-            <div className={classNames(styles.iconButtonSettingsWrapper)}>
+            <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
                 <Button className={classNames(styles.iconButtonSettings, {}, [])}
                         onClick={OnClickOpenSettingsModalHandler}
                         theme={ThemeButton.CLEAR}>

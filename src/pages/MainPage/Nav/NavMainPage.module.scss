@@ -9,17 +9,17 @@
 }
 
 .title {
-    font: var(--font-btn-tp);
+    font: var(--font-btn);
     color: var(--secondary-color);
 }
 
 .iconButtonMain {
     width: 70px;
     height: 32px;
-}
 
-.iconButtonMain > svg > path:nth-child(-n + 8) {
-    fill: var(--secondary-color);
+    & > svg > path:nth-child(-n + 8) {
+        fill: var(--secondary-color);
+    }
 }
 
 .iconButtonSettingsWrapper {
@@ -34,16 +34,16 @@
     justify-content: center;
     align-items: center;
     float: right;
-}
 
-.iconButtonSettings > svg {
-    cursor: pointer;
-}
+    & > svg {
+        cursor: pointer;
 
-.iconButtonSettings:hover > svg > path {
-    stroke: var(--primary-color);
-}
+        &:hover > path {
+            stroke: var(--primary-color);
+        }
 
-.iconButtonSettings:hover > svg > circle {
-    stroke: var(--primary-color);
+        &:hover > circle {
+            stroke: var(--primary-color);
+        }
+    }
 }

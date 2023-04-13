@@ -1,0 +1,27 @@
+.GuideModal {
+    padding: 30px;
+}
+
+.title {
+    font: var(--font-h2);
+    color: black;
+}
+
+.wrapper {
+    display: flex;
+    padding-top: 40px;
+}
+
+.steps {
+    padding-left: 33px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.icon {
+    & > svg > circle{
+        fill: var(--primary-color);
+    }
+}
