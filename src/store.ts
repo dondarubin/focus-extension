@@ -24,7 +24,8 @@ const combinedReducers = combineReducers({
 const persistConfig = {
     key: "root",
     version: 1,
-    storage: syncStorage
+    storage: syncStorage,
+    enabled: false
 };
 
 // TODO: Fix persistReducer so it doesn't break the types
@@ -55,6 +56,8 @@ export const store = configureStore({
 }) as typeof mockStore;
 
 export const persistor = persistStore(store);
+// TODO: DELETE IN PROD!
+//persistor.purge();
 
 // This is what makes Redux sync properly with multiple pages
 // Open your extension's options page and popup to see it in action

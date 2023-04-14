@@ -24,28 +24,21 @@ export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
         OnDelete
     } = props;
 
-    const [blockedAddr, setBlockedAddr] = useState<BlockedAddress>(address);
-
-    useEffect(() => {
-        setBlockedAddr(address);
-    }, [address.blocked]);
-
     function handleLockButtonClick() {
-        setBlockedAddr(newBlockedAddress(blockedAddr.addr, !blockedAddr.blocked));
-        OnBlock(blockedAddr);
+        OnBlock(newBlockedAddress(address.addr, !address.blocked));
     }
 
     function handleDeleteButtonClick() {
-        OnDelete(blockedAddr);
+        OnDelete(address);
     }
 
     return (
         <div className={classNames(styles.addressBlockerContainer, {}, [className])}>
-            <Button className={classNames(styles.lockButton, {}, [!blockedAddr.blocked ? "" : styles.lockButtonLocked])}
-                    theme={!blockedAddr.blocked ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+            <Button className={classNames(styles.lockButton, {}, [!address.blocked ? "" : styles.lockButtonLocked])}
+                    theme={!address.blocked ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
                     onClick={handleLockButtonClick}
             >
-                {!blockedAddr.blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
+                {!address.blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
             </Button>
             <div className={classNames(styles.addressContainer)}>
                 <span>{address.addr}</span>
