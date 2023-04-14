@@ -4,7 +4,7 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { AddressBlocker } from "~widgets/AddressBlocker/AddressBlocker";
 import { useRef, useState } from "react";
 import { LocalStoreHelper } from "~shared/lib/helpers/LocalStoreHelper";
-import LSKeys from "~app/LocalStorageController/LocalStorageKeys";
+import LSKeys from "~app/storage/LocalStorageKeys";
 import { AddNewAddress } from "~pages/SiteBlockerPage/AddNewAddress";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
