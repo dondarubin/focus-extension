@@ -18,7 +18,7 @@ import blockedAddresses from "~app/reducers/blockedAddresses-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
-    counter: blockedAddresses
+    blockedAddresses: blockedAddresses
 });
 
 const persistConfig = {

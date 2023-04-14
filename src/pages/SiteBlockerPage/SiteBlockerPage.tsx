@@ -8,41 +8,8 @@ import LSKeys from "~app/storage/LocalStorageKeys";
 import { AddNewAddress } from "~pages/SiteBlockerPage/AddNewAddress";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
-
-const mock_addresses = [
-    {
-        addr: "vk.com",
-        blocked: false
-    },
-    {
-        addr: "mama.ru",
-        blocked: true
-    },
-    {
-        addr: "ddpornhub.com",
-        blocked: false
-    },
-    {
-        addr: "pornhub.com",
-        blocked: false
-    },
-    {
-        addr: "pornhubd.com",
-        blocked: true
-    },
-    {
-        addr: "pornfhub.com",
-        blocked: false
-    },
-    {
-        addr: "pornshub.com",
-        blocked: false
-    },
-    {
-        addr: "pofrnhub.com",
-        blocked: true
-    }
-];
+import { addAddress, removeAddress, updateAddress } from "~app/reducers/blockedAddresses-slice";
+import { useAppDispatch, useAppSelector } from "~store";
 
 //LocalStoreHelper.setObj(LSKeys.BlockedSites, mock_addresses, true);
 
