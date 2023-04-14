@@ -1,9 +1,13 @@
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./SiteBlocker.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import { MarkIcon } from "~shared/resources/icons/MarkIcon";
 import { AddressBlocker } from "~widgets/AddressBlocker/AddressBlocker";
 import { useRef, useState } from "react";
+import { LocalStoreHelper } from "~shared/lib/helpers/LocalStoreHelper";
+import LSKeys from "~app/LocalStorageController/LocalStorageKeys";
+import { AddNewAddress } from "~pages/SiteBlockerPage/AddNewAddress";
+import type { BlockedAddress } from "~app/types/BlockedAddress";
+import { newBlockedAddress } from "~app/types/BlockedAddress";
 
 const mock_addresses = [
     {
@@ -40,10 +44,12 @@ const mock_addresses = [
     }
 ];
 
+//LocalStoreHelper.setObj(LSKeys.BlockedSites, mock_addresses, true);
+
 // TODO изменение значения blocked у адресса в массиве
 
 const SiteBlockerPage = () => {
-    const [addresses, setAddresses] = useState(mock_addresses);
+    const [addresses, setAddresses] = useState(LocalStoreHelper.getArray(LSKeys.BlockedSites));
     const [blockAll, setBlockAll] = useState<boolean>(false);
 
     const addressesCount = useRef<number>(addresses.length);
@@ -58,13 +64,14 @@ const SiteBlockerPage = () => {
         }
     }
 
-    function handleBlock(blocked: boolean, addr: string) {
-        blockAllButtonStateController(blocked);
+    function handleBlock(addr: BlockedAddress) {
+        blockAllButtonStateController(addr.blocked);
     }
 
-    function handleDelete(blocked: boolean, addr: string) {
+    function handleDelete(addr: BlockedAddress) {
         //TODO check if address is removed and then call addressCountReduce
-        addressesCountReduce(blocked);
+        LocalStoreHelper.deleteFromArray(LSKeys.BlockedSites, addr);
+        addressesCountReduce(addr.blocked);
         setAddresses(addresses.filter(address => address.addr !== addr));
     }
 
@@ -92,6 +99,10 @@ const SiteBlockerPage = () => {
         }
     }
 
+    function handleAddNewAddress(addr: BlockedAddress) {
+
+    }
+
     return (
         <div className={classNames(styles.layout)}>
             <div className={classNames(styles.title)}>
@@ -100,14 +111,7 @@ const SiteBlockerPage = () => {
             <span className={classNames(styles.titleDescription)}>
                 Block sites that interfere with your productivity
             </span>
-            <div className={classNames(styles.addAddressContainer)}>
-                {/*<input type={"text"} value={"Add address"}></input>*/}
-                <Button
-                    className={classNames(styles.addingButton)}
-                    theme={ThemeButton.DEFAULT}>
-                    <MarkIcon color={"var(--contrast-color)"} />
-                </Button>
-            </div>
+            <AddNewAddress OnAdd={handleAddNewAddress} />
             <Button
                 className={classNames(styles.blockAll)}
                 theme={ThemeButton.CLEAR}
@@ -122,8 +126,7 @@ const SiteBlockerPage = () => {
                     return (
                         <AddressBlocker
                             key={addr.addr}
-                            address={addr.addr}
-                            blockedInit={blocked}
+                            address={newBlockedAddress(addr.addr, blocked)}
                             OnBlock={handleBlock}
                             OnDelete={handleDelete}
                         />

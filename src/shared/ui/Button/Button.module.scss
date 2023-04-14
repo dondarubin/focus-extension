@@ -1,31 +1,31 @@
 .Button {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clear {
-    padding: 0;
-    border: none;
-    background: none;
-    outline: none;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
 }
 
 .default {
-    width: 155px;
-    height: 46px;
-    transition: transform 0.1s, box-shadow 0.1s;
-    border: 1px solid #040404;
-    border-radius: 5px;
-    color: white;
-    background-color: var(--primary-color);
-    box-shadow: 2px 3px black;
+  width: 155px;
+  height: 46px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border: 1px solid #040404;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--primary-color);
+  box-shadow: 2px 3px black;
 
-    &:hover {
-        box-shadow: none;
-        border: 1.5px solid #040404;
-        transform: translateX(2px) translateY(3px);
-    }
+  &:hover {
+    box-shadow: none;
+    border: 1.5px solid #040404;
+    transform: translateX(2px) translateY(3px);
+  }
 }
 
