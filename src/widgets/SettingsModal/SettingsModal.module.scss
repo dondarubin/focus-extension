@@ -20,6 +20,18 @@
     & > span {
         padding-right: 6px;
     }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+    &:hover > svg > path {
+        fill: var(--primary-color);
+    }
+
+    &:hover > svg > rect {
+        stroke: var(--primary-color);
+    }
 }
 
 .info {

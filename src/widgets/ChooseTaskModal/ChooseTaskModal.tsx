@@ -19,6 +19,21 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         setChooseTaskModalActive((prev) => !prev);
     }
 
+    const cardTask = (title: string, time: string) => {
+        return (
+            <div className={classNames(styles.cardTask, {}, [])}
+                 onClick={OnClickCloseChooseTaskModalHandler}>
+                <div className={classNames(styles.taskName, {}, [])}>
+                    {title}
+                </div>
+
+                <div className={classNames(styles.taskTime, {}, [])}>
+                    {time}
+                </div>
+            </div>
+        );
+    };
+
     return (
         <Modal
             className={classNames(styles.ChooseTaskModal, {}, [])}
@@ -36,16 +51,19 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
             </div>
 
             <div className={classNames(styles.tasksWrapper, {}, [])}>
-                <div className={classNames(styles.cardTask, {}, [])}
-                     onClick={OnClickCloseChooseTaskModalHandler}>
-                    <div className={classNames(styles.taskName, {}, [])}>
-                        Make a prototype for pomodoro timer
-                    </div>
-
-                    <div className={classNames(styles.taskTime, {}, [])}>
-                        Today
-                    </div>
-                </div>
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("Make a prototype for pomodoro timer", "Today")}
             </div>
         </Modal>
     );

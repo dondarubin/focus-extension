@@ -17,6 +17,10 @@
     position: absolute;
     right: 0;
     margin-right: 30px;
+
+    &:hover > svg > g > path {
+        stroke: var(--primary-color);
+    }
 }
 
 .modalContent {

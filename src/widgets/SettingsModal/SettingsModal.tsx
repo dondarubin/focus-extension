@@ -44,7 +44,8 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
             </div>
 
             <div onClick={OnClickOpenGuideModalHandler}
-                 className={classNames(styles.whatIs, {}, [])}>
+                 className={classNames(styles.whatIs, {}, [])}
+            >
                 <span>What is the pomodoro technique</span>
                 <QuestionIcon />
             </div>
