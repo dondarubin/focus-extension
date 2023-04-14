@@ -7,26 +7,21 @@ import type { BlockedAddress } from "~app/types/BlockedAddress";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
 import { addAddress, blockAll, removeAddress, updateAddress } from "~app/reducers/blockedAddresses-slice";
 import { useAppDispatch, useAppSelector } from "~store";
+import { AddressesList } from "~pages/SiteBlockerPage/AddressesList";
 
 const SiteBlockerPage = () => {
     const dispatch = useAppDispatch();
-    const addresses = useAppSelector((state) => state.blockedAddresses);
+    const allBlocked = useAppSelector((state) => state.blockedAddresses.allBlocked);
 
     function handleBlockAllButtonClick() {
-        dispatch(blockAll(!addresses.allBlocked));
-    }
-
-    function handleBlock(addr: BlockedAddress) {
-        dispatch(updateAddress(addr));
-    }
-
-    function handleDelete(addr: BlockedAddress) {
-        dispatch(removeAddress(addr.addr));
+        dispatch(blockAll(!allBlocked));
     }
 
     function handleAddNewAddress(addr: BlockedAddress) {
         dispatch(addAddress(addr));
     }
+
+    console.log(allBlocked, "from page");
 
     return (
         <div className={classNames(styles.layout)}>
@@ -42,20 +37,9 @@ const SiteBlockerPage = () => {
                 theme={ThemeButton.CLEAR}
                 onClick={handleBlockAllButtonClick}
             >
-                {addresses.allBlocked ? "Unlock all" : "Block all"}
+                {allBlocked ? "Unlock all" : "Block all"}
             </Button>
-            <div className={classNames(styles.addressesContainer)}>
-                {addresses.addresses.map(addr => {
-                    return (
-                        <AddressBlocker
-                            key={addr.addr}
-                            address={newBlockedAddress(addr.addr, addr.blocked)}
-                            OnBlock={handleBlock}
-                            OnDelete={handleDelete}
-                        />
-                    );
-                })}
-            </div>
+            <AddressesList />
         </div>
     );
 };
