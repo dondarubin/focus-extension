@@ -55,7 +55,7 @@ export const BlockPageManIcon = () => {
             <rect x="0.5" y="0.5" width="190" height="157" rx="4.5" stroke="black" />
             <path
                 d="M163.221 142.819C163.221 162.366 147.593 178.202 128.328 178.202C109.064 178.202 93.4362 162.366 93.4362 142.819C93.4362 123.272 109.064 107.436 128.328 107.436C147.593 107.436 163.221 123.272 163.221 142.819Z"
-                fill="#A5CE5D" stroke="black" strokeWidth="0.872344" />
+                fill="var(--primary-color)" stroke="black" strokeWidth="0.872344" />
             <path d="M174.181 220.568L169.521 220.568L167.304 202.342L174.183 202.342L174.181 220.568Z"
                   fill="#FFB8B8" />
             <path
@@ -99,9 +99,9 @@ export const BlockPageManIcon = () => {
             <path
                 d="M134.285 136.647V134.036C134.285 130.564 131.471 127.75 128 127.75V127.75C124.528 127.75 121.714 130.564 121.714 134.036V136.647"
                 stroke="white" strokeWidth="3" strokeLinecap="round" />
-            <path d="M128 143.263V149.256" stroke="#A5CE5D" strokeWidth="2" strokeLinecap="round"
+            <path d="M128 143.263V149.256" stroke="var(--primary-color)" strokeWidth="2" strokeLinecap="round"
                   strokeLinejoin="round" />
-            <circle cx="128" cy="144" r="2" fill="#A5CE5D" />
+            <circle cx="128" cy="144" r="2" fill="var(--primary-color)" />
         </svg>
     );
 };

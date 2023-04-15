@@ -8,6 +8,7 @@ import { blockAll, removeAddress, updateAddress } from "~app/reducers/blockedAdd
 import { useAppDispatch, useAppSelector } from "~store";
 import { BlockPageManIcon } from "~shared/resources/icons/people/BlockPageManIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { toast } from "react-toastify";
 
 type AddressesListProps = {
     className?: string
