@@ -62,6 +62,11 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
                 </div>
 
                 <div className={classNames(styles.focus, {}, [])}>
+                    <span>Sessions</span>
+                    <SelectSessions />
+                </div>
+
+                <div className={classNames(styles.focus, {}, [])}>
                     <span>Short break</span>
                     <SelectShortBreak />
                 </div>
@@ -70,18 +75,7 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
                     <span>Long break</span>
                     <SelectLongBreak />
                 </div>
-
-                <div className={classNames(styles.focus, {}, [])}>
-                    <span>Sessions</span>
-                    <SelectSessions />
-                </div>
             </div>
-
-            <Button theme={ThemeButton.DEFAULT}
-                    className={classNames(styles.button, {}, [])}
-                    onClick={OnClickCloseSettingsModalHandler}>
-                Save
-            </Button>
         </Modal>
     );
 };

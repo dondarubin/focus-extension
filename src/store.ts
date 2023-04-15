@@ -7,10 +7,10 @@ import {
     REHYDRATE,
     RESYNC,
     persistReducer,
-    persistStore
+    persistStore, createMigrate
 } from "@plasmohq/redux-persist";
 import { Storage } from "@plasmohq/storage";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, createStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { syncStorage } from "redux-persist-webextension-storage";
 
@@ -20,7 +20,7 @@ import settings from "~app/reducers/settings-slice";
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
     blockedAddresses: blockedAddresses,
-    settings: settings
+    settingsValues: settings
 });
 
 const persistConfig = {
@@ -29,6 +29,7 @@ const persistConfig = {
     storage: syncStorage,
     enabled: false
 };
+
 
 // TODO: Fix persistReducer so it doesn't break the types
 const persistedReducer = persistReducer(persistConfig, combinedReducers);
@@ -58,8 +59,71 @@ export const store = configureStore({
 }) as typeof mockStore;
 
 export const persistor = persistStore(store);
+
 // TODO: DELETE IN PROD!
-//persistor.purge();
+const defaultState = {
+    blockedAddresses: {
+        allBlocked: false,
+        addresses: [
+            {
+                addr: "vk.com",
+                blocked: false
+            },
+            {
+                addr: "mama.ru",
+                blocked: true
+            },
+            {
+                addr: "ddpornhub.com",
+                blocked: false
+            },
+            {
+                addr: "pornhub.com",
+                blocked: false
+            },
+            {
+                addr: "pornhubd.com",
+                blocked: true
+            },
+            {
+                addr: "pornfhub.com",
+                blocked: false
+            },
+            {
+                addr: "pornshub.com",
+                blocked: false
+            },
+            {
+                addr: "pofrnhub.com",
+                blocked: true
+            }
+        ]
+    },
+    settings: {
+        shortBreakTime: 5,
+        longBreakTime: 15,
+        sessionsCount: 4,
+        focusTime: 25
+    }
+};
+
+export const resetStore = () => {
+    return new Promise<void>((resolve, reject) => {
+
+        persistStore(
+            createStore(
+                persistedReducer,
+                defaultState,
+                // @ts-ignore
+                () => {
+                    resolve();
+                }
+            )
+        ).purge();
+    });
+};
+//resetStore();
+// TODO: DELETE IN PROD!
 
 // This is what makes Redux sync properly with multiple pages
 // Open your extension's options page and popup to see it in action

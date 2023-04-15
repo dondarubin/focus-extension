@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomSelect } from "~shared/ui/CustomSelect/CustomSelect";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setSessions } from "~app/reducers/settings-slice";
+import { setSessionsCount } from "~app/reducers/settings-slice";
 
 interface SelectSessionsProps {
     className?: string;
@@ -9,15 +9,15 @@ interface SelectSessionsProps {
 
 export const SelectSessions = ({ className }: SelectSessionsProps) => {
     const dispatch = useAppDispatch();
-    const sessions = useAppSelector((state) => state.settings.sessions);
+    const sessionsCount = useAppSelector((state) => state.settingsValues.sessionsCount);
 
     function handleChange(selected: string) {
-        dispatch(setSessions(+selected));
+        dispatch(setSessionsCount(+selected));
     }
 
     return (
         <CustomSelect
-            initValue={sessions.toString()}
+            initValue={sessionsCount.toString()}
             className={className}
             OnChange={handleChange}
         >

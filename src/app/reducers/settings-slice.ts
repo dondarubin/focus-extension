@@ -2,10 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { Settings } from "~app/types/Settings";
 
 const default_settings = {
-    shortBreak: 5,
-    longBreak: 15,
-    sessions: 4,
-    focus: 25
+    shortBreakTime: 5,
+    longBreakTime: 15,
+    sessionsCount: 4,
+    focusTime: 25
 } as Settings;
 
 
@@ -14,34 +14,34 @@ const settings = createSlice(
         name: "settings",
         initialState: default_settings as Settings,
         reducers: {
-            setShortBreak: (state, action: PayloadAction<number>) => {
+            setShortBreakTime: (state, action: PayloadAction<number>) => {
                 return {
                     ...state,
-                    shortBreak: action.payload
+                    shortBreakTime: action.payload
                 };
             },
-            setLongBreak: (state, action: PayloadAction<number>) => {
+            setLongBreakTime: (state, action: PayloadAction<number>) => {
                 return {
                     ...state,
-                    longBreak: action.payload
+                    longBreakTime: action.payload
                 };
             },
-            setSessions: (state, action: PayloadAction<number>) => {
+            setSessionsCount: (state, action: PayloadAction<number>) => {
                 return {
                     ...state,
-                    sessions: action.payload
+                    sessionsCount: action.payload
                 };
             },
-            setFocus: (state, action: PayloadAction<number>) => {
+            setFocusTime: (state, action: PayloadAction<number>) => {
                 return {
                     ...state,
-                    focus: action.payload
+                    focusTime: action.payload
                 };
             }
         }
     }
 );
 
-export const { setLongBreak, setShortBreak, setSessions, setFocus } = settings.actions;
+export const { setLongBreakTime, setShortBreakTime, setSessionsCount, setFocusTime } = settings.actions;
 
 export default settings.reducer;
