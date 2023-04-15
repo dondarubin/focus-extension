@@ -1,11 +1,9 @@
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./SiteBlocker.module.scss";
-import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import { AddressBlocker } from "~widgets/AddressBlocker/AddressBlocker";
 import { AddNewAddress } from "~pages/SiteBlockerPage/AddNewAddress";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
-import { addAddress, blockAll } from "~app/reducers/blockedAddresses-slice";
-import { useAppDispatch, useAppSelector } from "~store";
+import { addAddress } from "~app/reducers/blockedAddresses-slice";
+import { useAppDispatch } from "~store";
 import { AddressesList } from "~pages/SiteBlockerPage/AddressesList";
 
 const SiteBlockerPage = () => {
