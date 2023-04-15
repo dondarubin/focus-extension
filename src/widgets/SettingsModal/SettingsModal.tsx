@@ -51,6 +51,10 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
             </div>
 
             <div className={classNames(styles.info, {}, [])}>
+                <div className={classNames(styles.focus, {}, [])}>
+                    <span>Theme</span>
+                    <ThemeSwitcher />
+                </div>
 
                 <div className={classNames(styles.focus, {}, [])}>
                     <span>Focus</span>
@@ -70,11 +74,6 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
                 <div className={classNames(styles.focus, {}, [])}>
                     <span>Sessions</span>
                     <SelectSessions />
-                </div>
-
-                <div className={classNames(styles.focus, {}, [])}>
-                    <span>Theme</span>
-                    <ThemeSwitcher />
                 </div>
             </div>
 

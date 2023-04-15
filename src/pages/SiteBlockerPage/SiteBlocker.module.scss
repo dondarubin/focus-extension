@@ -33,6 +33,10 @@ $boxShadowBottomValue: 4px;
   & input {
     width: 100%;
   }
+
+  & input:focus {
+    outline: none;
+  }
 }
 
 .addingButton {
@@ -59,17 +63,31 @@ $boxShadowBottomValue: 4px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
   padding-right: 20px;
   overflow-y: auto;
   height: 310px;
-
-  & div {
-    transition: all 0.2s ease-out;
-  }
 }
 
-.itemRemove {
-  opacity: 0;
-  transform: translateY(-50px);
+.noDataIconContainer {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+$shiftValue: 43px+18px;
+.slideDown {
+  position: relative;
+  animation: slide-down 0.5s ease;
+}
+
+@keyframes slide-down {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: $shiftValue;
+  }
 }

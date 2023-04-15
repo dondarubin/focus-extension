@@ -5,51 +5,43 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { UnlockIcon } from "~shared/resources/icons/UnlockIcon";
 import { SmallCrossIcon } from "~shared/resources/icons/SmallCrossIcon";
 import { BlockIcon } from "~shared/resources/icons/block/BlockIcon";
+import type { BlockedAddress } from "~app/types/BlockedAddress";
+import { newBlockedAddress } from "~app/types/BlockedAddress";
 
 type AddressBlockerProps = {
     className?: string
-    address: string
+    address: BlockedAddress
     blockedInit?: boolean
-    OnBlock?: (block: boolean, addr: string) => void
-    OnDelete?: (block: boolean, addr: string) => void
+    OnBlock?: (addr: BlockedAddress) => void
+    OnDelete?: (addr: BlockedAddress) => void
 }
 
 export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
     const {
         className,
         address,
-        blockedInit,
         OnBlock,
         OnDelete
     } = props;
 
-    const [blocked, setBlocked] = useState(blockedInit);
-
-    console.log(blockedInit, address)
-
-    useEffect(() => {
-        setBlocked(blockedInit);
-    }, [blockedInit]);
-
     function handleLockButtonClick() {
-        setBlocked(!blocked);
-        OnBlock(blocked, address);
+        OnBlock(newBlockedAddress(address.addr, !address.blocked));
     }
 
     function handleDeleteButtonClick() {
-        OnDelete(blocked, address);
+        OnDelete(address);
     }
 
     return (
         <div className={classNames(styles.addressBlockerContainer, {}, [className])}>
-            <Button className={classNames(styles.lockButton, {}, [!blocked ? "" : styles.lockButtonLocked])}
-                    theme={!blocked ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+            <Button className={classNames(styles.lockButton, {}, [!address.blocked ? "" : styles.lockButtonLocked])}
+                    theme={!address.blocked ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
                     onClick={handleLockButtonClick}
             >
-                {!blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
+                {!address.blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
             </Button>
             <div className={classNames(styles.addressContainer)}>
-                <span>{address}</span>
+                <span>{address.addr}</span>
                 <Button
                     className={classNames(styles.deleteButton)}
                     theme={ThemeButton.CLEAR}
