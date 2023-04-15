@@ -4,18 +4,17 @@ import styles from "~pages/SiteBlockerPage/SiteBlocker.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { MarkIcon } from "~shared/resources/icons/MarkIcon";
 import { useInput } from "~shared/hooks/useInput";
-import type { BlockedAddress } from "~app/types/BlockedAddress";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
+import { useAppDispatch } from "~store";
+import { addAddress } from "~app/reducers/blockedAddresses-slice";
 
 type AddNewAddressProps = {
     className?: string
-    OnAdd: (addr: BlockedAddress) => void
 }
 
 export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
     const {
-        className,
-        OnAdd
+        className
     } = props;
 
     const {
@@ -28,9 +27,11 @@ export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
         onBlur
     } = useInput("", true, true, "Add Address");
 
+    const dispatch = useAppDispatch();
+
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        OnAdd(newBlockedAddress(value, true));
+        dispatch(addAddress(newBlockedAddress(value, true)));
         clear();
     }
 
@@ -48,7 +49,7 @@ export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
             <Button
                 type={"submit"}
                 className={classNames(styles.addingButton)}
-                theme={ThemeButton.DEFAULT}
+                theme={ThemeButton.CLEAR}
             >
                 <MarkIcon color={"var(--contrast-color)"} />
             </Button>

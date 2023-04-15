@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
 import produce from "immer";
+import { toast } from "react-toastify";
 
 type BlockedAddressesState = {
     allBlocked: boolean;
@@ -63,6 +64,7 @@ const blockedAddresses = createSlice({
             if (index === -1) {
                 state.addresses.unshift(action.payload);
             } else {
+                toast.warn(`${action.payload.addr} is already exists`);
                 console.warn(`${action.payload.addr} is already exists`);
             }
         },

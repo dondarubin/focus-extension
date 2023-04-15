@@ -20,6 +20,7 @@ $boxShadowBottomValue: 4px;
 .addAddressContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 10px 5px 20px;
   margin-top: 30px;
   height: 43px;
@@ -44,7 +45,14 @@ $boxShadowBottomValue: 4px;
   float: right;
   height: 30px;
   width: 30px;
-  box-shadow: 2px 2.5px black;
+  box-shadow: none;
+  background: var(--primary-color);
+  border: 1px solid #040404;
+  border-radius: 5px;
+
+  &:hover {
+    border: 2px solid #040404;
+  }
 }
 
 .blockAll {

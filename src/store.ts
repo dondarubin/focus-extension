@@ -15,10 +15,12 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { syncStorage } from "redux-persist-webextension-storage";
 
 import blockedAddresses from "~app/reducers/blockedAddresses-slice";
+import settings from "~app/reducers/settings-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
-    blockedAddresses: blockedAddresses
+    blockedAddresses: blockedAddresses,
+    settings: settings
 });
 
 const persistConfig = {
