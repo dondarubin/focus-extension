@@ -15,28 +15,16 @@ const settings = createSlice(
         initialState: default_settings as Settings,
         reducers: {
             setShortBreakTime: (state, action: PayloadAction<number>) => {
-                return {
-                    ...state,
-                    shortBreakTime: action.payload
-                };
+                state.shortBreakTime = action.payload;
             },
             setLongBreakTime: (state, action: PayloadAction<number>) => {
-                return {
-                    ...state,
-                    longBreakTime: action.payload
-                };
+                state.longBreakTime = action.payload;
             },
             setSessionsCount: (state, action: PayloadAction<number>) => {
-                return {
-                    ...state,
-                    sessionsCount: action.payload
-                };
+                state.sessionsCount = action.payload;
             },
             setFocusTime: (state, action: PayloadAction<number>) => {
-                return {
-                    ...state,
-                    focusTime: action.payload
-                };
+                state.focusTime = action.payload;
             }
         }
     }

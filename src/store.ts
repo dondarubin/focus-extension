@@ -16,11 +16,13 @@ import { syncStorage } from "redux-persist-webextension-storage";
 
 import blockedAddresses from "~app/reducers/blockedAddresses-slice";
 import settings from "~app/reducers/settings-slice";
+import tomato, { TomatoStates } from "~app/reducers/tomato-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
     blockedAddresses: blockedAddresses,
-    settingsValues: settings
+    settingsValues: settings,
+    tomato: tomato
 });
 
 const persistConfig = {
@@ -104,12 +106,18 @@ const defaultState = {
         longBreakTime: 15,
         sessionsCount: 4,
         focusTime: 25
+    },
+    tomato: {
+        stop: true,
+        currentTaskName: "test",
+        state: TomatoStates.OFF,
+        clockValue: { min: 20, sec: 50 },
+        currentSessionsCount: 4
     }
 };
 
 export const resetStore = () => {
     return new Promise<void>((resolve, reject) => {
-
         persistStore(
             createStore(
                 persistedReducer,

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "~pages/SiteBlockerPage/SiteBlocker.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import { MarkIcon } from "~shared/resources/icons/MarkIcon";
+import { SmallMarkIcon } from "~shared/resources/icons/SmallMarkIcon";
 import { useInput } from "~shared/hooks/useInput";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
 import { useAppDispatch } from "~store";
@@ -51,7 +51,7 @@ export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
                 className={classNames(styles.addingButton)}
                 theme={ThemeButton.CLEAR}
             >
-                <MarkIcon color={"var(--contrast-color)"} />
+                <SmallMarkIcon color={"var(--contrast-color)"} />
             </Button>
         </form>
     );

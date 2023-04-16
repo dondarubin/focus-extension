@@ -2,32 +2,59 @@ import styles from "./ContentMainPage.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
+import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
+import { useAppDispatch, useAppSelector } from "~store";
+import { setState, TomatoStates } from "~app/reducers/tomato-slice";
+import { TimerControlButtons } from "~widgets/TimerControllButtons/TimerControlButtons";
 
 interface ContentMainPageProps {
     className?: string;
     setChooseTaskModalActive?: Dispatch<SetStateAction<boolean>>;
 }
 
-export const ContentMainPage:FC<ContentMainPageProps> = (props) => {
+export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
     const {
         className,
-        setChooseTaskModalActive,
+        setChooseTaskModalActive
     } = props;
+    const dispatch = useAppDispatch();
+
+
+    const tomatoState = useAppSelector(state => state.tomato.state);
 
     function OnClickOpenChooseTaskModalHandler() {
-        setChooseTaskModalActive((prev) => !prev)
+        setChooseTaskModalActive((prev) => !prev);
+    }
+
+    function temp_handle() {
+        dispatch(setState(TomatoStates.OFF));
     }
 
     return (
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
-            <p className={classNames(styles.time, {}, [])}>25:00</p>
-            <Button
-                theme={ThemeButton.DEFAULT}
-                className={classNames(styles.button, {}, [])}
-                onClick={OnClickOpenChooseTaskModalHandler}
-            >
-                Start
-            </Button>
+            {
+                tomatoState !== TomatoStates.OFF
+                    ? <AnimatedTimer className={styles.animatedTimerContainer} />
+                    : <div style={{ width: "440px", height: "45px" }}></div>
+            }
+            <p className={classNames(styles.clock)}>25:00</p>
+
+            {tomatoState === TomatoStates.FOCUS
+                ? <TimerControlButtons
+                    className={styles.button}
+                    onExit={temp_handle}
+                    onPause={temp_handle}
+                    onDone={temp_handle}
+                />
+                : <Button
+                    theme={ThemeButton.DEFAULT}
+                    className={classNames(styles.button, {}, [])}
+                    onClick={OnClickOpenChooseTaskModalHandler}
+                >
+                    Start
+                </Button>
+            }
         </div>
-    );
+    )
+        ;
 };

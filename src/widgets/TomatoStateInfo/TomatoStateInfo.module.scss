@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tomatoStateName {
+  font: var(--font-btn);
+  color: var(--secondary-color);
+}
+
+.taskName {
+  font: var(--font-body-regular);
+  color: #040404
+}

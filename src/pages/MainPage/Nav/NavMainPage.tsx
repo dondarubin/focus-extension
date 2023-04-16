@@ -1,9 +1,12 @@
 import styles from "./NavMainPage.module.scss";
 import { MainIcon } from "~shared/resources/icons/mainIcon/mainIcon";
-import {SettingsIcon} from "~shared/resources/icons/settings/settings";
-import React, {Dispatch, FC, SetStateAction} from "react";
-import {classNames} from "~shared/lib/classNames/classNames";
+import { SettingsIcon } from "~shared/resources/icons/settings/settings";
+import React, { Dispatch, FC, SetStateAction } from "react";
+import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { useAppSelector } from "~store";
+import { TomatoStates } from "~app/reducers/tomato-slice";
+import { TomatoStateInfo } from "~widgets/TomatoStateInfo/TomatoStateInfo";
 
 interface NavMainPageProps {
     setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
@@ -16,6 +19,8 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
         setSettingsModalActive
     } = props;
 
+    const tomatoState = useAppSelector(state => state.tomato.state);
+
     function OnClickOpenSettingsModalHandler() {
         setSettingsModalActive((prev) => !prev);
     }
@@ -26,16 +31,21 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
                     theme={ThemeButton.CLEAR}>
                 <MainIcon />
             </Button>
+            {tomatoState === TomatoStates.OFF
+                ?
+                <>
+                    <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
+                    <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
+                        <Button className={classNames(styles.iconButtonSettings, {}, [])}
+                                onClick={OnClickOpenSettingsModalHandler}
+                                theme={ThemeButton.CLEAR}>
+                            <SettingsIcon />
+                        </Button>
+                    </div>
+                </>
+                : <TomatoStateInfo />
+            }
 
-            <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
-
-            <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
-                <Button className={classNames(styles.iconButtonSettings, {}, [])}
-                        onClick={OnClickOpenSettingsModalHandler}
-                        theme={ThemeButton.CLEAR}>
-                    <SettingsIcon />
-                </Button>
-            </div>
         </nav>
     );
 };

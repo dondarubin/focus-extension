@@ -3,6 +3,8 @@ import styles from "./ChooseTaskModal.module.scss";
 import { Modal } from "~shared/ui/Modal/Modal";
 import type { FC } from "react";
 import React, { Dispatch, SetStateAction } from "react";
+import { useAppDispatch } from "~store";
+import { setCurrentTaskName } from "~app/reducers/tomato-slice";
 
 interface ChooseTaskModalProps {
     chooseTaskModalActive?: boolean;
@@ -15,14 +17,25 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         setChooseTaskModalActive
     } = props;
 
-    function OnClickCloseChooseTaskModalHandler() {
+    const dispatch = useAppDispatch();
+
+    function closeModal() {
         setChooseTaskModalActive((prev) => !prev);
+    }
+
+    function OnClickCloseChooseTaskModalHandler() {
+        closeModal();
+    }
+
+    function chooseTaskHandler(taskName: string) {
+        dispatch(setCurrentTaskName(taskName));
+        closeModal();
     }
 
     const cardTask = (title: string, time: string) => {
         return (
             <div className={classNames(styles.cardTask, {}, [])}
-                 onClick={OnClickCloseChooseTaskModalHandler}>
+                 onClick={() => chooseTaskHandler(title)}>
                 <div className={classNames(styles.taskName, {}, [])}>
                     {title}
                 </div>
@@ -52,15 +65,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
             <div className={classNames(styles.tasksWrapper, {}, [])}>
                 {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
+                {cardTask("U/x Research", "Today")}
                 {cardTask("Make a prototype for pomodoro timer", "Today")}
                 {cardTask("Make a prototype for pomodoro timer", "Today")}
                 {cardTask("Make a prototype for pomodoro timer", "Today")}

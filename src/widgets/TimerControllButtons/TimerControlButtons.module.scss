@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.button {
+  width: 44px;
+  height: 44px;
+}
+
+.whiteBg {
+  background: white;
+}

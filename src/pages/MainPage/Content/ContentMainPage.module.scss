@@ -1,17 +1,25 @@
 .ContentMainPage {
-    min-height: calc(var(--app-height) - var(--mp-nav-height) - var(--footer-height));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  min-height: calc(var(--app-height) - var(--mp-nav-height) - var(--footer-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.time {
-    color: black;
-    font: var(--font-h1);
+.clock {
+  width: 177px;
+  height: 82px;
+  margin-top: 20px;
+  color: black;
+  font: var(--font-h1);
 }
 
 .button {
-    margin-top: 20px;
-    font: var(--font-btn);
+  margin-top: 20px;
+  font: var(--font-btn);
+}
+
+.animatedTimerContainer {
+  width: 440px;
+  height: 45px;
 }
