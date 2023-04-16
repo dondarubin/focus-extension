@@ -16,10 +16,6 @@ interface ChooseTaskModalProps {
 }
 
 const mock_tasks = [
-    /*{
-        name: "Make a prototype for pomodoro timer",
-        time: "Today"
-    },
     {
         name: "Make a prototype for pomodoro timer",
         time: "Today"
@@ -31,7 +27,11 @@ const mock_tasks = [
     {
         name: "Make a prototype for pomodoro timer",
         time: "Today"
-    }*/
+    },
+    {
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    }
 ];
 
 
@@ -103,6 +103,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
                     <h2>Your task list is empty</h2>
                     <span>Create one and get to work</span>
                 </div>
+                // TODO create page switcher with redux
                 <Link to={RoutePath.tasks}>
                     <Button onClick={closeModal} className={styles.goToTasksButton} theme={ThemeButton.DEFAULT}>
                         Go to Tasks
