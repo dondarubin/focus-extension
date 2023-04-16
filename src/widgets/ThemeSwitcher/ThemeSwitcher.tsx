@@ -13,17 +13,29 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
 
     function OnClickSwitchTheme(selected) {
-        if (selected === "Blue") {
-            toggleTheme(Theme.BLUE);
-            return;
-        }
-        if (selected === "Orange") {
-            toggleTheme(Theme.ORANGE);
-            return;
-        }
-        if (selected === "Purple") {
-            toggleTheme(Theme.PURPLE);
-            return;
+        switch (selected) {
+            case "Blue":
+                toggleTheme(Theme.BLUE);
+                break;
+            case "Orange":
+                toggleTheme(Theme.ORANGE);
+                break;
+            case "Coral":
+                toggleTheme(Theme.CORAL);
+                break;
+            case "DarkBlue":
+                toggleTheme(Theme.DARKBLUE);
+                break;
+            case "Peach":
+                toggleTheme(Theme.PEACH);
+                break;
+            case "Aqua":
+                toggleTheme(Theme.AQUA);
+                break;
+            case "Purple":
+                toggleTheme(Theme.PURPLE);
+                break;
+            default: break;
         }
     }
 
@@ -39,6 +51,22 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             <div className={styles.themeOption}>
                 <ColorRect color={"#F6BF62"} />
                 Orange
+            </div>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#FF7F50"} />
+                Coral
+            </div>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#5D6EA8"} />
+                DarkBlue
+            </div>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#F5C5B8"} />
+                Peach
+            </div>
+            <div className={styles.themeOption}>
+                <ColorRect color={"#72BFCF"} />
+                Aqua
             </div>
             <div className={styles.themeOption}>
                 <ColorRect color={"#856BC2"} />

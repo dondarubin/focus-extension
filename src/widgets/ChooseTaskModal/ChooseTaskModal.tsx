@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 
 interface ChooseTaskModalProps {
+    className?: string;
     chooseTaskModalActive?: boolean;
     setChooseTaskModalActive?: Dispatch<SetStateAction<boolean>>;
 }
@@ -37,6 +38,7 @@ const mock_tasks = [
 
 export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
     const {
+        className,
         chooseTaskModalActive,
         setChooseTaskModalActive
     } = props;
@@ -58,6 +60,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
     const _cardTask = (props: { title: string, time: string }) => {
         return (
+
             <div className={classNames(styles.cardTask, {}, [])}
                  onClick={() => chooseTaskHandler(props.title)}>
                 <div className={classNames(styles.taskName, {}, [])}>
@@ -66,6 +69,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
                 <div className={classNames(styles.taskTime, {}, [])}>
                     {props.time}
+
                 </div>
             </div>
         );
@@ -115,7 +119,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
     return (
         <Modal
-            className={classNames(styles.ChooseTaskModal, {}, [])}
+            className={classNames(styles.ChooseTaskModal, {}, [className])}
             modalActive={chooseTaskModalActive}
             setModalActive={setChooseTaskModalActive}
         >
@@ -124,7 +128,6 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
                     ? <_tasksPage />
                     : <_renderIfTasksEmpty />
             }
-
         </Modal>
     );
 };

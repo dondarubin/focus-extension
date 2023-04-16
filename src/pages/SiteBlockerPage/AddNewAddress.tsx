@@ -48,7 +48,7 @@ export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
             />
             <Button
                 type={"submit"}
-                className={classNames(styles.addingButton)}
+                className={styles.addingButton}
                 theme={ThemeButton.CLEAR}
             >
                 <SmallMarkIcon color={"var(--contrast-color)"} />

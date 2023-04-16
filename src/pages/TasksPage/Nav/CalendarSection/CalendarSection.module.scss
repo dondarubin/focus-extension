@@ -1,0 +1,35 @@
+.CalendarSection {
+    width: 469px;
+    height: 90px;
+    padding-top: 25px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftArrow {
+    width: 10px;
+    height: 22px;
+
+    & > svg {
+        cursor: pointer;
+    }
+
+    &:hover > svg > path {
+        stroke: var(--primary-color);
+    }
+}
+
+.rightArrow {
+    width: 10px;
+    height: 22px;
+
+    & > svg {
+        cursor: pointer;
+    }
+
+    &:hover > svg > path {
+        stroke: var(--primary-color);
+    }
+}

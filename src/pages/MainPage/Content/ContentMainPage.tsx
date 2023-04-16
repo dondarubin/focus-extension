@@ -32,6 +32,7 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
 
     return (
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
+
             {
                 tomatoState !== TomatoStates.OFF
                     ? <AnimatedTimer className={styles.animatedTimerContainer} />
@@ -54,7 +55,7 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
                     Start
                 </Button>
             }
+
         </div>
-    )
-        ;
+    );
 };

@@ -15,6 +15,10 @@ type AddressesListProps = {
 }
 
 export const AddressesList: FC<AddressesListProps> = (props) => {
+    const {
+        className
+    } = props;
+
     const dispatch = useAppDispatch();
     const addresses = useAppSelector((state) => state.blockedAddresses);
 
@@ -33,7 +37,7 @@ export const AddressesList: FC<AddressesListProps> = (props) => {
     const _blockAllButton = () => {
         return (
             <Button
-                className={classNames(styles.blockAll)}
+                className={styles.blockAll}
                 theme={ThemeButton.CLEAR}
                 onClick={handleBlockAllButtonClick}
             >
@@ -62,7 +66,7 @@ export const AddressesList: FC<AddressesListProps> = (props) => {
 
     const _noDataIcon = () => {
         return (
-            <div className={classNames(styles.noDataIconContainer)}>
+            <div className={styles.noDataIconContainer}>
                 <BlockPageManIcon />
             </div>
         );
@@ -71,7 +75,7 @@ export const AddressesList: FC<AddressesListProps> = (props) => {
     return (
         <>
             {addresses.addresses.length !== 0 ? <_blockAllButton /> : <></>}
-            <div className={classNames(styles.addressesContainer, {}, [props.className])}>
+            <div className={classNames(styles.addressesContainer, {}, [className])}>
                 {addresses.addresses.length !== 0 ? <_addressesList /> : <_noDataIcon />}
             </div>
         </>

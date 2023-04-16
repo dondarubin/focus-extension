@@ -1,50 +1,51 @@
 .SettingsModal {
-    padding: 30px;
+  padding: 30px;
 }
 
 .title {
-    width: 100%;
-    height: 50px;
-    font: var(--font-h2);
-    border-bottom: 1px solid #040404;
-    color: black;
+  width: 100%;
+  height: 50px;
+  font: var(--font-h2);
+  border-bottom: 1px solid #040404;
+  color: black;
 }
 
 .whatIs {
-    display: flex;
-    padding-top: 15px;
-    color: black;
-    font: var(--font-btn);
-    cursor: pointer;
-    height: 16px;
-    width: 250px;
+  width: 250px;
+  padding-top: 15px;
+  display: flex;
+  cursor: pointer;
+  color: black;
+  font: var(--font-btn);
+  height: 16px;
 
-    & > span {
-        padding-right: 6px;
-    }
+  & > span {
+    padding-right: 6px;
+  }
 
-    &:hover {
-        color: var(--primary-color);
-    }
+  &:hover {
+    color: var(--primary-color);
+  }
 
-    &:hover > svg > path {
-        fill: var(--primary-color);
-    }
+  &:hover > svg > path {
+    fill: var(--primary-color);
+  }
 
-    &:hover > svg > rect {
-        stroke: var(--primary-color);
-    }
+  &:hover > svg > rect {
+    stroke: var(--primary-color);
+  }
 }
 
+
 .info {
-    padding-top: 30px;
-    color: black;
-    width: 441px;
+  padding-top: 30px;
+  color: black;
+  width: 441px;
 }
 
 .focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
 }

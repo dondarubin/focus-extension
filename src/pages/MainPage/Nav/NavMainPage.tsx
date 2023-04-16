@@ -27,7 +27,7 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
 
     return (
         <nav className={classNames(styles.NavMainPage, {}, [className])}>
-            <Button className={classNames(styles.iconButtonMain, {}, [])}
+            <Button className={styles.iconButtonMain}
                     theme={ThemeButton.CLEAR}>
                 <MainIcon />
             </Button>
@@ -45,7 +45,6 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
                 </>
                 : <TomatoStateInfo />
             }
-
         </nav>
     );
 };
