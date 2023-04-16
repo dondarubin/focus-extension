@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./Taskpage.module.scss";
-import { classNames } from "~shared/lib/classNames/classNames";
+import { NavTaskPage } from "~pages/TasksPage/Nav/NavTaskPage";
+import { ContentTasksPage } from "~pages/TasksPage/Content/ContentTasksPage";
 
 const TasksPage = () => {
     return (
-        <div className={classNames(styles.TaskPage, {}, [])}>
-            Tasks Page
+        <div className={styles.TaskPage}>
+            <NavTaskPage />
+            <ContentTasksPage />
         </div>
     );
 };
