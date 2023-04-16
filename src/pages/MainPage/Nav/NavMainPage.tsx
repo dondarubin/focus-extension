@@ -22,15 +22,15 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
 
     return (
         <nav className={classNames(styles.NavMainPage, {}, [className])}>
-            <Button className={classNames(styles.iconButtonMain, {}, [])}
+            <Button className={styles.iconButtonMain}
                     theme={ThemeButton.CLEAR}>
                 <MainIcon />
             </Button>
 
-            <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
+            <p className={styles.title}>walletadress.ada</p>
 
-            <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
-                <Button className={classNames(styles.iconButtonSettings, {}, [])}
+            <div className={styles.iconButtonSettingsWrapper}>
+                <Button className={styles.iconButtonSettings}
                         onClick={OnClickOpenSettingsModalHandler}
                         theme={ThemeButton.CLEAR}>
                     <SettingsIcon />

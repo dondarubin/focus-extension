@@ -14,7 +14,7 @@ const MainPage = () => {
 
 
     return (
-        <div className={classNames(styles.MainPage, {}, [])}>
+        <div className={styles.MainPage}>
             <NavMainPage setSettingsModalActive={setSettingsModalActive} />
             <ContentMainPage setChooseTaskModalActive={setChooseTaskModalActive} />
 

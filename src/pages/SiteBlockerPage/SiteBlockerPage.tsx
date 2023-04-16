@@ -1,4 +1,3 @@
-import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./SiteBlocker.module.scss";
 import { AddNewAddress } from "~pages/SiteBlockerPage/AddNewAddress";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
@@ -14,11 +13,11 @@ const SiteBlockerPage = () => {
     }
 
     return (
-        <div className={classNames(styles.layout)}>
-            <div className={classNames(styles.title)}>
+        <div className={styles.layout}>
+            <div className={styles.title}>
                 Website Blocker
             </div>
-            <span className={classNames(styles.titleDescription)}>
+            <span className={styles.titleDescription}>
                 Block sites that interfere with your productivity
             </span>
             <AddNewAddress OnAdd={handleAddNewAddress} />

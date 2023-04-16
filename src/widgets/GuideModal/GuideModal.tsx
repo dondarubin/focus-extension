@@ -12,25 +12,26 @@ interface GuideModalProps {
 
 export const GuideModal: FC<GuideModalProps> = (props) => {
     const {
+        className,
         guideModalActive,
         setGuideModalActive
     } = props;
 
     return (
-        <Modal className={classNames(styles.GuideModal, {}, [])}
+        <Modal className={classNames(styles.GuideModal, {}, [className])}
                modalActive={guideModalActive}
                setModalActive={setGuideModalActive}
         >
-            <div className={classNames(styles.title)}>
+            <div className={styles.title}>
                 What is the Pomodoro Technique
             </div>
 
-            <div className={classNames(styles.wrapper)}>
-                <div className={classNames(styles.icon)}>
+            <div className={styles.wrapper}>
+                <div className={styles.icon}>
                     <GuideStepsIcon />
                 </div>
 
-                <div className={classNames(styles.steps)}>
+                <div className={styles.steps}>
                     <span>Choose a single task to focus on</span>
                     <span>Set a timer for 25 minutes and<br /> work only on your selected<br /> task</span>
                     <span>After 25 minutes take<br /> a five-minute break</span>

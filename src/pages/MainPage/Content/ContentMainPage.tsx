@@ -20,10 +20,10 @@ export const ContentMainPage:FC<ContentMainPageProps> = (props) => {
 
     return (
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
-            <p className={classNames(styles.time, {}, [])}>25:00</p>
+            <p className={styles.time}>25:00</p>
             <Button
                 theme={ThemeButton.DEFAULT}
-                className={classNames(styles.button, {}, [])}
+                className={styles.button}
                 onClick={OnClickOpenChooseTaskModalHandler}
             >
                 Start

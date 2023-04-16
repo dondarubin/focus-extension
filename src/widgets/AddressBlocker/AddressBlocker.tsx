@@ -40,10 +40,10 @@ export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
             >
                 {!address.blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
             </Button>
-            <div className={classNames(styles.addressContainer)}>
+            <div className={styles.addressContainer}>
                 <span>{address.addr}</span>
                 <Button
-                    className={classNames(styles.deleteButton)}
+                    className={styles.deleteButton}
                     theme={ThemeButton.CLEAR}
                     onClick={handleDeleteButtonClick}
                 >

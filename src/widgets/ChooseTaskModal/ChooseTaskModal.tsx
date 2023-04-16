@@ -5,12 +5,14 @@ import type { FC } from "react";
 import React, { Dispatch, SetStateAction } from "react";
 
 interface ChooseTaskModalProps {
+    className?: string;
     chooseTaskModalActive?: boolean;
     setChooseTaskModalActive?: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
     const {
+        className,
         chooseTaskModalActive,
         setChooseTaskModalActive
     } = props;
@@ -21,13 +23,13 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
     const cardTask = (title: string, time: string) => {
         return (
-            <div className={classNames(styles.cardTask, {}, [])}
+            <div className={styles.cardTask}
                  onClick={OnClickCloseChooseTaskModalHandler}>
-                <div className={classNames(styles.taskName, {}, [])}>
+                <div className={styles.taskName}>
                     {title}
                 </div>
 
-                <div className={classNames(styles.taskTime, {}, [])}>
+                <div className={styles.taskTime}>
                     {time}
                 </div>
             </div>
@@ -36,21 +38,21 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
 
     return (
         <Modal
-            className={classNames(styles.ChooseTaskModal, {}, [])}
+            className={classNames(styles.ChooseTaskModal, {}, [className])}
             modalActive={chooseTaskModalActive}
             setModalActive={setChooseTaskModalActive}
         >
-            <div className={classNames(styles.nav, {}, [])}>
-                <div className={classNames(styles.title, {}, [])}>
+            <div className={styles.nav}>
+                <div className={styles.title}>
                     Choose Task
                 </div>
 
-                <div className={classNames(styles.whatIs, {}, [])}>
+                <div className={styles.whatIs}>
                     <span>Select one task to start the timer</span>
                 </div>
             </div>
 
-            <div className={classNames(styles.tasksWrapper, {}, [])}>
+            <div className={styles.tasksWrapper}>
                 {cardTask("Make a prototype for pomodoro timer", "Today")}
                 {cardTask("Make a prototype for pomodoro timer", "Today")}
                 {cardTask("Make a prototype for pomodoro timer", "Today")}

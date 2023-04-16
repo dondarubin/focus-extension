@@ -11,6 +11,7 @@ import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 
 interface SettingsModalProps {
+    className?: string;
     settingsModalActive: boolean;
     setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
     setGuideModalActive: Dispatch<SetStateAction<boolean>>;
@@ -19,6 +20,7 @@ interface SettingsModalProps {
 
 export const SettingsModal: FC<SettingsModalProps> = (props) => {
     const {
+        className,
         settingsModalActive,
         setSettingsModalActive,
         setGuideModalActive
@@ -35,50 +37,49 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
 
     return (
         <Modal
-            className={classNames(styles.SettingsModal, {}, [])}
+            className={classNames(styles.SettingsModal, {}, [className])}
             modalActive={settingsModalActive}
-            setModalActive={setSettingsModalActive}
-        >
-            <div className={classNames(styles.title, {}, [])}>
+            setModalActive={setSettingsModalActive}>
+            <div className={styles.title}>
                 Settings
             </div>
 
-            <div onClick={OnClickOpenGuideModalHandler}
-                 className={classNames(styles.whatIs, {}, [])}
+            <div className={styles.whatIs}
+                 onClick={OnClickOpenGuideModalHandler}
             >
                 <span>What is the pomodoro technique</span>
                 <QuestionIcon />
             </div>
 
-            <div className={classNames(styles.info, {}, [])}>
-                <div className={classNames(styles.focus, {}, [])}>
+            <div className={styles.info}>
+                <div className={styles.focus}>
                     <span>Theme</span>
                     <ThemeSwitcher />
                 </div>
 
-                <div className={classNames(styles.focus, {}, [])}>
+                <div className={styles.focus}>
                     <span>Focus</span>
                     <SelectFocusTime />
                 </div>
 
-                <div className={classNames(styles.focus, {}, [])}>
+                <div className={styles.focus}>
                     <span>Short break</span>
                     <SelectShortBreak />
                 </div>
 
-                <div className={classNames(styles.focus, {}, [])}>
+                <div className={styles.focus}>
                     <span>Long break</span>
                     <SelectLongBreak />
                 </div>
 
-                <div className={classNames(styles.focus, {}, [])}>
+                <div className={styles.focus}>
                     <span>Sessions</span>
                     <SelectSessions />
                 </div>
             </div>
 
-            <Button theme={ThemeButton.DEFAULT}
-                    className={classNames(styles.button, {}, [])}
+            <Button className={styles.button}
+                    theme={ThemeButton.DEFAULT}
                     onClick={OnClickCloseSettingsModalHandler}>
                 Save
             </Button>

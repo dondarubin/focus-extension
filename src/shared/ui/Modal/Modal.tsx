@@ -30,12 +30,10 @@ export const Modal: FC<ModalProps> = (props) => {
             className,
             modalActive ? styles.active : ""
         ])}>
-            <div className={classNames(styles.modalContent, {}, [])}>
-                <Button
-                    className={classNames(styles.modalButton, {}, [])}
-                    onClick={OnClickCloseModalHandler}
-                    theme={ThemeButton.CLEAR}
-                >
+            <div className={styles.modalContent}>
+                <Button className={styles.modalButton}
+                        onClick={OnClickCloseModalHandler}
+                        theme={ThemeButton.CLEAR}>
                     <CloseIcon />
                 </Button>
                 {children}

@@ -103,7 +103,7 @@ export const CustomSelect: FC<CustomSelectProps> = (props) => {
             >
                 {selectedOption.element}
             </div>
-            {isOpen && <div className={classNames(styles.dropdownOptions, {}, [])}>{optionsContainers}</div>}
+            {isOpen && <div className={styles.dropdownOptions}>{optionsContainers}</div>}
         </div>
     );
 };
