@@ -5,11 +5,35 @@ import type { FC } from "react";
 import React, { Dispatch, SetStateAction } from "react";
 import { useAppDispatch } from "~store";
 import { setCurrentTaskName } from "~app/reducers/tomato-slice";
+import { ChooseTaskModalMansIcon } from "~shared/resources/icons/people/ChooseTaskModalMansIcon";
+import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { Link } from "react-router-dom";
+import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 
 interface ChooseTaskModalProps {
     chooseTaskModalActive?: boolean;
     setChooseTaskModalActive?: Dispatch<SetStateAction<boolean>>;
 }
+
+const mock_tasks = [
+    /*{
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    },
+    {
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    },
+    {
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    },
+    {
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    }*/
+];
+
 
 export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
     const {
@@ -32,17 +56,58 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         closeModal();
     }
 
-    const cardTask = (title: string, time: string) => {
+    const _cardTask = (props: { title: string, time: string }) => {
         return (
             <div className={classNames(styles.cardTask, {}, [])}
-                 onClick={() => chooseTaskHandler(title)}>
+                 onClick={() => chooseTaskHandler(props.title)}>
                 <div className={classNames(styles.taskName, {}, [])}>
-                    {title}
+                    {props.title}
                 </div>
 
                 <div className={classNames(styles.taskTime, {}, [])}>
-                    {time}
+                    {props.time}
                 </div>
+            </div>
+        );
+    };
+
+    const _tasksPage = () => {
+        return (
+            <>
+                <div className={classNames(styles.nav, {}, [])}>
+                    <div className={classNames(styles.title, {}, [])}>
+                        Choose Task
+                    </div>
+
+                    <div className={classNames(styles.whatIs, {}, [])}>
+                        <span>Select one task to start the timer</span>
+                    </div>
+                </div>
+
+                <div className={classNames(styles.tasksWrapper, {}, [])}>
+                    {mock_tasks.map((task, i) => {
+                        return (
+                            <_cardTask key={i} title={task.name} time={task.time} />
+                        );
+                    })}
+                </div>
+            </>
+        );
+    };
+
+    const _renderIfTasksEmpty = () => {
+        return (
+            <div className={styles.emptyPageContainer}>
+                <ChooseTaskModalMansIcon />
+                <div className={styles.emptyPageMsgContainer}>
+                    <h2>Your task list is empty</h2>
+                    <span>Create one and get to work</span>
+                </div>
+                <Link to={RoutePath.tasks}>
+                    <Button onClick={closeModal} className={styles.goToTasksButton} theme={ThemeButton.DEFAULT}>
+                        Go to Tasks
+                    </Button>
+                </Link>
             </div>
         );
     };
@@ -53,23 +118,12 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
             modalActive={chooseTaskModalActive}
             setModalActive={setChooseTaskModalActive}
         >
-            <div className={classNames(styles.nav, {}, [])}>
-                <div className={classNames(styles.title, {}, [])}>
-                    Choose Task
-                </div>
+            {
+                mock_tasks.length !== 0
+                    ? <_tasksPage />
+                    : <_renderIfTasksEmpty />
+            }
 
-                <div className={classNames(styles.whatIs, {}, [])}>
-                    <span>Select one task to start the timer</span>
-                </div>
-            </div>
-
-            <div className={classNames(styles.tasksWrapper, {}, [])}>
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("U/x Research", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-                {cardTask("Make a prototype for pomodoro timer", "Today")}
-            </div>
         </Modal>
     );
 };

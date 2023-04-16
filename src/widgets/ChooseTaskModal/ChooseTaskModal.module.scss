@@ -1,56 +1,96 @@
 .ChooseTaskModal {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 .nav {
-    width: 100%;
-    height: 56px;
-    padding-left: 30px;
-    margin-bottom: 30px;
+  width: 100%;
+  height: 56px;
+  padding-left: 30px;
+  margin-bottom: 30px;
 }
 
 .title {
-    color: black;
-    font: var(--font-h2);
+  color: black;
+  font: var(--font-h2);
 }
 
 .whatIs {
-    padding-top: 5px;
-    font: var(--font-small-1);
-    color: #000000;
+  padding-top: 5px;
+  font: var(--font-small-1);
+  color: #000000;
 }
 
 .tasksWrapper {
-    width: 494px;
-    height: 475px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    align-content: flex-start;
-    overflow-y: scroll;
-    padding-left: 30px;
+  width: 494px;
+  height: 475px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-content: flex-start;
+  overflow-y: scroll;
+  padding-left: 30px;
 }
 
 .cardTask {
-    cursor: pointer;
-    padding: 10px;
-    width: 210px;
-    height: 105px;
-    border: 1px solid #040404;
-    border-radius: 5px;
-    background: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+  width: 210px;
+  height: 105px;
+  border: 1px solid #040404;
+  border-radius: 5px;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .taskName {
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden
 }
 
 .taskTime {
-    font: var(--font-small);
+  font: var(--font-small);
 }
+
+// if task is empty
+.emptyPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 112px 0;
+}
+
+.emptyPageMsgContainer {
+  margin-top: 25px;
+  text-align: center;
+  color: #26282B;
+
+  & h2 {
+    height: 35px;
+    font: var(--font-h2);
+  }
+
+  & span {
+    height: 21px;
+    font: var(--font-body-regular);
+    margin-top: 5px;
+  }
+}
+
+.goToTasksButton {
+ margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
