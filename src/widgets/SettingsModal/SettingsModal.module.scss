@@ -11,11 +11,12 @@
 }
 
 .whatIs {
-    display: flex;
+    width: 250px;
     padding-top: 15px;
+    display: flex;
+    cursor: pointer;
     color: black;
     font: var(--font-btn);
-    cursor: pointer;
 
     & > span {
         padding-right: 6px;
@@ -33,6 +34,7 @@
         stroke: var(--primary-color);
     }
 }
+
 
 .info {
     padding-top: 30px;

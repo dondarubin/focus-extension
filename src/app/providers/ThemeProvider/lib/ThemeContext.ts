@@ -3,6 +3,10 @@ import { createContext } from 'react';
 export enum Theme {
     BLUE = 'blue',
     ORANGE = 'orange',
+    CORAL = 'coral',
+    DARKBLUE = 'darkblue',
+    PEACH = 'peach',
+    AQUA = 'aqua',
     PURPLE = 'purple',
 }
 
