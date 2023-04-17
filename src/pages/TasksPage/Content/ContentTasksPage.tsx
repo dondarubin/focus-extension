@@ -39,6 +39,7 @@ export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
             <div className={styles.tasksWrapper}>
                 {taskCard("Make a prototype for pomodoro timer", "5x Sessions")}
                 {taskCard("U/X Research", "0 Sessions")}
+                {taskCard("U/X Research", "0 Sessions")}
             </div>
         </div>
     );

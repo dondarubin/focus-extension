@@ -9,6 +9,7 @@ import { ChooseTaskModalMansIcon } from "~shared/resources/icons/people/ChooseTa
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { Link } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
+import { AppRotes, setCurrentPage } from "~app/reducers/router-slice";
 
 interface ChooseTaskModalProps {
     className?: string;
@@ -17,7 +18,7 @@ interface ChooseTaskModalProps {
 }
 
 const mock_tasks = [
-    {
+    /*{
         name: "Make a prototype for pomodoro timer",
         time: "Today"
     },
@@ -32,7 +33,7 @@ const mock_tasks = [
     {
         name: "Make a prototype for pomodoro timer",
         time: "Today"
-    }
+    }*/
 ];
 
 
@@ -49,8 +50,9 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         setChooseTaskModalActive((prev) => !prev);
     }
 
-    function OnClickCloseChooseTaskModalHandler() {
+    function goToTasksClickHandler() {
         closeModal();
+        dispatch(setCurrentPage(AppRotes.TASKS));
     }
 
     function chooseTaskHandler(taskName: string) {
@@ -99,6 +101,7 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         );
     };
 
+    // TODO create page switcher with redux
     const _renderIfTasksEmpty = () => {
         return (
             <div className={styles.emptyPageContainer}>
@@ -107,9 +110,9 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
                     <h2>Your task list is empty</h2>
                     <span>Create one and get to work</span>
                 </div>
-                // TODO create page switcher with redux
                 <Link to={RoutePath.tasks}>
-                    <Button onClick={closeModal} className={styles.goToTasksButton} theme={ThemeButton.DEFAULT}>
+                    <Button onClick={goToTasksClickHandler} className={styles.goToTasksButton}
+                            theme={ThemeButton.DEFAULT}>
                         Go to Tasks
                     </Button>
                 </Link>

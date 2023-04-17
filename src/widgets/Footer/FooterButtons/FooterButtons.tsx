@@ -6,55 +6,57 @@ import { TasksIcon } from "~shared/resources/icons/tasks/TasksIcon";
 import { BlockIcon } from "~shared/resources/icons/block/BlockIcon";
 import { StatsIcon } from "~shared/resources/icons/stats/StatsIcon";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { AppRotes, RoutePath } from "~shared/config/routeConfig/routeConfig";
+import { RoutePath } from "~shared/config/routeConfig/routeConfig";
+import { useAppDispatch, useAppSelector } from "~store";
+import { AppRotes, setCurrentPage } from "~app/reducers/router-slice";
 
 interface FooterButtonsProps {
     className?: string;
 }
 
 export const FooterButtons = ({ className }: FooterButtonsProps) => {
-    const [currentPage, setCurrentPage] = useState<string>(RoutePath.main);
+    const dispatch = useAppDispatch();
+    const currentPage = useAppSelector(state => state.router.currentPage);
 
     return (
         <div className={classNames(styles.FooterButtons, {}, [className])}>
             <Link to={RoutePath.main}>
                 <Button
                     className={styles.footerButton}
-                    theme={currentPage === RoutePath.main ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
-                    onClick={() => setCurrentPage(RoutePath.main)}
+                    theme={currentPage === AppRotes.MAIN ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+                    onClick={() => dispatch(setCurrentPage(AppRotes.MAIN))}
                 >
-                    <TimerIcon color={currentPage === RoutePath.main ? "var(--contrast-color)" : "#040404"} />
+                    <TimerIcon color={currentPage === AppRotes.MAIN ? "var(--contrast-color)" : "#040404"} />
                 </Button>
             </Link>
 
             <Link to={RoutePath.tasks}>
                 <Button
                     className={styles.footerButton}
-                    theme={currentPage === RoutePath.tasks ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
-                    onClick={() => setCurrentPage(RoutePath.tasks)}
+                    theme={currentPage === AppRotes.TASKS ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+                    onClick={() => dispatch(setCurrentPage(AppRotes.TASKS))}
                 >
-                    <TasksIcon color={currentPage === RoutePath.tasks ? "var(--contrast-color)" : "#040404"} />
+                    <TasksIcon color={currentPage === AppRotes.TASKS ? "var(--contrast-color)" : "#040404"} />
                 </Button>
             </Link>
 
             <Link to={RoutePath.blocker}>
                 <Button
                     className={styles.footerButton}
-                    theme={currentPage === RoutePath.blocker ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
-                    onClick={() => setCurrentPage(RoutePath.blocker)}
+                    theme={currentPage === AppRotes.BLOCKER ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+                    onClick={() => dispatch(setCurrentPage(AppRotes.BLOCKER))}
                 >
-                    <BlockIcon color={currentPage === RoutePath.blocker ? "var(--contrast-color)" : "#040404"} />
+                    <BlockIcon color={currentPage === AppRotes.BLOCKER ? "var(--contrast-color)" : "#040404"} />
                 </Button>
             </Link>
 
             <Link to={RoutePath.stats}>
                 <Button
                     className={styles.footerButton}
-                    theme={currentPage === RoutePath.stats ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
-                    onClick={() => setCurrentPage(RoutePath.stats)}
+                    theme={currentPage === AppRotes.STATS ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
+                    onClick={() => dispatch(setCurrentPage(AppRotes.STATS))}
                 >
-                    <StatsIcon color={currentPage === RoutePath.stats ? "var(--contrast-color)" : "#040404"}/>
+                    <StatsIcon color={currentPage === AppRotes.STATS ? "var(--contrast-color)" : "#040404"} />
                 </Button>
             </Link>
         </div>

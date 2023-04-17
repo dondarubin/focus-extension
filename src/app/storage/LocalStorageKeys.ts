@@ -1,5 +1,5 @@
 enum LocalStorageKeys {
-    BlockedSites = "BlockedSites"
+    INITIAL_PAGE = "INITIAL_PAGE"
 }
 
-export default LocalStorageKeys
+export default LocalStorageKeys;

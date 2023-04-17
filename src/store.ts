@@ -16,18 +16,20 @@ import { syncStorage } from "redux-persist-webextension-storage";
 
 import blockedAddresses from "~app/reducers/blockedAddresses-slice";
 import settings from "~app/reducers/settings-slice";
+import router from "~app/reducers/router-slice";
 import tomato, { TomatoStates } from "~app/reducers/tomato-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
     blockedAddresses: blockedAddresses,
     settingsValues: settings,
-    tomato: tomato
+    tomato: tomato,
+    router: router
 });
 
 const persistConfig = {
     key: "root",
-    version: 1,
+    version: 3,
     storage: syncStorage,
     enabled: false
 };
@@ -130,7 +132,8 @@ export const resetStore = () => {
         ).purge();
     });
 };
-//resetStore();
+/*resetStore();
+persistor.purge()*/
 // TODO: DELETE IN PROD!
 
 // This is what makes Redux sync properly with multiple pages

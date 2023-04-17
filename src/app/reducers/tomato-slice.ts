@@ -21,7 +21,7 @@ type TomatoTimerState = {
 }
 
 const default_state = {
-    stop: true,
+    stop: false,
     currentTaskName: "test",
     state: TomatoStates.OFF,
     clockValue: { min: 20, sec: 50 },
