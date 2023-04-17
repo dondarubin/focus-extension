@@ -15,7 +15,7 @@ const MainPage = () => {
     const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
     const [guideModalActive, setGuideModalActive] = useState(false);
 
-    // TODO: Refactor this shit
+    // TODO: Refactor this shit or replace with redux useAppState
     let initialPage = localStorage.getItem(LocalStorageKeys.INITIAL_PAGE) || RoutePath.main;
 
     function isAppRoute(path: string): path is AppRotes {

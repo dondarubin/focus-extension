@@ -101,7 +101,6 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         );
     };
 
-    // TODO create page switcher with redux
     const _renderIfTasksEmpty = () => {
         return (
             <div className={styles.emptyPageContainer}>
