@@ -9,27 +9,14 @@ import { Navigate } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { AppRotes } from "~app/reducers/router-slice";
 import LocalStorageKeys from "~app/storage/LocalStorageKeys";
+import { useInitialPage } from "~shared/hooks/useInitialPage";
 
 const MainPage = () => {
     const [settingsModalActive, setSettingsModalActive] = useState(false);
     const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
     const [guideModalActive, setGuideModalActive] = useState(false);
 
-    // TODO: Refactor this shit or replace with redux useAppState
-    let initialPage = localStorage.getItem(LocalStorageKeys.INITIAL_PAGE) || RoutePath.main;
-
-    function isAppRoute(path: string): path is AppRotes {
-        return Object.values(AppRotes).includes(path as AppRotes);
-    }
-
-    if (initialPage !== null && isAppRoute(initialPage)) {
-        initialPage = RoutePath[initialPage];
-        if (initialPage === undefined) {
-            initialPage = RoutePath.main;
-        }
-    } else {
-        initialPage = RoutePath.main;
-    }
+    const initialPage = useInitialPage();
 
     return (
         <div className={styles.MainPage}>
