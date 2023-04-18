@@ -4,7 +4,7 @@ import React, { Dispatch, FC, SetStateAction } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setState, TomatoStates } from "~app/reducers/tomato-slice";
+import { setState, setStop, TomatoStates } from "~app/reducers/tomato-slice";
 import { TimerControlButtons } from "~widgets/TimerControllButtons/TimerControlButtons";
 
 interface ContentMainPageProps {
@@ -17,17 +17,11 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
         className,
         setChooseTaskModalActive
     } = props;
-    const dispatch = useAppDispatch();
-
 
     const tomatoState = useAppSelector(state => state.tomato.state);
 
     function OnClickOpenChooseTaskModalHandler() {
         setChooseTaskModalActive((prev) => !prev);
-    }
-
-    function temp_handle() {
-        dispatch(setState(TomatoStates.OFF));
     }
 
     return (
@@ -43,9 +37,6 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
             {tomatoState === TomatoStates.FOCUS
                 ? <TimerControlButtons
                     className={styles.button}
-                    onExit={temp_handle}
-                    onPause={temp_handle}
-                    onDone={temp_handle}
                 />
                 : <Button
                     theme={ThemeButton.DEFAULT}

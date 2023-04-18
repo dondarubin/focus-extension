@@ -16,7 +16,6 @@ export const SelectFocusTime = ({ className }: SelectTimeProps) => {
         dispatch(setFocusTime(minString2Number(selected)));
     }
 
-    console.log(`${focusTimeValue} min`);
     return (
         <CustomSelect
             initValue={`${focusTimeValue} min`}

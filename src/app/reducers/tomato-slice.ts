@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { Settings } from "~app/types/Settings";
 
 export enum TomatoStates {
     OFF = "OFF",
@@ -18,15 +19,25 @@ type TomatoTimerState = {
     state: TomatoStates
     clockValue: ClockValue
     currentSessionsCount: number
+    settings: Settings
 }
+
+const default_settings = {
+    shortBreakTime: 5,
+    longBreakTime: 15,
+    sessionsCount: 4,
+    focusTime: 25
+} as Settings;
 
 const default_state = {
     stop: false,
     currentTaskName: "test",
     state: TomatoStates.OFF,
     clockValue: { min: 20, sec: 50 },
-    currentSessionsCount: 4
+    currentSessionsCount: 4,
+    settings: default_settings
 } as TomatoTimerState;
+
 
 const tomato = createSlice(
     {
@@ -39,6 +50,7 @@ const tomato = createSlice(
             },
             setState: (state, action: PayloadAction<TomatoStates>) => {
                 state.state = action.payload;
+                state.stop = false;
             },
             setClockValue: (state, action: PayloadAction<ClockValue>) => {
                 state.clockValue = action.payload;

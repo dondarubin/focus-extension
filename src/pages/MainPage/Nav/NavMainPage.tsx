@@ -32,8 +32,7 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
                 <MainIcon />
             </Button>
             {tomatoState === TomatoStates.OFF
-                ?
-                <>
+                ? <>
                     <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
                     <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
                         <Button className={classNames(styles.iconButtonSettings, {}, [])}
@@ -43,7 +42,10 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
                         </Button>
                     </div>
                 </>
-                : <TomatoStateInfo />
+                : <>
+                    <TomatoStateInfo />
+                    <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}></div>
+                </>
             }
         </nav>
     );
