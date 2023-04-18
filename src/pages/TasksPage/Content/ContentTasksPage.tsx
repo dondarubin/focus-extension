@@ -33,7 +33,7 @@ export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
     return (
         <div className={classNames(styles.ContentTasksPage, {}, [className])}>
             {/*<div className={styles.emptyTaskList}>*/}
-            {/*    <EmptyTasksListIcon color={"var(--primary-color)"} />*/}
+            {/*    <EmptyTasksListIcon primaryColor={"var(--primary-color)"} secondaryColor={"var(--secondary-color)"} />*/}
             {/*</div>*/}
 
             <div className={styles.tasksWrapper}>

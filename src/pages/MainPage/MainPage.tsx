@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MainPage.module.scss";
 import { NavMainPage } from "~pages/MainPage/Nav/NavMainPage";
 import { ContentMainPage } from "~pages/MainPage/Content/ContentMainPage";
@@ -9,11 +9,15 @@ import { Navigate } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { AppRotes } from "~app/reducers/router-slice";
 import LocalStorageKeys from "~app/storage/LocalStorageKeys";
+import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
+
+
 
 const MainPage = () => {
     const [settingsModalActive, setSettingsModalActive] = useState(false);
     const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
     const [guideModalActive, setGuideModalActive] = useState(false);
+    const [welcomeModalActive, setWelcomeModalActive] = useState(true);
 
     // TODO: Refactor this shit or replace with redux useAppState
     let initialPage = localStorage.getItem(LocalStorageKeys.INITIAL_PAGE) || RoutePath.main;
@@ -46,6 +50,9 @@ const MainPage = () => {
             />
             <GuideModal guideModalActive={guideModalActive}
                         setGuideModalActive={setGuideModalActive}
+            />
+            <WelcomeModal welcomeModalActive={welcomeModalActive}
+                          setWelcomeModalActive={setWelcomeModalActive}
             />
         </div>
     );
