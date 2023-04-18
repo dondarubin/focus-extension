@@ -2,11 +2,20 @@ import React from "react";
 
 export const PlayIcon = () => {
     return (
-        <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M16.5 9.13397C17.1667 9.51887 17.1667 10.4811 16.5 10.866L1.5 19.5263C0.833333 19.9112 0 19.4301 0 18.6603V1.33975C0 0.569945 0.833333 0.0888208 1.5 0.473721L16.5 9.13397Z"
-                fill="white" />
+        <svg style={{ marginRight: "1px" }} width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_1512_3204)">
+                <path
+                    d="M21 10.2679C22.3333 11.0377 22.3333 12.9623 21 13.7321L7.5 21.5263C6.16667 22.2961 4.5 21.3338 4.5 19.7942V4.20577C4.5 2.66617 6.16667 1.70392 7.5 2.47372L21 10.2679Z"
+                    fill="white" />
+            </g>
+            <defs>
+                <clipPath id="clip0_1512_3204">
+                    <rect width="24" height="24" fill="white" />
+                </clipPath>
+            </defs>
         </svg>
+
     );
 };
 

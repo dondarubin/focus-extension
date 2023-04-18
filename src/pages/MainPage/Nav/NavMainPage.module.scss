@@ -1,11 +1,11 @@
 .NavMainPage {
   color: #9FB4F6;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
   height: var(--mp-nav-height);
-  padding-top: 20px;
+  padding: 30px 30px 0 30px;
 }
 
 .title {

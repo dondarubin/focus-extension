@@ -30,7 +30,7 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
             {
                 tomatoState !== TomatoStates.OFF
                     ? <AnimatedTimer className={styles.animatedTimerContainer} />
-                    : <div style={{ width: "440px", height: "45px" }}></div>
+                    : <div className={styles.animatedTimerContainer}></div>
             }
             <p className={classNames(styles.clock)}>25:00</p>
 
