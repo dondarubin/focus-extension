@@ -1,9 +1,11 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./WelcomeModal.module.scss";
 import { Modal } from "~shared/ui/Modal/Modal";
 import { WelcomeIcon } from "~shared/resources/icons/people/WelcomeIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { SkipIcon } from "~shared/resources/icons/arrow/SkipIcon";
+import { WelcomeSlider } from "~widgets/Slider/WelcomeSlider";
 
 interface WelcomeModalProps {
     className?: string;
@@ -12,6 +14,7 @@ interface WelcomeModalProps {
 }
 
 export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
+    const [getStarted, setGetStarted] = useState(false);
 
     const {
         className,
@@ -19,21 +22,57 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
         setWelcomeModalActive
     } = props;
 
+    function OnClickGetStartedHandler() {
+        setGetStarted((prev) => !prev);
+    }
 
-    return (
-        <Modal className={classNames(styles.WelcomeModal, {}, [className])}
-               modalActive={welcomeModalActive}
-               setModalActive={setWelcomeModalActive}
-        >
+    function OnClickCloseWelcomeModalHandler() {
+        setWelcomeModalActive((prev) => !prev);
+    }
+
+
+    const GetStarted = () => {
+        return (
             <div className={styles.welcomeWrapper}>
                 <WelcomeIcon primaryColor={"var(--primary-color)"} secondaryColor={"var(--secondary-color)"} />
 
                 <Button className={styles.button}
                         theme={ThemeButton.DEFAULT}
+                        OnClick={OnClickGetStartedHandler}
                 >
                     Get started
                 </Button>
             </div>
+        );
+    };
+
+    const WelcomeModal = () => {
+        return (
+            <>
+                <nav className={styles.nav}>
+                    <div className={styles.skip}
+                         onClick={OnClickCloseWelcomeModalHandler}
+                    >
+                        <span>Skip</span>
+                        <SkipIcon />
+                    </div>
+                </nav>
+
+                <div className={styles.content}>
+                    <WelcomeSlider />
+                </div>
+            </>
+        );
+    };
+
+
+    return (
+        <Modal className={classNames(styles.WelcomeModal, {}, [className])}
+               SetCloseButton={false}
+               modalActive={welcomeModalActive}
+               setModalActive={setWelcomeModalActive}
+        >
+            {!getStarted ? GetStarted() : WelcomeModal()}
         </Modal>
     );
 };

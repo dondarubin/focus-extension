@@ -2,6 +2,7 @@ import styles from "./ContentTasksPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { EmptyTasksListIcon } from "~shared/resources/icons/people/EmptyTasksListIcon";
 import { DownArrowIcon } from "~shared/resources/icons/arrow/DownArrowIcon";
+import { CalendarSection } from "~pages/TasksPage/Nav/CalendarSection/CalendarSection";
 
 interface ContentTasksPageProps {
     className?: string;
@@ -32,11 +33,17 @@ export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
 
     return (
         <div className={classNames(styles.ContentTasksPage, {}, [className])}>
+            <CalendarSection />
+
+
             {/*<div className={styles.emptyTaskList}>*/}
             {/*    <EmptyTasksListIcon primaryColor={"var(--primary-color)"} secondaryColor={"var(--secondary-color)"} />*/}
             {/*</div>*/}
 
             <div className={styles.tasksWrapper}>
+                {taskCard("Make a prototype for pomodoro timer", "5x Sessions")}
+                {taskCard("U/X Research", "0 Sessions")}
+                {taskCard("U/X Research", "0 Sessions")}
                 {taskCard("Make a prototype for pomodoro timer", "5x Sessions")}
                 {taskCard("U/X Research", "0 Sessions")}
                 {taskCard("U/X Research", "0 Sessions")}
