@@ -10,11 +10,17 @@ const App = () => {
     const { theme } = useTheme();
     const documentRef = useRef(document);
 
+    function handleTabKeyClick(e: KeyboardEvent) {
+        if (e.key === "Tab") {
+            e.preventDefault();
+        }
+    }
+
     useEffect(() => {
-        documentRef.current.addEventListener("click", handleClickOutside);
-        
+        documentRef.current.addEventListener("keydown", handleTabKeyClick);
+
         return () => {
-            documentRef.current.removeEventListener("click", handleClickOutside);
+            documentRef.current.removeEventListener("keydown", handleTabKeyClick);
         };
     }, [documentRef]);
 
