@@ -39,12 +39,12 @@ const MainPage = () => {
             <GuideModal guideModalActive={guideModalActive}
                         setGuideModalActive={setGuideModalActive}
             />
-            {showWelcome === null
-                ? <WelcomeModal
-                    welcomeModalActive={welcomeModalActive}
-                    setWelcomeModalActive={setWelcomeModalActive}
-                />
-                : <></>
+            {!showWelcome
+                ??
+              <WelcomeModal
+                welcomeModalActive={welcomeModalActive}
+                setWelcomeModalActive={setWelcomeModalActive}
+              />
             }
         </div>
     );
