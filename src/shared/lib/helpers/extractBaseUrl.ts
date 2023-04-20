@@ -6,6 +6,11 @@ export function extractBaseUrl(url: string): string | null {
 
         if (url.indexOf(".") === -1) {
             return null;
+        } else {
+            const dotIndex = url.indexOf(".");
+            if (url.length === dotIndex + 1) {
+                return null;
+            }
         }
 
         const parsedUrl = new URL(url);
