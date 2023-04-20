@@ -8,15 +8,15 @@ import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
 
 const App = () => {
     const { theme } = useTheme();
-    const documentRef = useRef(document);
-
-    useEffect(() => {
-        documentRef.current.addEventListener("click", handleClickOutside);
-        
-        return () => {
-            documentRef.current.removeEventListener("click", handleClickOutside);
-        };
-    }, [documentRef]);
+    // const documentRef = useRef(document);
+    //
+    // useEffect(() => {
+    //     documentRef.current.addEventListener("click", handleClickOutside);
+    //
+    //     return () => {
+    //         documentRef.current.removeEventListener("click", handleClickOutside);
+    //     };
+    // }, [documentRef]);
 
     return (
         <div className={classNames("app", {}, [theme])}>
