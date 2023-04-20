@@ -18,6 +18,11 @@ const MainPage = () => {
 
     const initialPage = useInitialPage();
 
+    let showWelcome = localStorage.getItem("SHOW_WELCOME");
+    if (!showWelcome) {
+        localStorage.setItem("SHOW_WELCOME", "");
+    }
+
     return (
         <div className={styles.MainPage}>
             {initialPage !== RoutePath.main && <Navigate replace to={initialPage} />}
@@ -34,9 +39,13 @@ const MainPage = () => {
             <GuideModal guideModalActive={guideModalActive}
                         setGuideModalActive={setGuideModalActive}
             />
-            {/*<WelcomeModal welcomeModalActive={welcomeModalActive}
-                          setWelcomeModalActive={setWelcomeModalActive}
-            />*/}
+            {showWelcome === null
+                ? <WelcomeModal
+                    welcomeModalActive={welcomeModalActive}
+                    setWelcomeModalActive={setWelcomeModalActive}
+                />
+                : <></>
+            }
         </div>
     );
 };
