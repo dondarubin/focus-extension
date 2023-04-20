@@ -30,14 +30,14 @@ export const VerticalCalendar: FC<VerticalCalendarProps> = (props) => {
                 break;
         }
         //temp
-
+        //TODO: Create dates validator
         return (
             <Button
                 key={i}
                 className={classNames(styles.dateButton, {}, [additionalClass])}
                 theme={ThemeButton.CLEAR}>
                 <p>Mon</p>
-                <p>{formatNumber(i)}</p
+                <p>{formatNumber(i + 1)}</p
                 >
             </Button>
         );
