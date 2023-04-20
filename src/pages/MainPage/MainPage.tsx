@@ -10,6 +10,7 @@ import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { useInitialPage } from "~shared/hooks/useInitialPage";
 import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
 import { useAppSelector } from "~store";
+import { useShowWelcome } from "~shared/hooks/useShowWelcome";
 
 const MainPage = () => {
     const [settingsModalActive, setSettingsModalActive] = useState(false);
@@ -18,11 +19,7 @@ const MainPage = () => {
     const [welcomeModalActive, setWelcomeModalActive] = useState(true);
 
     const initialPage = useInitialPage();
-
-    let showWelcome = localStorage.getItem("SHOW_WELCOME");
-    if (!showWelcome) {
-        localStorage.setItem("SHOW_WELCOME", "");
-    }
+    const showWelcome = useShowWelcome();
 
     return (
         <div className={styles.MainPage}>
