@@ -30,6 +30,10 @@
 
   & > span {
     color: #040404;
+    max-width: 324px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 

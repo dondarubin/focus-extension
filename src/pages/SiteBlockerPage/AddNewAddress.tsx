@@ -7,6 +7,10 @@ import { useInput } from "~shared/hooks/useInput";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
 import { useAppDispatch } from "~store";
 import { addAddress } from "~app/reducers/blockedAddresses-slice";
+import { extractBaseUrl } from "~shared/lib/helpers/extractBaseUrl";
+import notify = chrome.fileSystemProvider.notify;
+import notifications = chrome.contentSettings.notifications;
+import { toast } from "react-toastify";
 
 type AddNewAddressProps = {
     className?: string
@@ -31,8 +35,13 @@ export const AddNewAddress: FC<AddNewAddressProps> = (props) => {
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        dispatch(addAddress(newBlockedAddress(value, true)));
-        clear();
+        let _value = extractBaseUrl(value);
+        if (_value !== null) {
+            dispatch(addAddress(newBlockedAddress(_value, true)));
+            clear();
+        } else {
+            toast.error("Invalid url");
+        }
     }
 
     return (
