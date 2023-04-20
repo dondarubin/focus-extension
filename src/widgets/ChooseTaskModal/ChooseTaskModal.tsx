@@ -18,7 +18,7 @@ interface ChooseTaskModalProps {
 }
 
 const mock_tasks = [
-    {
+    /*{
         name: "Make a prototype for pomodoro timer",
         time: "Today"
     },
@@ -33,7 +33,7 @@ const mock_tasks = [
     {
         name: "Make a prototype for pomodoro timer",
         time: "Today"
-    }
+    }*/
 ];
 
 

@@ -4,7 +4,6 @@ import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { LeftArrowIcon } from "~shared/resources/icons/arrow/LeftArrowIcon";
 import { RightArrowIcon } from "~shared/resources/icons/arrow/RightArrowIcon";
-import { DotIcon } from "~shared/resources/icons/DotIcon";
 
 type VerticalCalendarProps = {
     className?: string
