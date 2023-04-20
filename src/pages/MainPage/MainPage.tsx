@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MainPage.module.scss";
 import { NavMainPage } from "~pages/MainPage/Nav/NavMainPage";
 import { ContentMainPage } from "~pages/MainPage/Content/ContentMainPage";
@@ -7,14 +7,14 @@ import { ChooseTaskModal } from "~widgets/ChooseTaskModal/ChooseTaskModal";
 import { GuideModal } from "~widgets/GuideModal/GuideModal";
 import { Navigate } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
-import { AppRotes } from "~app/reducers/router-slice";
-import LocalStorageKeys from "~app/storage/LocalStorageKeys";
 import { useInitialPage } from "~shared/hooks/useInitialPage";
+import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
 
 const MainPage = () => {
     const [settingsModalActive, setSettingsModalActive] = useState(false);
     const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
     const [guideModalActive, setGuideModalActive] = useState(false);
+    const [welcomeModalActive, setWelcomeModalActive] = useState(true);
 
     const initialPage = useInitialPage();
 
@@ -34,6 +34,9 @@ const MainPage = () => {
             <GuideModal guideModalActive={guideModalActive}
                         setGuideModalActive={setGuideModalActive}
             />
+            {/*<WelcomeModal welcomeModalActive={welcomeModalActive}
+                          setWelcomeModalActive={setWelcomeModalActive}
+            />*/}
         </div>
     );
 };

@@ -11,6 +11,7 @@ interface ModalProps {
     setModalActive: Dispatch<SetStateAction<boolean>>;
     className?: string;
     children?: ReactNode;
+    SetCloseButton?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
@@ -18,7 +19,8 @@ export const Modal: FC<ModalProps> = (props) => {
         modalActive,
         setModalActive,
         className,
-        children
+        children,
+        SetCloseButton = true
     } = props;
 
     function OnClickCloseModalHandler() {
@@ -31,11 +33,14 @@ export const Modal: FC<ModalProps> = (props) => {
             modalActive ? styles.active : ""
         ])}>
             <div className={styles.modalContent}>
-                <Button className={styles.modalButton}
-                        onClick={OnClickCloseModalHandler}
-                        theme={ThemeButton.CLEAR}>
-                    <CloseIcon />
-                </Button>
+                {SetCloseButton ?
+                    <Button className={styles.modalButton}
+                            onClick={OnClickCloseModalHandler}
+                            theme={ThemeButton.CLEAR}>
+                        <CloseIcon />
+                    </Button>
+                    : <></>
+                }
                 {children}
             </div>
         </div>

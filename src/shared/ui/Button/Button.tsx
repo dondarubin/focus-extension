@@ -10,7 +10,7 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ThemeButton;
-    onClick?: MouseEventHandler<any>;
+    OnClick?: MouseEventHandler<any>;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -18,7 +18,7 @@ export const Button: FC<ButtonProps> = (props) => {
         className,
         theme,
         children,
-        onClick,
+        OnClick,
         ...otherProps
     } = props;
 
@@ -31,7 +31,7 @@ export const Button: FC<ButtonProps> = (props) => {
                 {},
                 [className, styles[theme]]
             )}
-            onClick={onClick}
+            onClick={OnClick}
             {...otherProps}
         >
             {children}

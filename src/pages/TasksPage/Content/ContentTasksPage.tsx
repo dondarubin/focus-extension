@@ -33,10 +33,13 @@ export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
     return (
         <div className={classNames(styles.ContentTasksPage, {}, [className])}>
             {/*<div className={styles.emptyTaskList}>*/}
-            {/*    <EmptyTasksListIcon color={"var(--primary-color)"} />*/}
+            {/*    <EmptyTasksListIcon primaryColor={"var(--primary-color)"} secondaryColor={"var(--secondary-color)"} />*/}
             {/*</div>*/}
 
             <div className={styles.tasksWrapper}>
+                {taskCard("Make a prototype for pomodoro timer", "5x Sessions")}
+                {taskCard("U/X Research", "0 Sessions")}
+                {taskCard("U/X Research", "0 Sessions")}
                 {taskCard("Make a prototype for pomodoro timer", "5x Sessions")}
                 {taskCard("U/X Research", "0 Sessions")}
                 {taskCard("U/X Research", "0 Sessions")}
