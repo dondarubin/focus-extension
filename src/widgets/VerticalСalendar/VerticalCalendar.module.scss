@@ -1,0 +1,66 @@
+.wrapper {
+  width: 475px;
+  height: 90px;
+  padding-top: 25px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftArrow {
+  width: 10px;
+  height: 22px;
+
+  & > svg {
+    cursor: pointer;
+  }
+
+  &:hover > svg > path {
+    stroke: var(--primary-color);
+  }
+}
+
+.rightArrow {
+  width: 10px;
+  height: 22px;
+
+  & > svg {
+    cursor: pointer;
+  }
+
+  &:hover > svg > path {
+    stroke: var(--primary-color);
+  }
+}
+
+.calendarContainer {
+  width: 435px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  gap: 7px
+}
+
+.dateButton {
+  flex-direction: column;
+  width: 56px;
+  height: 52px;
+  box-shadow: none;
+  font: var(--font-btn);
+  border: 1px solid #040404;
+  border-radius: 5px;
+  color: #26282B;
+  background: white;
+}
+
+.dateButtonWithTasks {
+  border: 2px solid #687FC9;
+}
+
+.dateButtonSelected {
+  color: white;
+  background: var(--primary-color);
+  box-shadow: 1px 2px black;
+}
+

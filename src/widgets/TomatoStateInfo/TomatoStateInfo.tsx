@@ -49,7 +49,7 @@ export const TomatoStateInfo: FC<TomatoStateInfoProps> = (props) => {
                         </p>
                 }
             </div>
-            <SessionsDotsIndicator allDotsCount={settingsSessionsCount} coloredDotsCount={1} />
+            <SessionsDotsIndicator allDotsCount={settingsSessionsCount} coloredDotsCount={3} />
         </div>
     );
 };

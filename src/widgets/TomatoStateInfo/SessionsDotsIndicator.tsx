@@ -15,18 +15,16 @@ export const SessionsDotsIndicator: FC<SessionsDotsIndicatorProps> = (props) => 
         coloredDotsCount
     } = props;
 
-    const _dots = () => {
-        const dots: ReactNode[] = [];
-        for (let i = 0; i < allDotsCount; i++) {
-            const color = i > coloredDotsCount - 1 ? "white" : "var(--primary-color)";
-            dots.push(<DotIcon key={i} color={color} />);
-        }
-        return dots;
-    };
+    const dots = Array.from({ length: allDotsCount }, (_, i) => {
+        const color = i > coloredDotsCount - 1 ? "white" : "var(--primary-color)";
+        return (
+            <DotIcon key={i} color={color} />
+        );
+    });
 
     return (
         <div className={classNames(styles.dotsContainer)}>
-            {_dots().map(dot => dot)}
+            {dots}
         </div>
     );
 };
