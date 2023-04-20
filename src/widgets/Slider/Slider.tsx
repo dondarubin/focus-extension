@@ -1,7 +1,7 @@
 import styles from "./Slider.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import type { FC } from "react";
-import React, { Dispatch, SetStateAction, useRef, useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { FirstSliderIcon } from "~shared/resources/icons/people/slider/FirstSliderIcon";
 import { SecondSliderIcon } from "~shared/resources/icons/people/slider/SecondSliderIcon";
 import { ThirdSliderIcon } from "~shared/resources/icons/people/slider/ThirdSliderIcon";
