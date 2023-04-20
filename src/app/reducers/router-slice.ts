@@ -19,7 +19,6 @@ const router = createSlice(
         reducers: {
             setCurrentPage: (state, action: PayloadAction<AppRotes>) => {
                 state.currentPage = action.payload;
-                localStorage.setItem(LocalStorageKeys.INITIAL_PAGE, action.payload);
             }
         }
     }

@@ -132,8 +132,8 @@ export const resetStore = () => {
         ).purge();
     });
 };
-/*resetStore();
-persistor.purge()*/
+resetStore();
+persistor.purge()
 // TODO: DELETE IN PROD!
 
 // This is what makes Redux sync properly with multiple pages

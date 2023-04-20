@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { useInitialPage } from "~shared/hooks/useInitialPage";
 import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
+import { useAppSelector } from "~store";
 
 const MainPage = () => {
     const [settingsModalActive, setSettingsModalActive] = useState(false);
