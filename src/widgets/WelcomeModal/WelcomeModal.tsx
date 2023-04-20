@@ -5,7 +5,7 @@ import { Modal } from "~shared/ui/Modal/Modal";
 import { WelcomeIcon } from "~shared/resources/icons/people/WelcomeIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { SkipIcon } from "~shared/resources/icons/arrow/SkipIcon";
-import { WelcomeSlider } from "~widgets/Slider/WelcomeSlider";
+import { Slider } from "~widgets/Slider/Slider";
 
 interface WelcomeModalProps {
     className?: string;
@@ -59,7 +59,7 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
                 </nav>
 
                 <div className={styles.content}>
-                    <WelcomeSlider />
+                    <Slider setWelcomeModalActive={OnClickCloseWelcomeModalHandler} />
                 </div>
             </>
         );

@@ -1,0 +1,57 @@
+.Slider {
+    width: 100%;
+    height: 545px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sliderItemWrapper {
+    width: 300px;
+    height: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footerWrapper {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.dotsWrapper {
+    display: flex;
+}
+
+.dots {
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+
+.dot {
+    background-color: black;
+    width: 6px;
+    height: 6px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: .3s ease width;
+}
+
+.dot:last-child {
+    margin-right: 0;
+}
+
+.active {
+    width: 25px;
+}
+
+.nextButton {
+    width: 274px;
+    height: 40px;
+    font: var(--font-small);
+}
