@@ -24,7 +24,7 @@ const MainPage = () => {
             <SettingsModal />
             <ChooseTaskModal />
             <GuideModal />
-
+            
             <NavMainPage />
             <ContentMainPage />
 
