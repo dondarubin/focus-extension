@@ -9,37 +9,38 @@ import { SelectShortBreak } from "~widgets/SelectShortBreak/SelectShortBreak";
 import { SelectLongBreak } from "~widgets/SelectLongBreak/SelectLongBreak";
 import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { useAppDispatch, useAppSelector } from "~store";
+import { setGuideModalActive, setSettingsModalActive } from "~app/reducers/modals-slice";
 
 interface SettingsModalProps {
     className?: string;
-    settingsModalActive: boolean;
-    setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
-    setGuideModalActive: Dispatch<SetStateAction<boolean>>;
     children?: ReactNode;
 }
 
 export const SettingsModal: FC<SettingsModalProps> = (props) => {
     const {
-        className,
-        settingsModalActive,
-        setSettingsModalActive,
-        setGuideModalActive
+        className
     } = props;
 
-    function OnClickCloseSettingsModalHandler() {
-        setSettingsModalActive((prev) => !prev);
+    const settingsModalState = useAppSelector(state => state.modal.settingsModalActive);
+    const dispatch = useAppDispatch();
+
+
+    function OnClickCloseSettingsModalHandler(){
+        dispatch(setSettingsModalActive(false))
     }
 
     function OnClickOpenGuideModalHandler() {
-        setGuideModalActive((prev) => !prev);
+        dispatch(setGuideModalActive(true))
     }
 
 
     return (
         <Modal
             className={classNames(styles.SettingsModal, {}, [className])}
-            modalActive={settingsModalActive}
-            setModalActive={setSettingsModalActive}>
+            modalActive={settingsModalState}
+            setModalActive={OnClickCloseSettingsModalHandler}
+        >
             <div className={styles.title}>
                 Settings
             </div>

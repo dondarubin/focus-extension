@@ -7,10 +7,11 @@ import { SecondSliderIcon } from "~shared/resources/icons/people/slider/SecondSl
 import { ThirdSliderIcon } from "~shared/resources/icons/people/slider/ThirdSliderIcon";
 import { FourthSliderIcon } from "~shared/resources/icons/people/slider/FourthSliderIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { useAppDispatch } from "~store";
+import { setWelcomeModalActive } from "~app/reducers/modals-slice";
 
 interface SliderProps {
     className?: string;
-    setWelcomeModalActive: Dispatch<SetStateAction<boolean>>;
 }
 
 const SliderItems = [
@@ -23,21 +24,20 @@ const SliderItems = [
 export const Slider: FC<SliderProps> = (props) => {
     const {
         className,
-        setWelcomeModalActive
     } = props;
 
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
     const [currentItem, setCurrentItem] = useState(SliderItems[currentItemIndex]);
+    const dispatch = useAppDispatch();
 
 
     function OnClickSwitchSliderImageHandler() {
         setCurrentItem(SliderItems[currentItemIndex + 1]);
         setCurrentItemIndex(currentItemIndex + 1);
-
     }
 
     function OnClickCloseWelcomeModalHandler() {
-        setWelcomeModalActive((prev) => !prev);
+        dispatch(setWelcomeModalActive(false));
     }
 
 

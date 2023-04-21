@@ -11,11 +11,6 @@ import { useInitialPage } from "~shared/hooks/useInitialPage";
 import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
 
 const MainPage = () => {
-    const [settingsModalActive, setSettingsModalActive] = useState(false);
-    const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
-    const [guideModalActive, setGuideModalActive] = useState(false);
-    const [welcomeModalActive, setWelcomeModalActive] = useState(true);
-
     const initialPage = useInitialPage();
 
     let showWelcome = localStorage.getItem("SHOW_WELCOME");
@@ -26,27 +21,14 @@ const MainPage = () => {
     return (
         <div className={styles.MainPage}>
             {initialPage !== RoutePath.main && <Navigate replace to={initialPage} />}
-            <NavMainPage setSettingsModalActive={setSettingsModalActive} />
-            <ContentMainPage setChooseTaskModalActive={setChooseTaskModalActive} />
+            <SettingsModal />
+            <ChooseTaskModal />
+            <GuideModal />
 
-            <SettingsModal settingsModalActive={settingsModalActive}
-                           setSettingsModalActive={setSettingsModalActive}
-                           setGuideModalActive={setGuideModalActive}
-            />
-            <ChooseTaskModal chooseTaskModalActive={chooseTaskModalActive}
-                             setChooseTaskModalActive={setChooseTaskModalActive}
-            />
-            <GuideModal guideModalActive={guideModalActive}
-                        setGuideModalActive={setGuideModalActive}
-            />
+            <NavMainPage />
+            <ContentMainPage />
 
-            {showWelcome === null
-                ? <WelcomeModal
-                    welcomeModalActive={welcomeModalActive}
-                    setWelcomeModalActive={setWelcomeModalActive}
-                />
-                : <></>
-            }
+            {showWelcome === null ? <WelcomeModal /> : <></>}
         </div>
     );
 };
