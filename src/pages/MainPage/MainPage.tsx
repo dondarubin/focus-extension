@@ -39,6 +39,7 @@ const MainPage = () => {
             <GuideModal guideModalActive={guideModalActive}
                         setGuideModalActive={setGuideModalActive}
             />
+
             {showWelcome === null
                 ? <WelcomeModal
                     welcomeModalActive={welcomeModalActive}
