@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import styles from "./VerticalCalendar.module.scss";
+import styles from "./HorizontalCalendar.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { LeftArrowIcon } from "~shared/resources/icons/arrow/LeftArrowIcon";
@@ -9,7 +9,7 @@ type VerticalCalendarProps = {
     className?: string
 }
 
-export const VerticalCalendar: FC<VerticalCalendarProps> = (props) => {
+export const HorizontalCalendar: FC<VerticalCalendarProps> = (props) => {
     const {
         className
     } = props;

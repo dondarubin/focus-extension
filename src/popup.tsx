@@ -6,11 +6,16 @@ import { persistor, store } from "~store";
 import { PersistGate } from "@plasmohq/redux-persist/es/integration/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DotLoader } from "~shared/ui/Loaders/DotLoader/DotLoader";
+
 
 function IndexPopup() {
     return (
         <Provider store={store}>
-            <PersistGate persistor={persistor} loading={null}>
+            <PersistGate persistor={persistor} loading={
+                <DotLoader />
+            }
+            >
                 <ThemeProvider>
                     <ToastContainer />
                     <App />

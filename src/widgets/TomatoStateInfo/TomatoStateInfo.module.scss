@@ -1,49 +1,45 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tomatoStateName {
-    cursor: default;
-    font: var(--font-btn);
-    color: var(--secondary-color);
+  cursor: default;
+  font: var(--font-btn);
+  color: var(--secondary-color);
 }
 
 .taskNameContainer {
-    width: 221px;
-    height: 21px;
+  width: 221px;
+  height: 21px;
 }
 
 .taskName {
-    margin-top: 2px;
-    font: var(--font-body-regular);
-    color: #040404;
-    cursor: pointer;
-    width: 221px;
-    height: 21px;
-    background: none;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  margin-top: 2px;
+  font: var(--font-body-regular);
+  color: #040404;
+  cursor: pointer;
+  width: 221px;
+  height: 21px;
+  background: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .marquee p {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 
 .taskNameStatic {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-// session dots indicator
-
-.dotsContainer {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 6px;
+.dotsIndicator {
+  margin-top: 10px;
 }
+

@@ -3,7 +3,7 @@ import styles from "./TomatoStateInfo.module.scss";
 import { useAppSelector } from "~store";
 import Marquee from "react-fast-marquee";
 import { classNames } from "~shared/lib/classNames/classNames";
-import { SessionsDotsIndicator } from "~widgets/TomatoStateInfo/SessionsDotsIndicator";
+import { SessionsDotsIndicator } from "~widgets/SessionsDontsIndicator/SessionsDotsIndicator";
 
 type TomatoStateInfoProps = {}
 
@@ -49,7 +49,7 @@ export const TomatoStateInfo: FC<TomatoStateInfoProps> = (props) => {
                         </p>
                 }
             </div>
-            <SessionsDotsIndicator allDotsCount={settingsSessionsCount} coloredDotsCount={3} />
+            <SessionsDotsIndicator className={styles.dotsIndicator} />
         </div>
     );
 };

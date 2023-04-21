@@ -12,7 +12,7 @@ export const InfoSection = ({ className }: InfoSectionProps) => {
         <div className={classNames(styles.InfoSection, {}, [className])}>
             <div className={styles.taskInfo}>
                 <div className={styles.taskCount}>
-                    0 Tasks today
+                    April 22
                 </div>
                 <span className={styles.taskDescription}>
                     Set tasks and complete them

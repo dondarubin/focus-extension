@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "~pages/SiteBlockerPage/SiteBlocker.module.scss";
-import { AddressBlocker } from "~widgets/AddressBlocker/AddressBlocker";
+import { AddressCard } from "~widgets/AddressBlocker/AddressCard";
 import { newBlockedAddress } from "~app/types/BlockedAddress";
 import { blockAll, removeAddress, updateAddress } from "~app/reducers/blockedAddresses-slice";
 import { useAppDispatch, useAppSelector } from "~store";
@@ -51,7 +51,7 @@ export const AddressesList: FC<AddressesListProps> = (props) => {
             <>
                 {addresses.addresses.map((addr, index) => {
                     return (
-                        <AddressBlocker
+                        <AddressCard
                             className={""}
                             key={addr.addr}
                             address={newBlockedAddress(addr.addr, addr.blocked)}

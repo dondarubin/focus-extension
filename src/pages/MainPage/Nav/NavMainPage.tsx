@@ -7,26 +7,23 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { useAppDispatch, useAppSelector } from "~store";
 import { TomatoStates } from "~app/reducers/tomato-slice";
 import { TomatoStateInfo } from "~widgets/TomatoStateInfo/TomatoStateInfo";
-import { useDispatch } from "react-redux";
 import { setSettingsModalActive } from "~app/reducers/modals-slice";
+import { SessionsDotsIndicator } from "~widgets/SessionsDontsIndicator/SessionsDotsIndicator";
 
 interface NavMainPageProps {
-    // setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
     className?: string;
 }
 
 export const NavMainPage: FC<NavMainPageProps> = (props) => {
     const {
         className
-        // setSettingsModalActive
     } = props;
 
     const tomatoState = useAppSelector(state => state.tomato.state);
     const dispatch = useAppDispatch();
 
     function OnClickOpenSettingsModalHandler() {
-        dispatch(setSettingsModalActive(true))
-        // setSettingsModalActive((prev) => !prev);
+        dispatch(setSettingsModalActive(true));
     }
 
     return (
@@ -37,7 +34,10 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
             </Button>
             {tomatoState === TomatoStates.OFF
                 ? <>
-                    <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
+                    <div className={styles.titleContainer}>
+                        <p className={classNames(styles.title, {}, [])}>walletadress.ada</p>
+                        <SessionsDotsIndicator />
+                    </div>
                     <div className={classNames(styles.iconButtonSettingsWrapper, {}, [])}>
                         <Button className={classNames(styles.iconButtonSettings, {}, [])}
                                 onClick={OnClickOpenSettingsModalHandler}

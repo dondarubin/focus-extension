@@ -1,7 +1,7 @@
 import styles from "./NavTaskPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { InfoSection } from "~pages/TasksPage/Nav/InfoSection/InfoSection";
-import { VerticalCalendar } from "~widgets/VerticalСalendar/VerticalCalendar";
+import { HorizontalCalendar } from "~widgets/VerticalСalendar/HorizontalCalendar";
 
 
 interface NavTaskPageProps {
@@ -12,7 +12,7 @@ export const NavTaskPage = ({ className }: NavTaskPageProps) => {
     return (
         <nav className={classNames(styles.NavTaskPage, {}, [className])}>
             <InfoSection />
-            <VerticalCalendar />
+            <HorizontalCalendar />
         </nav>
     );
 };

@@ -1,0 +1,66 @@
+.taskCard {
+  width: 440px;
+  height: 70px;
+  background: white;
+  border: 1px solid #26282B;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  box-shadow: 1px 2px black;
+  color: black;
+  display: flex;
+  transition: transform 0.1s, box-shadow 0.1s;
+
+  &:hover {
+    box-shadow: none;
+    border: 1.5px solid #040404;
+    transform: translateX(2px) translateY(3px);
+  }
+}
+
+.priority {
+  width: 16px;
+  border-radius: 3.5px 0 0 3.5px;
+  border-right: 1px solid #040404;
+}
+
+.defaultPriority {
+  background: var(--primary-color);
+}
+
+.heightPriority {
+  background: #B83838;
+}
+
+
+.ContentWrapper {
+  padding: 10px 15px 10px 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.DescriptionWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  width: 100%;
+  height: 21px;
+}
+
+.sessions {
+  font: var(--font-small-2);
+  width: 100%;
+  height: 16px;
+}
+
+.date {
+  font: var(--font-small);
+  align-self: flex-end;
+}
+

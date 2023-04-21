@@ -2,8 +2,9 @@
   min-height: calc(var(--app-height) - var(--mp-nav-height) - var(--footer-height));
   display: flex;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
   flex-direction: column;
+  padding-top: 76px;
 }
 
 .clock {

@@ -1,6 +1,6 @@
 import styles from "./ContentMainPage.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, {FC} from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";

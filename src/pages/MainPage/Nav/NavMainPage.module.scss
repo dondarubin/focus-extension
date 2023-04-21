@@ -8,6 +8,15 @@
   padding: 30px 30px 0 30px;
 }
 
+.titleContainer {
+  width: 221px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .title {
   width: 221px;
   text-align: center;
@@ -17,7 +26,7 @@
 
 .iconButtonMain {
   width: 70px;
-  height: 32px;
+  height: 38px;
 
   & > svg > path:nth-child(-n + 8) {
     fill: var(--secondary-color);

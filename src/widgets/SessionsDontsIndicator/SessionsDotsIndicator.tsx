@@ -1,19 +1,18 @@
 import React, { FC, ReactNode } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
-import styles from "./TomatoStateInfo.module.scss";
+import styles from "./SessionsDotsIndicator.module.scss";
 import { DotIcon } from "~shared/resources/icons/DotIcon";
+import { useAppSelector } from "~store";
 
 type SessionsDotsIndicatorProps = {
     className?: string
-    allDotsCount: number
-    coloredDotsCount: number
 }
 
 export const SessionsDotsIndicator: FC<SessionsDotsIndicatorProps> = (props) => {
-    const {
-        allDotsCount,
-        coloredDotsCount
-    } = props;
+
+    const allDotsCount = useAppSelector(state => state.settingsValues.sessionsCount);
+    //TODO: Refactor this with using redux state
+    const coloredDotsCount = 2;
 
     const dots = Array.from({ length: allDotsCount }, (_, i) => {
         const color = i > coloredDotsCount - 1 ? "white" : "var(--primary-color)";
@@ -23,7 +22,7 @@ export const SessionsDotsIndicator: FC<SessionsDotsIndicatorProps> = (props) => 
     });
 
     return (
-        <div className={classNames(styles.dotsContainer)}>
+        <div className={classNames(styles.dotsContainer, {}, [props.className])}>
             {dots}
         </div>
     );

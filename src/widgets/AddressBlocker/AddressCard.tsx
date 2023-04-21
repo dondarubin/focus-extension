@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import styles from "./AddressBlocker.module.scss";
+import React, { FC } from "react";
+import styles from "./AddressCard.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { UnlockIcon } from "~shared/resources/icons/UnlockIcon";
@@ -16,7 +16,7 @@ type AddressBlockerProps = {
     OnDelete?: (addr: BlockedAddress) => void
 }
 
-export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
+export const AddressCard: FC<AddressBlockerProps> = (props) => {
     const {
         className,
         address,
@@ -32,8 +32,12 @@ export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
         OnDelete(address);
     }
 
+    function formatAddress(addr: string): string {
+        return addr.replace(/https?:\/\//, "");
+    }
+
     return (
-        <div className={classNames(styles.addressBlockerContainer, {}, [className])}>
+        <div className={classNames(styles.addressCardContainer, {}, [className])}>
             <Button className={classNames(styles.lockButton, {}, [!address.blocked ? "" : styles.lockButtonLocked])}
                     theme={!address.blocked ? ThemeButton.DEFAULT : ThemeButton.CLEAR}
                     onClick={handleLockButtonClick}
@@ -41,7 +45,7 @@ export const AddressBlocker: FC<AddressBlockerProps> = (props) => {
                 {!address.blocked ? <UnlockIcon color={"white"} /> : <BlockIcon color={"white"} />}
             </Button>
             <div className={styles.addressContainer}>
-                <span>{address.addr}</span>
+                <span>{formatAddress(address.addr)}</span>
                 <Button
                     className={styles.deleteButton}
                     theme={ThemeButton.CLEAR}
