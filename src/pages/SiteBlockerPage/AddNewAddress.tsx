@@ -8,8 +8,6 @@ import { newBlockedAddress } from "~app/types/BlockedAddress";
 import { useAppDispatch } from "~store";
 import { addAddress } from "~app/reducers/blockedAddresses-slice";
 import { extractBaseUrl } from "~shared/lib/helpers/extractBaseUrl";
-import notify = chrome.fileSystemProvider.notify;
-import notifications = chrome.contentSettings.notifications;
 import { toast } from "react-toastify";
 
 type AddNewAddressProps = {
