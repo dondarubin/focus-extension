@@ -18,13 +18,15 @@ import blockedAddresses from "~app/reducers/blockedAddresses-slice";
 import settings from "~app/reducers/settings-slice";
 import router from "~app/reducers/router-slice";
 import tomato, { TomatoStates } from "~app/reducers/tomato-slice";
+import modals from "~app/reducers/modals-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
     blockedAddresses: blockedAddresses,
     settingsValues: settings,
     tomato: tomato,
-    router: router
+    router: router,
+    modal: modals
 });
 
 const persistConfig = {

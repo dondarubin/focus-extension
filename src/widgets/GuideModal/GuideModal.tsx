@@ -3,24 +3,30 @@ import { classNames } from "~shared/lib/classNames/classNames";
 import { Modal } from "~shared/ui/Modal/Modal";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { GuideStepsIcon } from "~shared/resources/icons/GuideSteps/GuideStepsIcon";
+import { useAppDispatch, useAppSelector } from "~store";
+import { setGuideModalActive, setSettingsModalActive } from "~app/reducers/modals-slice";
 
 interface GuideModalProps {
-    guideModalActive: boolean;
-    setGuideModalActive: Dispatch<SetStateAction<boolean>>;
+
     className?: string;
 }
 
 export const GuideModal: FC<GuideModalProps> = (props) => {
     const {
         className,
-        guideModalActive,
-        setGuideModalActive
     } = props;
+
+    const guideModalState = useAppSelector(state => state.modal.guideModalActive);
+    const dispatch = useAppDispatch();
+
+    function OnClickCloseGuideModalHandler(){
+        dispatch(setGuideModalActive(false))
+    }
 
     return (
         <Modal className={classNames(styles.GuideModal, {}, [className])}
-               modalActive={guideModalActive}
-               setModalActive={setGuideModalActive}
+               modalActive={guideModalState}
+               setModalActive={OnClickCloseGuideModalHandler}
         >
             <div className={styles.title}>
                 What is the Pomodoro Technique

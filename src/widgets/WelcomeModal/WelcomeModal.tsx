@@ -6,28 +6,29 @@ import { WelcomeIcon } from "~shared/resources/icons/people/WelcomeIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { SkipIcon } from "~shared/resources/icons/arrow/SkipIcon";
 import { Slider } from "~widgets/Slider/Slider";
+import { useAppDispatch, useAppSelector } from "~store";
+import { setWelcomeModalActive } from "~app/reducers/modals-slice";
 
 interface WelcomeModalProps {
     className?: string;
-    welcomeModalActive: boolean;
-    setWelcomeModalActive: Dispatch<SetStateAction<boolean>>;
 }
 
 export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
     const [getStarted, setGetStarted] = useState(false);
 
     const {
-        className,
-        welcomeModalActive,
-        setWelcomeModalActive
+        className
     } = props;
+
+    const welcomeModalState = useAppSelector(state => state.modal.welcomeModalActive);
+    const dispatch = useAppDispatch();
 
     function OnClickGetStartedHandler() {
         setGetStarted((prev) => !prev);
     }
 
     function OnClickCloseWelcomeModalHandler() {
-        setWelcomeModalActive((prev) => !prev);
+        dispatch(setWelcomeModalActive(false));
     }
 
 
@@ -59,7 +60,7 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
                 </nav>
 
                 <div className={styles.content}>
-                    <Slider setWelcomeModalActive={OnClickCloseWelcomeModalHandler} />
+                    <Slider />
                 </div>
             </>
         );
@@ -69,8 +70,8 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
     return (
         <Modal className={classNames(styles.WelcomeModal, {}, [className])}
                SetCloseButton={false}
-               modalActive={welcomeModalActive}
-               setModalActive={setWelcomeModalActive}
+               modalActive={welcomeModalState}
+               setModalActive={OnClickCloseWelcomeModalHandler}
         >
             {!getStarted ? GetStarted() : WelcomeModal()}
         </Modal>

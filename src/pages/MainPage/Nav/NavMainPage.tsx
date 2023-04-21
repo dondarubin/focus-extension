@@ -4,25 +4,29 @@ import { SettingsIcon } from "~shared/resources/icons/settings/settings";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import { useAppSelector } from "~store";
+import { useAppDispatch, useAppSelector } from "~store";
 import { TomatoStates } from "~app/reducers/tomato-slice";
 import { TomatoStateInfo } from "~widgets/TomatoStateInfo/TomatoStateInfo";
+import { useDispatch } from "react-redux";
+import { setSettingsModalActive } from "~app/reducers/modals-slice";
 
 interface NavMainPageProps {
-    setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
+    // setSettingsModalActive: Dispatch<SetStateAction<boolean>>;
     className?: string;
 }
 
 export const NavMainPage: FC<NavMainPageProps> = (props) => {
     const {
-        className,
-        setSettingsModalActive
+        className
+        // setSettingsModalActive
     } = props;
 
     const tomatoState = useAppSelector(state => state.tomato.state);
+    const dispatch = useAppDispatch();
 
     function OnClickOpenSettingsModalHandler() {
-        setSettingsModalActive((prev) => !prev);
+        dispatch(setSettingsModalActive(true))
+        // setSettingsModalActive((prev) => !prev);
     }
 
     return (

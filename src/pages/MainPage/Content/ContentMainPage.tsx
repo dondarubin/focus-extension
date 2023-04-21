@@ -6,22 +6,22 @@ import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";
 import { setState, setStop, TomatoStates } from "~app/reducers/tomato-slice";
 import { TimerControlButtons } from "~widgets/TimerControllButtons/TimerControlButtons";
+import { setChooseTaskModalActive } from "~app/reducers/modals-slice";
 
 interface ContentMainPageProps {
     className?: string;
-    setChooseTaskModalActive?: Dispatch<SetStateAction<boolean>>;
 }
 
 export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
     const {
         className,
-        setChooseTaskModalActive
     } = props;
 
     const tomatoState = useAppSelector(state => state.tomato.state);
+    const dispatch = useAppDispatch();
 
     function OnClickOpenChooseTaskModalHandler() {
-        setChooseTaskModalActive((prev) => !prev);
+        dispatch(setChooseTaskModalActive(true))
     }
 
     return (

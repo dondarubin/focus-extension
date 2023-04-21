@@ -13,37 +13,20 @@ import { useAppSelector } from "~store";
 import { useShowWelcome } from "~shared/hooks/useShowWelcome";
 
 const MainPage = () => {
-    const [settingsModalActive, setSettingsModalActive] = useState(false);
-    const [chooseTaskModalActive, setChooseTaskModalActive] = useState(false);
-    const [guideModalActive, setGuideModalActive] = useState(false);
-    const [welcomeModalActive, setWelcomeModalActive] = useState(true);
-
     const initialPage = useInitialPage();
     const showWelcome = useShowWelcome();
 
     return (
         <div className={styles.MainPage}>
             {initialPage !== RoutePath.main && <Navigate replace to={initialPage} />}
-            <NavMainPage setSettingsModalActive={setSettingsModalActive} />
-            <ContentMainPage setChooseTaskModalActive={setChooseTaskModalActive} />
+            <SettingsModal />
+            <ChooseTaskModal />
+            <GuideModal />
+            
+            <NavMainPage />
+            <ContentMainPage />
 
-            <SettingsModal settingsModalActive={settingsModalActive}
-                           setSettingsModalActive={setSettingsModalActive}
-                           setGuideModalActive={setGuideModalActive}
-            />
-            <ChooseTaskModal chooseTaskModalActive={chooseTaskModalActive}
-                             setChooseTaskModalActive={setChooseTaskModalActive}
-            />
-            <GuideModal guideModalActive={guideModalActive}
-                        setGuideModalActive={setGuideModalActive}
-            />
-            {showWelcome === null
-                ? <WelcomeModal
-                    welcomeModalActive={welcomeModalActive}
-                    setWelcomeModalActive={setWelcomeModalActive}
-                />
-                : <></>
-            }
+            {showWelcome === null ? <WelcomeModal /> : <></>}
         </div>
     );
 };

@@ -3,12 +3,10 @@ import styles from "./Modal.module.scss";
 import type {FC, ReactNode} from "react";
 import {Button, ThemeButton} from "~shared/ui/Button/Button";
 import {CloseIcon} from "~shared/resources/icons/close/CloseIcon";
-import React, {Dispatch, SetStateAction} from "react";
-
 
 interface ModalProps {
     modalActive: boolean;
-    setModalActive: Dispatch<SetStateAction<boolean>>;
+    setModalActive: () => void;
     className?: string;
     children?: ReactNode;
     SetCloseButton?: boolean;
@@ -24,7 +22,7 @@ export const Modal: FC<ModalProps> = (props) => {
     } = props;
 
     function OnClickCloseModalHandler() {
-        setModalActive((prev) => !prev)
+        setModalActive();
     }
 
     return (

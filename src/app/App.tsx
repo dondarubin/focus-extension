@@ -8,6 +8,7 @@ import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
 
 const App = () => {
     const { theme } = useTheme();
+
     const documentRef = useRef(document);
 
     function handleTabKeyClick(e: KeyboardEvent) {
@@ -23,6 +24,7 @@ const App = () => {
             documentRef.current.removeEventListener("keydown", handleTabKeyClick);
         };
     }, [documentRef]);
+
 
     return (
         <div className={classNames("app", {}, [theme])}>
