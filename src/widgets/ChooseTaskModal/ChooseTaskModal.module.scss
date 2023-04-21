@@ -6,7 +6,7 @@
   width: 100%;
   height: 56px;
   padding-left: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .title {
@@ -29,6 +29,7 @@
   align-content: flex-start;
   overflow-y: scroll;
   padding-left: 30px;
+  padding-top: 4px;
 }
 
 .cardTask {
@@ -43,9 +44,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.1s, box-shadow 0.1s;
 
   &:hover {
-    
+    box-shadow: 2px 3px black;
+    border: 1.5px solid #040404;
+    transform: translateX(-2px) translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateX(0) translateY(0);
   }
 }
 
