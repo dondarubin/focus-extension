@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setState, setStop, TomatoStates } from "~app/reducers/tomato-slice";
+import { setState, TomatoStates } from "~app/reducers/tomato-slice";
 import { TimerControlButtons } from "~widgets/TimerControllButtons/TimerControlButtons";
 import { setChooseTaskModalActive } from "~app/reducers/modals-slice";
 
@@ -24,6 +24,34 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
         dispatch(setChooseTaskModalActive(true));
     }
 
+    function skipButtonHandler() {
+        dispatch(setState(TomatoStates.OFF));
+    }
+
+    const _startButton = () => {
+        return (
+            <Button
+                theme={ThemeButton.DEFAULT}
+                className={classNames(styles.button, {}, [])}
+                onClick={OnClickOpenChooseTaskModalHandler}
+            >
+                Start
+            </Button>
+        );
+    };
+
+    const _skipButton = () => {
+        return (
+            <Button
+                theme={ThemeButton.DEFAULT}
+                className={classNames(styles.button, {}, [])}
+                onClick={skipButtonHandler}
+            >
+                Skip
+            </Button>
+        );
+    };
+
     return (
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
 
@@ -38,13 +66,8 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
                 ? <TimerControlButtons
                     className={styles.button}
                 />
-                : <Button
-                    theme={ThemeButton.DEFAULT}
-                    className={classNames(styles.button, {}, [])}
-                    onClick={OnClickOpenChooseTaskModalHandler}
-                >
-                    {[TomatoStates.SHORT_BREAK, TomatoStates.LONG_BREAK].includes(tomatoState) ? "Skip" : "Start"}
-                </Button>
+                : [TomatoStates.SHORT_BREAK, TomatoStates.LONG_BREAK]
+                    .includes(tomatoState) ? _skipButton() : _startButton()
             }
         </div>
     );

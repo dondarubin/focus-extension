@@ -20,7 +20,7 @@ const MainPage = () => {
 
         <div className={styles.MainPage}>
             <_tempControls />
-            
+
             {initialPage !== RoutePath.main && <Navigate replace to={initialPage} />}
             <SettingsModal />
             <ChooseTaskModal />
