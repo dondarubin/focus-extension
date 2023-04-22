@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./MainPage.module.scss";
 import { NavMainPage } from "~pages/MainPage/Nav/NavMainPage";
 import { ContentMainPage } from "~pages/MainPage/Content/ContentMainPage";
-import { SettingsModal } from "~widgets/SettingsModal/SettingsModal";
-import { ChooseTaskModal } from "~widgets/ChooseTaskModal/ChooseTaskModal";
-import { GuideModal } from "~widgets/GuideModal/GuideModal";
+import { SettingsModal } from "~widgets/Modals/SettingsModal/SettingsModal";
+import { ChooseTaskModal } from "~widgets/Modals/ChooseTaskModal/ChooseTaskModal";
+import { GuideModal } from "~widgets/Modals/GuideModal/GuideModal";
 import { Navigate } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { useInitialPage } from "~shared/hooks/useInitialPage";
-import { WelcomeModal } from "~widgets/WelcomeModal/WelcomeModal";
+import { WelcomeModal } from "~widgets/Modals/WelcomeModal/WelcomeModal";
 import { useShowWelcome } from "~shared/hooks/useShowWelcome";
 
 const MainPage = () => {
