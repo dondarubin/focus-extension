@@ -10,22 +10,25 @@ import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { useInitialPage } from "~shared/hooks/useInitialPage";
 import { WelcomeModal } from "~widgets/Modals/WelcomeModal/WelcomeModal";
 import { useShowWelcome } from "~shared/hooks/useShowWelcome";
+import { _tempControls } from "~widgets/_tempControls/_tempControls";
 
 const MainPage = () => {
     const initialPage = useInitialPage();
     const showWelcome = useShowWelcome();
 
     return (
+
         <div className={styles.MainPage}>
+            <_tempControls />
+            
             {initialPage !== RoutePath.main && <Navigate replace to={initialPage} />}
             <SettingsModal />
             <ChooseTaskModal />
             <GuideModal />
-            
+            {showWelcome === null ? <WelcomeModal /> : <></>}
+
             <NavMainPage />
             <ContentMainPage />
-
-            {showWelcome === null ? <WelcomeModal /> : <></>}
         </div>
     );
 };

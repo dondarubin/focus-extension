@@ -7,6 +7,7 @@ import { PersistGate } from "@plasmohq/redux-persist/es/integration/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { DotLoader } from "~shared/ui/Loaders/DotLoader/DotLoader";
+import { _tempControls } from "~widgets/_tempControls/_tempControls";
 
 
 function IndexPopup() {

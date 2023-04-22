@@ -1,6 +1,6 @@
 import styles from "./ContentMainPage.module.scss";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
-import React, {FC} from "react";
+import React, { FC } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";
@@ -14,14 +14,14 @@ interface ContentMainPageProps {
 
 export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
     const {
-        className,
+        className
     } = props;
 
     const tomatoState = useAppSelector(state => state.tomato.state);
     const dispatch = useAppDispatch();
 
     function OnClickOpenChooseTaskModalHandler() {
-        dispatch(setChooseTaskModalActive(true))
+        dispatch(setChooseTaskModalActive(true));
     }
 
     return (
@@ -43,10 +43,9 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
                     className={classNames(styles.button, {}, [])}
                     onClick={OnClickOpenChooseTaskModalHandler}
                 >
-                    Start
+                    {[TomatoStates.SHORT_BREAK, TomatoStates.LONG_BREAK].includes(tomatoState) ? "Skip" : "Start"}
                 </Button>
             }
-
         </div>
     );
 };
