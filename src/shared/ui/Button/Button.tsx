@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC, MouseEventHandler } from "react";
+import type { ButtonHTMLAttributes, DetailedHTMLProps, FC, MouseEventHandler } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./Button.module.scss";
 
@@ -11,6 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ThemeButton;
     OnClick?: MouseEventHandler<any>;
+    Type?: "submit" | "reset" | "button";
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -19,13 +20,14 @@ export const Button: FC<ButtonProps> = (props) => {
         theme,
         children,
         OnClick,
+        Type = "button",
         ...otherProps
     } = props;
 
 
     return (
         <button
-            type="button"
+            type={Type}
             className={classNames(
                 styles.Button,
                 {},

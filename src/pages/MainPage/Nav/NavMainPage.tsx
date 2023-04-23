@@ -1,7 +1,7 @@
 import styles from "./NavMainPage.module.scss";
 import { MainIcon } from "~shared/resources/icons/mainIcon/mainIcon";
 import { SettingsIcon } from "~shared/resources/icons/settings/settings";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { useAppDispatch, useAppSelector } from "~store";

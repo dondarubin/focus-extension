@@ -5,14 +5,20 @@ type ModalsState = {
     chooseTaskModalActive: boolean;
     guideModalActive: boolean;
     welcomeModalActive: boolean;
+    addTaskModalActive: boolean;
+    editTaskModalActive: boolean;
+    allTasksModalActive: boolean;
 }
 
-const initialState = {
+const initialState: ModalsState = {
     settingsModalActive: false,
     chooseTaskModalActive: false,
     guideModalActive: false,
     welcomeModalActive: true,
-} as ModalsState;
+    addTaskModalActive: false,
+    editTaskModalActive: false,
+    allTasksModalActive: false
+};
 
 
 const modals = createSlice(
@@ -31,6 +37,15 @@ const modals = createSlice(
             },
             setWelcomeModalActive: (state, action: PayloadAction<boolean>) => {
                 state.welcomeModalActive = action.payload;
+            },
+            setAddTaskModalActive: (state, action: PayloadAction<boolean>) => {
+                state.addTaskModalActive = action.payload;
+            },
+            setEditTaskModalActive: (state, action: PayloadAction<boolean>) => {
+                state.editTaskModalActive = action.payload;
+            },
+            setAllTasksModalActive: (state, action: PayloadAction<boolean>) => {
+                state.allTasksModalActive = action.payload;
             }
         }
     }
@@ -40,7 +55,10 @@ export const {
     setSettingsModalActive,
     setChooseTaskModalActive,
     setGuideModalActive,
-    setWelcomeModalActive
+    setWelcomeModalActive,
+    setAddTaskModalActive,
+    setEditTaskModalActive,
+    setAllTasksModalActive
 } = modals.actions;
 
 export default modals.reducer;

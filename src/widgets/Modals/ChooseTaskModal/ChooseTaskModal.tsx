@@ -18,7 +18,7 @@ interface ChooseTaskModalProps {
 
 const mock_tasks = [
     {
-        name: "Make a prototype for pomodoro timer",
+        name: "Make a prototype for pomodoro timer Make a prototype for pomodoro timer",
         time: "Today"
     },
     {
@@ -32,7 +32,11 @@ const mock_tasks = [
     {
         name: "Make a prototype for pomodoro timer",
         time: "Today"
-    }
+    },
+    {
+        name: "Make a prototype for pomodoro timer",
+        time: "Today"
+    },
 ];
 
 
@@ -62,14 +66,14 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         return (
 
             <div className={classNames(styles.cardTask, {}, [])}
-                 onClick={() => chooseTaskHandler(props.title)}>
+                 onClick={() => chooseTaskHandler(props.title)}
+            >
                 <div className={classNames(styles.taskName, {}, [])}>
                     {props.title}
                 </div>
 
                 <div className={classNames(styles.taskTime, {}, [])}>
                     {props.time}
-
                 </div>
             </div>
         );
