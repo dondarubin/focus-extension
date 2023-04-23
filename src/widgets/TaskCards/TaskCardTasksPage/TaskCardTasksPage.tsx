@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import styles from "./TaskCardTasksPage.module.scss";
 import { DownArrowIcon } from "~shared/resources/icons/arrow/DownArrowIcon";
 import { classNames } from "~shared/lib/classNames/classNames";
+import { useAppDispatch } from "~store";
+import { setEditTaskModalActive } from "~app/reducers/modals-slice";
 
 type TaskCardTasksPageProps = {
     className?: string
@@ -20,6 +22,12 @@ export const TaskCardTasksPage: FC<TaskCardTasksPageProps> = (props) => {
         date
     } = props;
 
+    const dispatch = useAppDispatch();
+
+    function OnClickOpenEditTaskModalHandler() {
+        dispatch(setEditTaskModalActive(true));
+    }
+
     function formatDate(date: Date): string {
         return date.toLocaleDateString("en-GB", {
             day: "2-digit",
@@ -28,7 +36,10 @@ export const TaskCardTasksPage: FC<TaskCardTasksPageProps> = (props) => {
     }
 
     return (
-        <div className={classNames(styles.taskCard, {}, [className])}>
+        <div
+            onClick={OnClickOpenEditTaskModalHandler}
+            className={classNames(styles.taskCard, {}, [className])}
+        >
             <div className={
                 classNames(
                     styles.priority,

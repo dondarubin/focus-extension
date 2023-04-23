@@ -6,10 +6,10 @@ import { setAddTaskModalActive, setEditTaskModalActive } from "~app/reducers/mod
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { CalendarIcon } from "~shared/resources/icons/CalendarIcon";
 import { PriorityIcon } from "~shared/resources/icons/PriorityIcon";
-import { PlusIconBtn } from "~shared/resources/icons/plus/PlusIconBtn";
 import React from "react";
 import { DoneIcon } from "~shared/resources/icons/DoneIcon";
 import { TrashIcon } from "~shared/resources/icons/TrashIcon";
+import { DatePickerCalendar } from "~widgets/DatePickerCalendar/DatePickerCalendar";
 
 interface EditTaskModalProps {
     className?: string;
@@ -26,7 +26,6 @@ export const EditTaskModal = ({ className }: EditTaskModalProps) => {
 
     function OnClickSubmitFormHandler(e: React.FormEvent) {
         e.preventDefault();
-        // dispatch....
         OnClickCloseEditTaskModalHandler();
     }
 
@@ -40,12 +39,7 @@ export const EditTaskModal = ({ className }: EditTaskModalProps) => {
             </div>
 
             <form onSubmit={OnClickSubmitFormHandler}>
-                <div className={styles.chooseDate}>
-                    <span>28.05.23</span>
-                    <Button theme={ThemeButton.CLEAR}>
-                        <CalendarIcon color={"var(--secondary-color)"} />
-                    </Button>
-                </div>
+                <DatePickerCalendar/>
 
                 <div className={styles.aboutWrapper}>
                     <div className={styles.taskNote}>
@@ -85,7 +79,7 @@ export const EditTaskModal = ({ className }: EditTaskModalProps) => {
                                 theme={ThemeButton.DEFAULT}
                         >
                             <DoneIcon />
-                            <span>Done</span>
+                            <span>Save</span>
                         </Button>
                     </div>
                 </div>

@@ -1,0 +1,28 @@
+.DataPickerContainer {
+  width: 440px;
+  height: 45px;
+  border: 2px solid #26282B;
+  border-radius: 5px;
+  background: white;
+  margin-top: 35px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+}
+
+.dropdownContainer {
+  user-select: none;
+  position: relative;
+  display: inline-block;
+}
+
+.dropDownCalendar {
+  width: 300px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1;
+}
+

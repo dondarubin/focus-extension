@@ -8,6 +8,7 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { PriorityIcon } from "~shared/resources/icons/PriorityIcon";
 import { PlusIconBtn } from "~shared/resources/icons/plus/PlusIconBtn";
 import React from "react";
+import { DatePickerCalendar } from "~widgets/DatePickerCalendar/DatePickerCalendar";
 
 interface AddTaskModalProps {
     className?: string;
@@ -37,12 +38,7 @@ export const AddTaskModal = ({ className }: AddTaskModalProps) => {
             </div>
 
             <form onSubmit={OnClickSubmitFormHandler}>
-                <div className={styles.chooseDate}>
-                    <span>Today</span>
-                    <Button theme={ThemeButton.CLEAR}>
-                        <CalendarIcon color={"var(--secondary-color)"} />
-                    </Button>
-                </div>
+                <DatePickerCalendar />
 
                 <div className={styles.aboutWrapper}>
                     <div className={styles.taskTitle}>

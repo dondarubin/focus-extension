@@ -11,12 +11,6 @@ interface ContentTasksPageProps {
 }
 
 export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
-    const dispatch = useAppDispatch();
-
-    function OnClickOpenEditTaskModalHandler() {
-        dispatch(setEditTaskModalActive(true));
-    }
-
     return (
         <div className={classNames(styles.ContentTasksPage, {}, [className])}>
             {/*<div className={styles.emptyTaskList}>*/}
@@ -24,11 +18,11 @@ export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
             {/*</div>*/}
 
             <div className={styles.tasksWrapper}>
-                <TaskCardTasksPage priority={true} taskName={"task name"} sessionsCount={3} date={new Date()}/>
-                <TaskCardTasksPage priority={false} taskName={"task name"} sessionsCount={6} date={new Date()}/>
-                <TaskCardTasksPage priority={true} taskName={"task name"} sessionsCount={1} date={new Date()}/>
-                <TaskCardTasksPage priority={false} taskName={"task name"} sessionsCount={2} date={new Date()}/>
-                <TaskCardTasksPage priority={true} taskName={"task name"} sessionsCount={3} date={new Date()}/>
+                <TaskCardTasksPage priority={true} taskName={"task name"} sessionsCount={3} date={new Date()} />
+                <TaskCardTasksPage priority={true} taskName={"task name"} sessionsCount={1} date={new Date()} />
+                <TaskCardTasksPage priority={false} taskName={"task name"} sessionsCount={3} date={new Date()} />
+                <TaskCardTasksPage priority={false} taskName={"task name"} sessionsCount={6} date={new Date()} />
+                <TaskCardTasksPage priority={false} taskName={"task name"} sessionsCount={2} date={new Date()} />
             </div>
         </div>
     );
