@@ -25,7 +25,6 @@ export const SettingsModal: FC<SettingsModalProps> = (props) => {
     const settingsModalState = useAppSelector(state => state.modal.settingsModalActive);
     const dispatch = useAppDispatch();
 
-
     function OnClickCloseSettingsModalHandler(){
         dispatch(setSettingsModalActive(false))
     }

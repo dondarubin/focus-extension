@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./MainPage.module.scss";
 import { NavMainPage } from "~pages/MainPage/Nav/NavMainPage";
 import { ContentMainPage } from "~pages/MainPage/Content/ContentMainPage";

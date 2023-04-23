@@ -2,6 +2,8 @@ import styles from "./ContentTasksPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { EmptyTasksListIcon } from "~shared/resources/icons/people/EmptyTasksListIcon";
 import { DownArrowIcon } from "~shared/resources/icons/arrow/DownArrowIcon";
+import { useAppDispatch } from "~store";
+import { setEditTaskModalActive } from "~app/reducers/modals-slice";
 
 interface ContentTasksPageProps {
     className?: string;
@@ -9,9 +11,17 @@ interface ContentTasksPageProps {
 
 export const ContentTasksPage = ({ className }: ContentTasksPageProps) => {
 
+    const dispatch = useAppDispatch();
+
+    function OnClickOpenEditTaskModalHandler() {
+        dispatch(setEditTaskModalActive(true));
+    }
+
     const taskCard = (title: string, sessions: string) => {
         return (
-            <div className={styles.taskCard}>
+            <div className={styles.taskCard}
+                 onClick={OnClickOpenEditTaskModalHandler}
+            >
                 <div className={styles.priority}></div>
 
                 <div className={styles.taskDescriptionWrapper}>
