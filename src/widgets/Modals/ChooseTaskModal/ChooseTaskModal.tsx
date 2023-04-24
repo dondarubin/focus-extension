@@ -18,7 +18,7 @@ interface ChooseTaskModalProps {
 
 const mock_tasks = [
     {
-        name: "Make a prototype for pomodoro timer Make a prototype for pomodoro timer",
+        name: "Make UI",
         time: "Today"
     },
     {

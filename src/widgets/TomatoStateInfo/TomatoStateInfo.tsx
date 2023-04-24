@@ -13,7 +13,6 @@ export const TomatoStateInfo: FC<TomatoStateInfoProps> = (props) => {
 
     const currentTomatoState = useAppSelector(state => state.tomato.state);
     const currentTaskName = useAppSelector(state => state.tomato.currentTaskName);
-    const settingsSessionsCount = useAppSelector(state => state.settingsValues.sessionsCount);
 
     const [isRunning, setIsRunning] = useState(false);
 
@@ -44,7 +43,7 @@ export const TomatoStateInfo: FC<TomatoStateInfoProps> = (props) => {
                               speed={50}
                               gradient={false}
                           >
-                              <p style={{ marginRight: "20px" }}>{currentTaskName}</p>
+                              <p>{currentTaskName}</p>
                           </Marquee>
 
                           : <p className={classNames(styles.taskName, {}, [styles.taskNameStatic])}>
