@@ -7,7 +7,7 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { useAppDispatch, useAppSelector } from "~store";
 import { TomatoStates } from "~app/reducers/tomato-slice";
 import { TomatoStateInfo } from "~widgets/TomatoStateInfo/TomatoStateInfo";
-import { setSettingsModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 import { SessionsDotsIndicator } from "~widgets/SessionsDontsIndicator/SessionsDotsIndicator";
 
 interface NavMainPageProps {
@@ -23,7 +23,10 @@ export const NavMainPage: FC<NavMainPageProps> = (props) => {
     const dispatch = useAppDispatch();
 
     function OnClickOpenSettingsModalHandler() {
-        dispatch(setSettingsModalActive(true));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.SETTINGS,
+            active: true
+        }));
     }
 
     return (

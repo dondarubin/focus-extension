@@ -2,7 +2,7 @@ import styles from "./EditTaskModal.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Modal } from "~shared/ui/Modal/Modal";
 import { useAppDispatch, useAppSelector } from "~store";
-import {setEditTaskModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { PriorityIcon } from "~shared/resources/icons/PriorityIcon";
 import React from "react";
@@ -16,11 +16,14 @@ interface EditTaskModalProps {
 
 export const EditTaskModal = ({ className }: EditTaskModalProps) => {
 
-    const editTaskState = useAppSelector(state => state.modal.editTaskModalActive);
+    const editTaskState = useAppSelector(state => state.modal[ModalsNames.EDIT_TASK]);
     const dispatch = useAppDispatch();
 
     function OnClickCloseEditTaskModalHandler() {
-        dispatch(setEditTaskModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.EDIT_TASK,
+            active: false
+        }));
     }
 
     function OnClickSubmitFormHandler(e: React.FormEvent) {

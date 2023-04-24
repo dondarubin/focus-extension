@@ -4,7 +4,7 @@ import { Modal } from "~shared/ui/Modal/Modal";
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { GuideStepsIcon } from "~shared/resources/icons/GuideSteps/GuideStepsIcon";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setGuideModalActive, setSettingsModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 interface GuideModalProps {
 
@@ -16,11 +16,14 @@ export const GuideModal: FC<GuideModalProps> = (props) => {
         className,
     } = props;
 
-    const guideModalState = useAppSelector(state => state.modal.guideModalActive);
+    const guideModalState = useAppSelector(state => state.modal[ModalsNames.GUIDE]);
     const dispatch = useAppDispatch();
 
-    function OnClickCloseGuideModalHandler(){
-        dispatch(setGuideModalActive(false))
+    function OnClickCloseGuideModalHandler() {
+        dispatch(setModalActive({
+            ModalName: ModalsNames.GUIDE,
+            active: false
+        }));
     }
 
     return (

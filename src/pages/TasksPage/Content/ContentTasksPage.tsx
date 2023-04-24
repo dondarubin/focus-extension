@@ -1,9 +1,7 @@
 import styles from "./ContentTasksPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
-import { DownArrowIcon } from "~shared/resources/icons/arrow/DownArrowIcon";
 import { TaskCardTasksPage } from "~widgets/TaskCards/TaskCardTasksPage/TaskCardTasksPage";
-import { useAppDispatch } from "~store";
-import { setEditTaskModalActive } from "~app/reducers/modals-slice";
+import { EmptyTasksListIcon } from "~shared/resources/icons/people/EmptyTasksListIcon";
 
 
 interface ContentTasksPageProps {

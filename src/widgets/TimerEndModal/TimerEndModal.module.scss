@@ -1,0 +1,33 @@
+.TimerEndModal {
+    z-index: 10;
+}
+
+.content {
+    width: 500px;
+    height: 514px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font: var(--font-h2);
+    color: var(--secondary-color)
+}
+
+.ask {
+    padding-top: 10px;
+    color: black;
+    text-align:center
+}
+
+.footer {
+    height: 86px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn {
+    font: var(--font-btn);
+}

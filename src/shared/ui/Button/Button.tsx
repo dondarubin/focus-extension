@@ -4,7 +4,8 @@ import styles from "./Button.module.scss";
 
 export enum ThemeButton {
     CLEAR = "clear",
-    DEFAULT = "default"
+    DEFAULT = "default",
+    INVERT_DEFAULT = 'invertDefault'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

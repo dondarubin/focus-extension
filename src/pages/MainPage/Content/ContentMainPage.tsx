@@ -6,7 +6,7 @@ import { AnimatedTimer } from "~widgets/AnimatedTimerLines/AnimatedTimer";
 import { useAppDispatch, useAppSelector } from "~store";
 import { setState, TomatoStates } from "~app/reducers/tomato-slice";
 import { TimerControlButtons } from "~widgets/TimerControllButtons/TimerControlButtons";
-import { setChooseTaskModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 interface ContentMainPageProps {
     className?: string;
@@ -20,8 +20,18 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
     const tomatoState = useAppSelector(state => state.tomato.state);
     const dispatch = useAppDispatch();
 
+    function OnClickOpenTimerEndModalHandler() {
+        dispatch(setModalActive({
+            ModalName: ModalsNames.TIMER_END,
+            active: true
+        }));
+    }
+
     function OnClickOpenChooseTaskModalHandler() {
-        dispatch(setChooseTaskModalActive(true));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.CHOOSE_TASK,
+            active: true
+        }));
     }
 
     function skipButtonHandler() {
@@ -54,12 +64,12 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
 
     return (
         <div className={classNames(styles.ContentMainPage, {}, [className])}>
-
             {
                 tomatoState !== TomatoStates.OFF
                     ? <AnimatedTimer className={styles.animatedTimerContainer} />
                     : <div className={styles.animatedTimerContainer}></div>
             }
+
             <p className={classNames(styles.clock)}>25:00</p>
 
             {tomatoState === TomatoStates.FOCUS
@@ -69,6 +79,9 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
                 : [TomatoStates.SHORT_BREAK, TomatoStates.LONG_BREAK]
                     .includes(tomatoState) ? _skipButton() : _startButton()
             }
+
+            {/*TODO: Delete this shit from production!!!*/}
+            <button onClick={OnClickOpenTimerEndModalHandler}>Activate modal</button>
         </div>
     );
 };

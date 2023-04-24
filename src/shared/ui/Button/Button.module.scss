@@ -31,3 +31,20 @@
   }
 }
 
+.invertDefault {
+  text-decoration: none;
+  width: 155px;
+  height: 46px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  border: 1px solid #040404;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  box-shadow: 2px 3px black;
+
+  &:hover {
+    box-shadow: none;
+    border: 1.5px solid #040404;
+    transform: translateX(2px) translateY(3px);
+  }
+}

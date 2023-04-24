@@ -6,7 +6,7 @@ import {CloseIcon} from "~shared/resources/icons/close/CloseIcon";
 
 interface ModalProps {
     modalActive: boolean;
-    setModalActive: () => void;
+    setModalActive?: () => void;
     className?: string;
     children?: ReactNode;
     SetCloseButton?: boolean;
