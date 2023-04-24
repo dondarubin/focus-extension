@@ -2,6 +2,7 @@ import React, { FC, ReactElement, ReactNode, useEffect, useMemo, useRef, useStat
 import styles from "./CustomSelect.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { getInnerText } from "~shared/lib/helpers/getInnerText";
+import { useOverlay } from "~shared/hooks/useOverlay";
 
 interface CustomSelectProps {
     children: ReactElement[];
@@ -46,10 +47,9 @@ export const CustomSelect: FC<CustomSelectProps> = (props) => {
         [children]
     );
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<Option>(initOption(initValue, options));
     const dropdownRef = useRef(null);
-    const documentRef = useRef(document);
+    const { isOpen, setIsOpen } = useOverlay(false, dropdownRef);
+    const [selectedOption, setSelectedOption] = useState<Option>(initOption(initValue, options));
 
     const handleOptionClick = (option: Option) => {
         if (OnChange !== undefined && selectedOption.text !== option.text) {
@@ -62,19 +62,6 @@ export const CustomSelect: FC<CustomSelectProps> = (props) => {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-        documentRef.current.addEventListener("click", handleClickOutside);
-
-        return () => {
-            documentRef.current.removeEventListener("click", handleClickOutside);
-        };
-    }, [dropdownRef, documentRef]);
 
     const optionsContainers = useMemo(
         () =>

@@ -4,41 +4,28 @@ import { CalendarIcon } from "~shared/resources/icons/CalendarIcon";
 import styles from "./DatePickerCalendar.module.scss";
 import Calendar from "react-calendar";
 import "./CustomCalendar.css";
+import { useOverlay } from "~shared/hooks/useOverlay";
 
 type DatePickerCalendarProps = {}
 
 export const DatePickerCalendar: FC<DatePickerCalendarProps> = (props) => {
     const {} = props;
 
-    const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
-    const documentRef = useRef(document);
+    const { isOpen, setIsOpen } = useOverlay(false, dropdownRef);
 
-    const toggleDropdown = () => {
+    const toggleDropdownCalendar = () => {
         setIsOpen(!isOpen);
     };
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsOpen(false);
-            }
-        };
-        documentRef.current.addEventListener("click", handleClickOutside);
-
-        return () => {
-            documentRef.current.removeEventListener("click", handleClickOutside);
-        };
-    }, [dropdownRef, documentRef]);
-
     function OnClickCalendarButtonHandler() {
-        toggleDropdown();
+        toggleDropdownCalendar();
     }
 
     return (
-        <div className={styles.DataPickerContainer}>
+        <div ref={dropdownRef} className={styles.DataPickerContainer}>
             <span>Today</span>
-            <div ref={dropdownRef} className={styles.dropdownContainer}>
+            <div className={styles.dropdownContainer}>
                 <Button theme={ThemeButton.CLEAR} onClick={OnClickCalendarButtonHandler}>
                     <CalendarIcon color={"var(--secondary-color)"} />
                 </Button>
@@ -46,7 +33,6 @@ export const DatePickerCalendar: FC<DatePickerCalendarProps> = (props) => {
                     isOpen
                         ? <div className={styles.dropDownCalendar}>
                             <Calendar
-
                                 defaultValue={new Date()}
                             ></Calendar>
                         </div>
