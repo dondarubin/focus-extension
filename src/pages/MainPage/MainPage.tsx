@@ -11,6 +11,7 @@ import { useInitialPage } from "~shared/hooks/useInitialPage";
 import { WelcomeModal } from "~widgets/Modals/WelcomeModal/WelcomeModal";
 import { useShowWelcome } from "~shared/hooks/useShowWelcome";
 import { _tempControls } from "~widgets/_tempControls/_tempControls";
+import { TimerEndModal } from "~widgets/TimerEndModal/TimerEndModal";
 
 const MainPage = () => {
     const initialPage = useInitialPage();
@@ -25,6 +26,7 @@ const MainPage = () => {
             <SettingsModal />
             <ChooseTaskModal />
             <GuideModal />
+            <TimerEndModal />
             {showWelcome === null ? <WelcomeModal /> : <></>}
 
             <NavMainPage />

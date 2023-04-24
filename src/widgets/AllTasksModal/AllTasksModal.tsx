@@ -2,7 +2,7 @@ import styles from "./AllTasksModal.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Modal } from "~shared/ui/Modal/Modal";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setAllTasksModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 import React from "react";
 
 interface AllTasksModalProps {
@@ -11,11 +11,14 @@ interface AllTasksModalProps {
 
 export const AllTasksModal = ({ className }: AllTasksModalProps) => {
 
-    const allTaskState = useAppSelector(state => state.modal.allTasksModalActive);
+    const allTaskState = useAppSelector(state => state.modal[ModalsNames.ALL_TASK]);
     const dispatch = useAppDispatch();
 
     function OnClickCloseAllTaskModalHandler() {
-        dispatch(setAllTasksModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.ALL_TASK,
+            active: false
+        }));
     }
 
     const mock_tasks = [

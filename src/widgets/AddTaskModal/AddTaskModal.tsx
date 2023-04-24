@@ -2,8 +2,7 @@ import styles from "./AddTaskModal.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { Modal } from "~shared/ui/Modal/Modal";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setAddTaskModalActive } from "~app/reducers/modals-slice";
-import { CalendarIcon } from "~shared/resources/icons/CalendarIcon";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { PriorityIcon } from "~shared/resources/icons/PriorityIcon";
 import { PlusIconBtn } from "~shared/resources/icons/plus/PlusIconBtn";
@@ -15,11 +14,14 @@ interface AddTaskModalProps {
 }
 
 export const AddTaskModal = ({ className }: AddTaskModalProps) => {
-    const addTaskState = useAppSelector(state => state.modal.addTaskModalActive);
+    const addTaskState = useAppSelector(state => state.modal[ModalsNames.ADD_TASK]);
     const dispatch = useAppDispatch();
 
     function OnClickCloseAddTaskModalHandler() {
-        dispatch(setAddTaskModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.ADD_TASK,
+            active: false
+        }));
     }
 
     function OnClickSubmitFormHandler(e: React.FormEvent) {

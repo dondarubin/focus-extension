@@ -3,7 +3,7 @@ import styles from "./TaskCardTasksPage.module.scss";
 import { DownArrowIcon } from "~shared/resources/icons/arrow/DownArrowIcon";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { useAppDispatch } from "~store";
-import { setEditTaskModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 type TaskCardTasksPageProps = {
     className?: string
@@ -25,7 +25,10 @@ export const TaskCardTasksPage: FC<TaskCardTasksPageProps> = (props) => {
     const dispatch = useAppDispatch();
 
     function OnClickOpenEditTaskModalHandler() {
-        dispatch(setEditTaskModalActive(true));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.EDIT_TASK,
+            active: true
+        }));
     }
 
     function formatDate(date: Date): string {

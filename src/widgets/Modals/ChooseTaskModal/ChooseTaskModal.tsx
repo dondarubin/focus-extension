@@ -2,7 +2,7 @@ import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./ChooseTaskModal.module.scss";
 import { Modal } from "~shared/ui/Modal/Modal";
 import type { FC } from "react";
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import { useAppDispatch, useAppSelector } from "~store";
 import { setCurrentTaskName } from "~app/reducers/tomato-slice";
 import { ChooseTaskModalMansIcon } from "~shared/resources/icons/people/ChooseTaskModalMansIcon";
@@ -10,7 +10,7 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { Link } from "react-router-dom";
 import { RoutePath } from "~shared/config/routeConfig/routeConfig";
 import { AppRotes, setCurrentPage } from "~app/reducers/router-slice";
-import { setChooseTaskModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 interface ChooseTaskModalProps {
     className?: string;
@@ -45,11 +45,14 @@ export const ChooseTaskModal: FC<ChooseTaskModalProps> = (props) => {
         className
     } = props;
 
-    const chooseTaskModalState = useAppSelector(state => state.modal.chooseTaskModalActive);
+    const chooseTaskModalState = useAppSelector(state => state.modal[ModalsNames.CHOOSE_TASK]);
     const dispatch = useAppDispatch();
 
     function OnClickCloseChooseTaskModalHandler() {
-        dispatch(setChooseTaskModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.CHOOSE_TASK,
+            active: false
+        }));
     }
 
     function goToTasksClickHandler() {

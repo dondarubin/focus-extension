@@ -1,36 +1,43 @@
 import { classNames } from "~shared/lib/classNames/classNames";
 import styles from "./SettingsModal.module.scss";
 import { Modal } from "~shared/ui/Modal/Modal";
-import type { Dispatch, FC, ReactNode, SetStateAction } from "react";
+import type { FC, ReactNode } from "react";
 import { QuestionIcon } from "~shared/resources/icons/question/QuestionIcon";
 import { SelectFocusTime } from "~widgets/SelectFocusTime/SelectFocusTime";
 import { ThemeSwitcher } from "~widgets/ThemeSwitcher/ThemeSwitcher";
 import { SelectShortBreak } from "~widgets/SelectShortBreak/SelectShortBreak";
 import { SelectLongBreak } from "~widgets/SelectLongBreak/SelectLongBreak";
 import { SelectSessions } from "~widgets/SelectSessions/SelectSessions";
-import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setGuideModalActive, setSettingsModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
+import React from "react";
 
 interface SettingsModalProps {
     className?: string;
     children?: ReactNode;
 }
 
+
 export const SettingsModal: FC<SettingsModalProps> = (props) => {
     const {
         className
     } = props;
 
-    const settingsModalState = useAppSelector(state => state.modal.settingsModalActive);
+    const settingsModalState = useAppSelector(state => state.modal[ModalsNames.SETTINGS]);
     const dispatch = useAppDispatch();
 
-    function OnClickCloseSettingsModalHandler(){
-        dispatch(setSettingsModalActive(false))
+    function OnClickCloseSettingsModalHandler() {
+        dispatch(setModalActive({
+            ModalName: ModalsNames.SETTINGS,
+            active: false
+        }));
     }
 
     function OnClickOpenGuideModalHandler() {
-        dispatch(setGuideModalActive(true))
+        dispatch(setModalActive({
+            ModalName: ModalsNames.GUIDE,
+            active: true
+        }))
     }
 
 
