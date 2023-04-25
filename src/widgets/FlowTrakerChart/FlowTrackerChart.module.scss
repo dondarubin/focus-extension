@@ -1,6 +1,8 @@
 .FlowTrackerChart {
   width: 438px;
   height: 307px;
+  display: flex;
+  justify-content: center;
   background: #FFFFFF;
   border: 1px solid #040404;
   box-shadow: 1px 2px 0 #26282B;
