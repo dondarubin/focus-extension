@@ -1,0 +1,41 @@
+.ContentStatsPage {
+    min-width: 100%;
+    min-height: calc(var(--app-height) - var(--footer-height) - var(--stats-nav-height));
+}
+
+.contentWrapper {
+    width: 494px;
+    height: 414px;
+    overflow-y: scroll;
+    padding-left: 30px;
+    margin-right: 6px;
+}
+
+.userTasks {
+    margin-bottom: 15px;
+}
+
+.userTask {
+    width: 439px;
+    height: 66px;
+    border: 1px solid #040404;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 3px black;
+    margin-top: 15px;
+    padding: 10px 20px 10px 20px;
+}
+
+.countStars {
+    font: var(--font-btn);
+    color: black;
+}
+
+.bar {
+    width: 399px;
+    height: 15px;
+    border: 1px solid #040404;
+    border-radius: 10px;
+    background: var(--app-bg);
+    margin-top: 10px;
+}

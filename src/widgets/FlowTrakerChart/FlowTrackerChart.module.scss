@@ -1,10 +1,28 @@
 .FlowTrackerChart {
   width: 438px;
   height: 307px;
-  display: flex;
-  justify-content: center;
   background: #FFFFFF;
   border: 1px solid #040404;
   box-shadow: 1px 2px 0 #26282B;
   border-radius: 5px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding: 15px 0 25px 20px;
+}
+
+.hours {
+  font: var(--font-work-sans);
+}
+
+.week {
+  font: var(--font-small-2);
+}
+
+.bar {
+  display: flex;
+  justify-content: center;
 }
