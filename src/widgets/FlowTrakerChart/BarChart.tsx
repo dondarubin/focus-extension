@@ -18,8 +18,6 @@ interface BarChartData extends ChartData {
 }
 
 export const BarChart: React.FC<Props> = ({ data }) => {
-    const maxYValue = Math.max(...data);
-
     const chartData: BarChartData = {
         labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [
