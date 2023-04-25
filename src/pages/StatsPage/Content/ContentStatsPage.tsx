@@ -12,7 +12,7 @@ const userTask = () => {
     return (
         <div className={styles.userTask}>
             <div className={styles.nav}>
-                <div>
+                <div className={styles.wrapper}>
                     <span className={styles.countStars}>14</span>
                     <StarIcon />
                     <span className={styles.userTaskName}>Completed Tasks</span>
