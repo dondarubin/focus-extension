@@ -22,21 +22,21 @@ type TomatoTimerState = {
     settings: Settings
 }
 
-const default_settings = {
+const default_settings: Settings = {
     shortBreakTime: 5,
     longBreakTime: 15,
     sessionsCount: 4,
     focusTime: 25
-} as Settings;
+};
 
-const default_state = {
+const default_state: TomatoTimerState = {
     stop: false,
     currentTaskName: "test",
     state: TomatoStates.OFF,
     clockValue: { min: 20, sec: 50 },
     currentSessionsCount: 4,
     settings: default_settings
-} as TomatoTimerState;
+};
 
 
 const tomato = createSlice(

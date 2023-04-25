@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { BlockedAddress } from "~app/types/BlockedAddress";
-import produce from "immer";
 import { toast } from "react-toastify";
 
 type BlockedAddressesState = {

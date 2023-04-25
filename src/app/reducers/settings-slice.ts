@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { Settings } from "~app/types/Settings";
 
-const default_settings = {
+const default_settings: Settings = {
     shortBreakTime: 5,
     longBreakTime: 15,
     sessionsCount: 4,
     focusTime: 25
-} as Settings;
+};
 
 
 const settings = createSlice(
