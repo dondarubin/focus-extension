@@ -4,7 +4,8 @@ import { classNames } from "~shared/lib/classNames/classNames";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { RewardIconIndicator } from "~widgets/RewardIconIndicator/RewardIconIndicator";
 import { useAppSelector } from "~store";
-import is from "@sindresorhus/is";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
+import { useAppDispatch } from "~store";
 
 type NavStatsPageProps = {
     className?: string
@@ -17,6 +18,15 @@ export const NavStatsPage: FC<NavStatsPageProps> = (props) => {
         className
     } = props;
 
+    const dispatch = useAppDispatch();
+
+    function OnClickOpenRewardsModalHandler() {
+        dispatch(setModalActive({
+            ModalName: ModalsNames.REWARDS,
+            active: true
+        }));
+    }
+
     return (
         <div className={classNames(styles.NavStatsPage, {}, [className, isScrolled ? styles.navShadow : ""])}>
             <div className={styles.infoContainer}>
@@ -27,9 +37,11 @@ export const NavStatsPage: FC<NavStatsPageProps> = (props) => {
                     Achieve goals, track stats, get rewards
                 </span>
             </div>
+
             <Button
                 theme={ThemeButton.CLEAR}
                 className={styles.rewardsButton}
+                OnClick={OnClickOpenRewardsModalHandler}
             >
                 <RewardIconIndicator value={9} />
             </Button>
