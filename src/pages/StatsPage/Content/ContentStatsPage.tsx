@@ -2,7 +2,7 @@ import styles from "./ContentStatsPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { FlowTrackerChart } from "~widgets/FlowTrakerChart/FlowTrackerChart";
 import React from "react";
-import { useAppDispatch, useAppSelector } from "~store";
+import { useAppDispatch } from "~store";
 import { setIsScrolled } from "~app/reducers/statsPageScroll-slice";
 import { StarIcon } from "~shared/resources/icons/StarIcon";
 
