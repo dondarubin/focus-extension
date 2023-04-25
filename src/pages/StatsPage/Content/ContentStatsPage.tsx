@@ -8,12 +8,19 @@ interface ContentStatsPageProps {
     className?: string;
 }
 
-const reward = () => {
+const userTask = () => {
     return (
         <div className={styles.userTask}>
             <div className={styles.nav}>
-                <span className={styles.countStars}>14</span>
-                <StarIcon />
+                <div>
+                    <span className={styles.countStars}>14</span>
+                    <StarIcon />
+                    <span className={styles.userTaskName}>Completed Tasks</span>
+                </div>
+
+                <div className={styles.userTaskProgress}>
+                    <span>(0/10)</span>
+                </div>
             </div>
 
             <div className={styles.bar}></div>
@@ -28,13 +35,13 @@ export const ContentStatsPage = ({ className }: ContentStatsPageProps) => {
                 <FlowTrackerChart />
 
                 <div className={styles.userTasks}>
-                    {reward()}
-                    {reward()}
-                    {reward()}
-                    {reward()}
-                    {reward()}
-                    {reward()}
-                    {reward()}
+                    {userTask()}
+                    {userTask()}
+                    {userTask()}
+                    {userTask()}
+                    {userTask()}
+                    {userTask()}
+                    {userTask()}
                 </div>
             </div>
         </div>
