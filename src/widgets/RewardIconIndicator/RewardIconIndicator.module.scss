@@ -2,6 +2,12 @@
   position: relative;
   width: 30px;
   height: 36px;
+  transition: 0.3s;
+
+  &:hover svg > path {
+    stroke: var(--primary-color);
+    background: var(--primary-color);
+  }
 }
 
 .circle {
@@ -21,3 +27,4 @@
   font: var(--font-btn);
   color: white;
 }
+

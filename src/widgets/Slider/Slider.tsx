@@ -1,14 +1,14 @@
 import styles from "./Slider.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import type { FC } from "react";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import { FirstSliderIcon } from "~shared/resources/icons/people/slider/FirstSliderIcon";
 import { SecondSliderIcon } from "~shared/resources/icons/people/slider/SecondSliderIcon";
 import { ThirdSliderIcon } from "~shared/resources/icons/people/slider/ThirdSliderIcon";
 import { FourthSliderIcon } from "~shared/resources/icons/people/slider/FourthSliderIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { useAppDispatch } from "~store";
-import { setWelcomeModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 interface SliderProps {
     className?: string;
@@ -23,7 +23,7 @@ const SliderItems = [
 
 export const Slider: FC<SliderProps> = (props) => {
     const {
-        className,
+        className
     } = props;
 
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
@@ -37,7 +37,10 @@ export const Slider: FC<SliderProps> = (props) => {
     }
 
     function OnClickCloseWelcomeModalHandler() {
-        dispatch(setWelcomeModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.WELCOME,
+            active: false
+        }));
     }
 
 

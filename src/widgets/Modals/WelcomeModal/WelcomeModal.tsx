@@ -7,7 +7,7 @@ import { Button, ThemeButton } from "~shared/ui/Button/Button";
 import { SkipIcon } from "~shared/resources/icons/arrow/SkipIcon";
 import { Slider } from "~widgets/Slider/Slider";
 import { useAppDispatch, useAppSelector } from "~store";
-import { setWelcomeModalActive } from "~app/reducers/modals-slice";
+import { ModalsNames, setModalActive } from "~app/reducers/modals-slice";
 
 interface WelcomeModalProps {
     className?: string;
@@ -20,7 +20,7 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
         className
     } = props;
 
-    const welcomeModalState = useAppSelector(state => state.modal.welcomeModalActive);
+    const welcomeModalState = useAppSelector(state => state.modal[ModalsNames.WELCOME]);
     const dispatch = useAppDispatch();
 
     function OnClickGetStartedHandler() {
@@ -28,10 +28,12 @@ export const WelcomeModal: FC<WelcomeModalProps> = (props) => {
     }
 
     function OnClickCloseWelcomeModalHandler() {
-        dispatch(setWelcomeModalActive(false));
+        dispatch(setModalActive({
+            ModalName: ModalsNames.WELCOME,
+            active: false
+        }));
     }
-
-
+    
     const GetStarted = () => {
         return (
             <div className={styles.welcomeWrapper}>
