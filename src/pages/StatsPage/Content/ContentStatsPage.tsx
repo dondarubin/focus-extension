@@ -2,6 +2,7 @@ import styles from "./ContentStatsPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
 import { FlowTrackerChart } from "~widgets/FlowTrakerChart/FlowTrackerChart";
 import React from "react";
+import { StarIcon } from "~shared/resources/icons/StarIcon";
 
 interface ContentStatsPageProps {
     className?: string;
@@ -12,6 +13,7 @@ const reward = () => {
         <div className={styles.userTask}>
             <div className={styles.nav}>
                 <span className={styles.countStars}>14</span>
+                <StarIcon />
             </div>
 
             <div className={styles.bar}></div>
