@@ -4,9 +4,17 @@
   padding: 30px;
   display: flex;
   justify-content: space-between;
+
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 4px 10px rgb(0, 0, 0, 0.0);
+  transition: border-bottom 0.3s ease;
+}
+
+.navShadow {
   border-bottom: 2px solid #040404;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .infoContainer {
   color: black;
@@ -28,6 +36,6 @@
 
 .rewardsButton {
   margin-top: 5px;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 36px;
 }

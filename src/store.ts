@@ -19,6 +19,7 @@ import settings from "~app/reducers/settings-slice";
 import router from "~app/reducers/router-slice";
 import tomato, { TomatoStates } from "~app/reducers/tomato-slice";
 import modals from "~app/reducers/modals-slice";
+import statsPageScroll from "~app/reducers/statsPageScroll-slice";
 
 // Here you can add all your reducers
 const combinedReducers = combineReducers({
@@ -26,14 +27,16 @@ const combinedReducers = combineReducers({
     settingsValues: settings,
     tomato: tomato,
     router: router,
-    modal: modals
+    modal: modals,
+    statsPageScroll: statsPageScroll
 });
 
 const persistConfig = {
     key: "root",
     version: 3,
     storage: syncStorage,
-    enabled: false
+    enabled: false,
+    blacklist: ["statsPageScroll"]
 };
 
 

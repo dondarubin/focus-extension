@@ -1,20 +1,24 @@
 import React, { FC } from "react";
 import styles from "./NavStatsPage.module.scss";
 import { classNames } from "~shared/lib/classNames/classNames";
-import { RewardsIcon } from "~shared/resources/icons/RewardsIcon";
 import { Button, ThemeButton } from "~shared/ui/Button/Button";
+import { RewardIconIndicator } from "~widgets/RewardIconIndicator/RewardIconIndicator";
+import { useAppSelector } from "~store";
+import is from "@sindresorhus/is";
 
 type NavStatsPageProps = {
     className?: string
 }
 
 export const NavStatsPage: FC<NavStatsPageProps> = (props) => {
+    const isScrolled = useAppSelector(state => state.statsPageScroll);
+    
     const {
         className
     } = props;
 
     return (
-        <div className={classNames(styles.NavStatsPage, {}, [className])}>
+        <div className={classNames(styles.NavStatsPage, {}, [className, isScrolled ? styles.navShadow : ""])}>
             <div className={styles.infoContainer}>
                 <span className={styles.title}>
                     WorkFlow Tracker
@@ -27,7 +31,7 @@ export const NavStatsPage: FC<NavStatsPageProps> = (props) => {
                 theme={ThemeButton.CLEAR}
                 className={styles.rewardsButton}
             >
-                <RewardsIcon color={"black"}></RewardsIcon>
+                <RewardIconIndicator value={9} />
             </Button>
 
         </div>

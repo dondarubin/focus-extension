@@ -43,8 +43,8 @@ export const BarChart: React.FC<Props> = ({ data }) => {
     const chartOptions = {
         responsive: false,
         maintainAspectRatio: true,
-        tooltips: {enabled: false},
-        hover: {mode: null},
+        tooltips: { enabled: false },
+        hover: { mode: null },
         scales: {
             y: {
                 grid: {
