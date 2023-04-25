@@ -79,9 +79,6 @@ export const ContentMainPage: FC<ContentMainPageProps> = (props) => {
                 : [TomatoStates.SHORT_BREAK, TomatoStates.LONG_BREAK]
                     .includes(tomatoState) ? _skipButton() : _startButton()
             }
-
-            {/*TODO: Delete this shit from production!!!*/}
-            <button onClick={OnClickOpenTimerEndModalHandler}>Activate modal</button>
         </div>
     );
 };
