@@ -1,74 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-    // Fonts
-    --font-family-main: 'Work Sans', sans-serif;
+  // Fonts
+  --font-family-main: 'Work Sans', sans-serif;
 
-    --font-weight-small: 400;
-    --font-size-small: 12px;
-    --font-line-small: 14.08px;
-    --font-small: var(--font-weight-small) var(--font-size-small) / var(--font-line-small) var(--font-family-main);
+  --font-weight-small: 400;
+  --font-size-small: 12px;
+  --font-line-small: 14.08px;
+  --font-small: var(--font-weight-small) var(--font-size-small) / var(--font-line-small) var(--font-family-main);
 
-    --font-weight-small-1: 300;
-    --font-size-small-1: 14px;
-    --font-line-small-1: 16.42px;
-    --font-small-1: var(--font-weight-small-1) var(--font-size-small-1) / var(--font-line-small-1) var(--font-family-main);
+  --font-weight-small-1: 300;
+  --font-size-small-1: 14px;
+  --font-line-small-1: 16.42px;
+  --font-small-1: var(--font-weight-small-1) var(--font-size-small-1) / var(--font-line-small-1) var(--font-family-main);
 
-    --font-weight-small-2: 400;
-    --font-size-small-2: 14px;
-    --font-line-small-2: 16.42px;
-    --font-small-2: var(--font-weight-small-2) var(--font-size-small-2) / var(--font-line-small-2) var(--font-family-main);
+  --font-weight-small-2: 400;
+  --font-size-small-2: 14px;
+  --font-line-small-2: 16.42px;
+  --font-small-2: var(--font-weight-small-2) var(--font-size-small-2) / var(--font-line-small-2) var(--font-family-main);
 
-    --font-weight-btn: 500;
-    --font-size-btn: 14px;
-    --font-line-btn: 16.42px;
-    --font-btn: var(--font-weight-btn) var(--font-size-btn) / var(--font-line-btn) var(--font-family-main);
+  --font-weight-btn: 500;
+  --font-size-btn: 14px;
+  --font-line-btn: 16.42px;
+  --font-btn: var(--font-weight-btn) var(--font-size-btn) / var(--font-line-btn) var(--font-family-main);
 
-    --font-weight-body-light: 300;
-    --font-size-body-light: 18px;
-    --font-line-body-light: 21.11px;
-    --font-body-light: var(--font-weight-body-light) var(--font-size-body-light) / var(--font-line-body-light) var(--font-family-main);
+  --font-weight-body-light: 300;
+  --font-size-body-light: 18px;
+  --font-line-body-light: 21.11px;
+  --font-body-light: var(--font-weight-body-light) var(--font-size-body-light) / var(--font-line-body-light) var(--font-family-main);
 
-    --font-weight-body-regular: 400;
-    --font-size-body-regular: 18px;
-    --font-line-body-regular: 21.11px;
-    --font-body-regular: var(--font-weight-body-regular) var(--font-size-body-regular) / var(--font-line-body-regular) var(--font-family-main);
+  --font-weight-body-regular: 400;
+  --font-size-body-regular: 18px;
+  --font-line-body-regular: 21.11px;
+  --font-body-regular: var(--font-weight-body-regular) var(--font-size-body-regular) / var(--font-line-body-regular) var(--font-family-main);
 
-    --font-weight-h3: 400;
-    --font-size-h3: 24px;
-    --font-line-h3: 28.15px;
-    --font-h3: var(--font-weight-h3) var(--font-size-h3) / var(--font-line-h3) var(--font-family-main);
+  --font-weight-h3: 400;
+  --font-size-h3: 24px;
+  --font-line-h3: 28.15px;
+  --font-h3: var(--font-weight-h3) var(--font-size-h3) / var(--font-line-h3) var(--font-family-main);
 
-    --font-weight-h2: 600;
-    --font-size-h2: 30px;
-    --font-line-h2: 35.19px;
-    --font-h2: var(--font-weight-h2) var(--font-size-h2) / var(--font-line-h2) var(--font-family-main);
+  --font-weight-h2: 600;
+  --font-size-h2: 30px;
+  --font-line-h2: 35.19px;
+  --font-h2: var(--font-weight-h2) var(--font-size-h2) / var(--font-line-h2) var(--font-family-main);
 
-    --font-weight-h1: 300;
-    --font-size-h1: 70px;
-    --font-line-h1: 82.11px;
-    --font-h1: var(--font-weight-h1) var(--font-size-h1) / var(--font-line-h1) var(--font-family-main);
-
-
-    // Sizes App
-    --app-width: 500px;
-    --app-height: 600px;
-    --footer-width: 100%;
-    --footer-height: 70px;
-
-    // Sizes Timer Page
-    --mp-nav-height: 90px;
-
-    // Sizes Tasks Page
-    --task-nav-height: 176px;
+  --font-weight-h1: 300;
+  --font-size-h1: 70px;
+  --font-line-h1: 82.11px;
+  --font-h1: var(--font-weight-h1) var(--font-size-h1) / var(--font-line-h1) var(--font-family-main);
 
 
-    // Colors
-    --app-bg: #F3F3F3;
-    --footer-bg: white;
+  // Sizes App
+  --app-width: 500px;
+  --app-height: 600px;
+  --footer-width: 100%;
+  --footer-height: 70px;
 
-    // Arrow to select
-    --select-arrow-default: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDE2IDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZD0iTTEgMUw3LjcyNTAxIDcuNzI1MDFDNy44NzY4OCA3Ljg3Njg4IDguMTIzMTIgNy44NzY4OCA4LjI3NDk5IDcuNzI1MDFMMTUgMSIgc3Ryb2tlPSJibGFjayINCiAgICAgICAgICBzdHJva2Utd2lkdGg9IjEuNTU1NTYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPg0KPC9zdmc+DQo=') no-repeat right;
+  // Sizes Timer Page
+  --mp-nav-height: 90px;
+
+  // Sizes Tasks Page
+  --task-nav-height: 176px;
+
+  // Sizes Stats Page
+  --stats-nav-height: 116px;
+
+  // Colors
+  --app-bg: #F3F3F3;
+  --footer-bg: white;
+
+  // Arrow to select
+  --select-arrow-default: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDE2IDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZD0iTTEgMUw3LjcyNTAxIDcuNzI1MDFDNy44NzY4OCA3Ljg3Njg4IDguMTIzMTIgNy44NzY4OCA4LjI3NDk5IDcuNzI1MDFMMTUgMSIgc3Ryb2tlPSJibGFjayINCiAgICAgICAgICBzdHJva2Utd2lkdGg9IjEuNTU1NTYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPg0KPC9zdmc+DQo=') no-repeat right;
 
 
 }

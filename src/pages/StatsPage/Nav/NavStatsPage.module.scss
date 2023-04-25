@@ -1,0 +1,33 @@
+.NavStatsPage {
+  width: 100%;
+  height: var(--stats-nav-height);
+  padding: 30px 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #040404;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.infoContainer {
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font: var(--font-h2);
+  color: #26282B;
+}
+
+.titleDescription {
+  margin-top: 5px;
+  height: 16px;
+  font: var(--font-small-1);
+  color: #040404;
+}
+
+.rewardsButton {
+  margin-top: 5px;
+  width: 28px;
+  height: 28px;
+}
